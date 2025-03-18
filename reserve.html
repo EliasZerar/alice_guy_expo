@@ -36,6 +36,144 @@
             <span class="part-2">premières</span>
         </span>
     </h1>
+
+    <form id="multiStepForm" class="reservation-form">
+        <div class="steps-wrapper">
+          <div class="form-step active" id="step-1">
+            <div class="title-info">
+              <h2 class="form-title">Choix de la date et heure</h2>
+            </div>
+            <div class="navigation">
+              <button type="button" class="nav-btn" id="prevWeekBtn">
+                <img src="img/icons/arrow-left-orange.svg" alt="Semaine précédente">
+              </button>
+              <div class="dates" id="datesContainer"></div>
+              <button type="button" class="nav-btn" id="nextWeekBtn">
+                <img src="img/icons/arrow-right-orange.svg" alt="Semaine suivante">
+              </button>
+            </div>
+            <div class="pagination" id="weekInfo"></div>
+          </div>
+          <div class="form-step" id="step-2">
+            <div class="title-info">
+              <h2 class="form-title">Informations personnelles</h2>
+              <p class="form-instructions">Veuillez saisir vos informations personnelles pour réserver vos places.</p>
+              <span class="required-fields"><i class="asterisk">*</i> champs obligatoires</span>
+            </div>
+            <div class="form-group-container">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="lastname">Nom <i class="asterisk">*</i></label>
+                  <input type="text" id="lastname" name="lastname" required>
+                  <span class="error-message" id="lastname-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="firstname">Prénom <i class="asterisk">*</i></label>
+                  <input type="text" id="firstname" name="firstname" required>
+                  <span class="error-message" id="firstname-error"></span>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="email">Email <i class="asterisk">*</i></label>
+                  <input type="email" id="email" name="email" required>
+                  <span class="error-message" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Téléphone <i class="asterisk">*</i></label>
+                  <input type="tel" pattern="[0-9]{10}" minlength="10" max="10" id="phone" name="phone" required>
+                  <span class="error-message" id="phone-error"></span>
+                </div>
+              </div>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="participants">Nombre de participants <i class="asterisk">*</i></label>
+                  <select name="participants" id="participants" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                  <span class="error-message" id="participants-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="promo">Code promotionnel</label>
+                  <input type="text" name="promo" id="promo">
+                  <span class="error-message" id="promo-error"></span>
+                  <span class="validate-promo" id="validate-promo">-10%  sur votre réservation</span>
+                </div>
+              </div>
+              <span class="name-info">Le nom renseigné vous sera demandé à votre arrivée à l'exposition.</span>
+            </div>
+          </div>
+          <div class="form-step" id="step-3">
+            <div class="details-reservation">
+              <h2 class="form-title">Récapitulatif de votre réservation</h2>
+              <p class="intro">Veuillez vérifier vos informations avant de confirmer.</p>
+          
+              <div class="info-group">
+                <div class="personal-info card">
+                  <h3>Informations personnelles</h3>
+                  <ul class="recap-list-columns">
+                    <div class="recap-column">
+                      <li><strong>Nom :</strong> <span class="recap-value" id="recap-lastname"></span></li>
+                      <li><strong>Email :</strong> <span class="recap-value" id="recap-email"></span></li>
+                    </div>
+                    <div class="recap-column">
+                      <li><strong>Prénom :</strong> <span class="recap-value" id="recap-firstname"></span></li>
+                      <li><strong>Téléphone :</strong> <span class="recap-value" id="recap-phone"></span></li>
+                    </div>
+                  </ul>
+                </div>
+          
+                <div class="reservation-info card">
+                  <h3>Réservation</h3>
+                  <ul class="recap-list-rows">
+                    <div class="recap-row">
+                      <li><strong>Date et heure :</strong> <span class="recap-value" id="recap-datetime"></span></li>
+                    </div>
+                    <div class="recap-row">
+                      <li><strong>Participants :</strong> <span class="recap-value" id="recap-participants"></span></li>
+                      <li><strong>Code promo :</strong> <span class="recap-value" id="recap-promo"></span></li>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+          
+                <p class="signature">À très bientôt, <span class="studio24-bold">Studio24</span></p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="bottom-container">
+          <div class="step-indicator">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="form-navigation">
+            <button type="button" id="prevBtn" class="nav-form-btn previous-btn">Précédent</button>
+            <button type="button" id="nextBtn" class="next-btn">Suivant</button>
+            <button type="submit" id="submitBtn" class="next-btn" style="display:none;">Confirmer</button>
+          </div>
+        </div>
+      </form>
+    
+      <div id="confirmationMessage" style="display: none;">
+        <div class="confirmation-container">
+          <h2 class="confirmation-title">Merci pour votre réservation !</h2>
+          <p>Un email de confirmation vous a été envoyé.</p>
+          <p>Nous avons hâte de vous accueillir !</p>
+          <p class="signature">– L'équipe <strong class="studio24-bold">Studio24</strong></p>
+        </div>
+      </div>
     <script src="js/main.js"></script>
+    <script src="js/reserve.js"></script>
 </body>
 </html>
