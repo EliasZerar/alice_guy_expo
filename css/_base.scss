@@ -14,7 +14,7 @@ body {
     background-color: black;
     margin: 0;
     height: 100%;
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', sans-serif;
     color: $secondary-color;
 }
 
@@ -58,7 +58,7 @@ nav {
     display: flex;
     flex-direction: row;
     font-size: 1.6rem;
-    font-family: 'Oddlini Thin';
+    font-family: 'Oddlini Thin', sans-serif;
 }
 
 .m-top {
@@ -159,7 +159,7 @@ header {
 .language {
     color: $secondary-color;
     font-size: 1.02rem;
-    font-family: 'Oddlini Thin';
+    font-family: 'Oddlini Thin', sans-serif;
     background-color: transparent;
     border: 0;
     margin-right: 40px;
@@ -295,7 +295,7 @@ header {
 }
 
 .title-1 {
-    font-family: 'Casablanca Serial';
+    font-family: 'Casablanca Serial', sans-serif;
     font-weight: bold;
     color: $secondary-color;
     font-size: 2.5rem;
@@ -306,7 +306,7 @@ header {
 
 .title-2 {
     color: $primary-color;
-    font-family: 'Oddlini';
+    font-family: 'Oddlini', sans-serif;
     font-weight: bold;
     font-size: 1.4rem;
     line-height: 5px;

@@ -1,34 +1,34 @@
 /* Casablanca */
 @font-face {
   font-family: "Casablanca Serial";
-  src: url("/alice_guy_expo/fonts/casablanca-serial/casablanca-serial-bold.woff2") format("woff2"), url("/alice_guy_expo/fonts/casablanca-serial/casablanca-serial-bold.woff") format("woff");
+  src: url("../fonts/casablanca-serial/casablanca-serial-bold.woff2") format("woff2"), url("../fonts/casablanca-serial/casablanca-serial-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 /* Satoshi */
 @font-face {
   font-family: "Satoshi";
-  src: url("/alice_guy_expo/fonts/satoshi-variable/satoshi-variable.woff2") format("woff2"), url("/alice_guy_expo/fonts/satoshi-variable/satoshi-variable.woff") format("woff");
+  src: url("../fonts/satoshi-variable/satoshi-variable.woff2") format("woff2"), url("../fonts/satoshi-variable/satoshi-variable.woff") format("woff"), url("../fonts/satoshi-variable/satoshi-variable.ttf") format("ttf");
   font-weight: 100 900;
   font-style: normal;
 }
 /* Oddlini */
 @font-face {
   font-family: "Oddlini Bold";
-  src: url("/alice_guy_expo/fonts/oddlini/oddlini-bold.woff2") format("woff2"), url("/alice_guy_expo/fonts/oddlini/oddlini-bold.woff") format("woff");
+  src: url("../fonts/oddlini/oddlini-bold.woff2") format("woff2"), url("../fonts/oddlini/oddlini-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Oddlini Regular";
-  src: url("/alice_guy_expo/fonts/oddlini/oddlini-regular.woff2") format("woff2"), url("/alice_guy_expo/fonts/oddlini/oddlini-regular.woff") format("woff");
+  src: url("../fonts/oddlini/oddlini-regular.woff2") format("woff2"), url("../fonts/oddlini/oddlini-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Oddlini Thin";
-  src: url("/alice_guy_expo/fonts/oddlini/oddlini-thin.woff2") format("woff2"), url("/alice_guy_expo/fonts/oddlini/oddlini-thin.woff") format("woff");
-  font-weight: light;
+  src: url("../fonts/oddlini/oddlini-thin.woff2") format("woff2"), url("../fonts/oddlini/oddlini-thin.woff") format("woff");
+  font-weight: 200;
   font-style: normal;
 }
 *,
@@ -47,7 +47,7 @@ body {
   background-color: black;
   margin: 0;
   height: 100%;
-  font-family: "Satoshi";
+  font-family: "Satoshi", sans-serif;
   color: #FFF;
 }
 
@@ -91,7 +91,7 @@ nav {
   display: flex;
   flex-direction: row;
   font-size: 1.6rem;
-  font-family: "Oddlini Thin";
+  font-family: "Oddlini Thin", sans-serif;
 }
 
 .m-top {
@@ -192,7 +192,7 @@ header {
 .language {
   color: #FFF;
   font-size: 1.02rem;
-  font-family: "Oddlini Thin";
+  font-family: "Oddlini Thin", sans-serif;
   background-color: transparent;
   border: 0;
   margin-right: 40px;
@@ -297,7 +297,7 @@ header {
 }
 
 .title-1 {
-  font-family: "Casablanca Serial";
+  font-family: "Casablanca Serial", sans-serif;
   font-weight: bold;
   color: #FFF;
   font-size: 2.5rem;
@@ -308,7 +308,7 @@ header {
 
 .title-2 {
   color: #EA5B28;
-  font-family: "Oddlini";
+  font-family: "Oddlini", sans-serif;
   font-weight: bold;
   font-size: 1.4rem;
   line-height: 5px;
