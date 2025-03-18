@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Casablanca */
 @font-face {
   font-family: "Casablanca Serial";
@@ -31,24 +32,8 @@
   font-weight: 200;
   font-style: normal;
 }
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-}
-
-body {
-  background-color: black;
-  margin: 0;
-  height: 100%;
-  font-family: "Satoshi", sans-serif;
-  color: #FFF;
+.bold {
+  font-weight: 600;
 }
 
 /* nav */
@@ -95,7 +80,7 @@ nav {
 }
 
 .m-top {
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 header {
@@ -158,13 +143,14 @@ header {
   height: 100vh;
   background-color: black;
   transition: right 0.3s ease-in-out;
+  padding-left: 30px;
 }
 
 .menu a {
   display: block;
   color: #FFF;
-  padding: 1rem;
   text-decoration: none;
+  padding-bottom: 30px;
 }
 
 .menu a:hover {
@@ -245,6 +231,9 @@ header {
     content: "";
     height: 1.5px;
   }
+  .menu a {
+    padding-bottom: 0;
+  }
 }
 @media (min-width: 900px) {
   .language {
@@ -276,21 +265,49 @@ header {
     display: flex;
     width: 100%;
     height: 70px;
-    gap: 50px;
+    gap: 80px;
     background-color: transparent;
   }
   .menu a {
-    padding: 0 1rem;
     display: inline-block;
     text-decoration: none;
   }
   .menu a.active {
     position: relative;
     color: #EA5B28;
-    text-decoration: underline;
-    text-underline-offset: 30px;
+    text-decoration: none; /* Retirer l'underline CSS par défaut */
+  }
+  .menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -25px; /* Déplacez l'underline plus bas sans affecter le lien */
+    height: 1px;
+    width: 100%;
+    background-color: #EA5B28;
   }
 }
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  height: 100%;
+  font-family: "Satoshi", sans-serif;
+  color: #FFF;
+}
+
 /* title */
 .title {
   margin: 0;
@@ -300,41 +317,24 @@ header {
   font-family: "Casablanca Serial", sans-serif;
   font-weight: bold;
   color: #FFF;
-  font-size: 2.5rem;
+  font-size: 3.3rem;
   display: block;
-  margin-top: 100px;
-  margin-bottom: 10px;
 }
 
 .title-2 {
   color: #EA5B28;
-  font-family: "Oddlini", sans-serif;
+  font-family: "Oddlini Bold", sans-serif;
   font-weight: bold;
-  font-size: 1.4rem;
-  line-height: 5px;
+  font-size: 1.9rem;
+  line-height: 30px;
 }
 
 .part-1 {
   display: block;
 }
 
-.five {
-  font-weight: 400;
-  font-size: 1.1rem;
-  margin: 0 0 50px;
-}
-
-.infos {
-  font-weight: 600;
-  font-size: 0.6rem;
-}
-
 .bold {
-  font-weight: 800;
-}
-
-.date {
-  margin: 0;
+  font-weight: 600;
 }
 
 @media (min-width: 700px) {
@@ -346,16 +346,6 @@ header {
     font-size: 2.25rem;
     line-height: normal;
   }
-  .five {
-    font-size: 1.8rem;
-  }
-  .infos {
-    font-weight: 400;
-    font-size: 0.9rem;
-  }
-  .bold {
-    font-weight: 600;
-  }
 }
 @media (min-width: 900px) {
   .title-1 {
@@ -366,9 +356,48 @@ header {
     font-size: 3.438rem;
     line-height: normal;
   }
+}
+.home {
+  display: flex;
+  min-height: 100vh;
+  display: flex;
+  margin-top: 40px;
+  margin-left: 25px;
+}
+
+.five {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0 0 50px;
+}
+
+.infos {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.date {
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .five {
+    font-size: 1.8rem;
+    margin: 0 0 50px;
+  }
+  .infos {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  .bold {
+    font-weight: 600;
+  }
+}
+@media (min-width: 900px) {
   .five {
     font-size: 2.8rem;
     font-weight: 300;
+    margin: 0 0 70px;
   }
   .infos {
     font-weight: 400;

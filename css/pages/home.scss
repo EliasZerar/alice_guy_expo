@@ -1,0 +1,60 @@
+.home {
+    display: flex;
+    // justify-content: space-around;
+    min-height: 100vh;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+.home-left {
+    
+}
+
+.five {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 50px;
+}
+
+.infos {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.date {
+    margin: 0;
+}
+
+// tablet
+@media (min-width: 700px) {
+
+    .five {
+        font-size: 1.8rem;
+        margin: 0 0 50px;
+    }
+
+    .infos {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+}
+
+// desktop
+@media (min-width: 900px) {
+    .five {
+        font-size: 2.8rem;
+        font-weight: 300;
+        margin: 0 0 70px;
+    }
+
+    .infos {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
+}
