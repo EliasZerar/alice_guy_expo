@@ -17,6 +17,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+const nav = document.querySelector('nav');
+const body = document.querySelector('body'); 
+
+const adjustBodyPadding = () => {
+    if (nav) { 
+        const navHeight = nav.offsetHeight; 
+        body.style.paddingTop = `${navHeight}px`; 
+    } else {
+        console.log('Navigation element not found');
+    }
+}
+
+window.addEventListener('DOMContentLoaded', adjustBodyPadding); 
+window.addEventListener('resize', adjustBodyPadding); 
+
+
+
 // nav active link
 // document.addEventListener('DOMContentLoaded', function () {
 //     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
