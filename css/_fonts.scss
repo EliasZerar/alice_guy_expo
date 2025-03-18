@@ -1,8 +1,8 @@
 /* Casablanca */ 
 @font-face {
     font-family: 'Casablanca Serial';
-    src: url('/alice_guy_expo/fonts/casablanca-serial/casablanca-serial-bold.woff2') format('woff2'),
-         url('/alice_guy_expo/fonts/casablanca-serial/casablanca-serial-bold.woff') format('woff');
+    src: url('../fonts/casablanca-serial/casablanca-serial-bold.woff2') format('woff2'),
+         url('../fonts/casablanca-serial/casablanca-serial-bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -10,8 +10,9 @@
 /* Satoshi */ 
 @font-face {
     font-family: 'Satoshi';
-    src: url('/alice_guy_expo/fonts/satoshi-variable/satoshi-variable.woff2') format('woff2'),
-         url('/alice_guy_expo/fonts/satoshi-variable/satoshi-variable.woff') format('woff');
+    src: url('../fonts/satoshi-variable/satoshi-variable.woff2') format('woff2'),
+         url('../fonts/satoshi-variable/satoshi-variable.woff') format('woff'),
+         url('../fonts/satoshi-variable/satoshi-variable.ttf') format('ttf');
     font-weight: 100 900;
     font-style: normal;
 }
@@ -19,24 +20,24 @@
 /* Oddlini */ 
 @font-face {
     font-family: 'Oddlini Bold';
-    src: url('/alice_guy_expo/fonts/oddlini/oddlini-bold.woff2') format('woff2'),
-         url('/alice_guy_expo/fonts/oddlini/oddlini-bold.woff') format('woff');
+    src: url('../fonts/oddlini/oddlini-bold.woff2') format('woff2'),
+         url('../fonts/oddlini/oddlini-bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Oddlini Regular';
-    src: url('/alice_guy_expo/fonts/oddlini/oddlini-regular.woff2') format('woff2'),
-         url('/alice_guy_expo/fonts/oddlini/oddlini-regular.woff') format('woff');
+    src: url('../fonts/oddlini/oddlini-regular.woff2') format('woff2'),
+         url('../fonts/oddlini/oddlini-regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Oddlini Thin';
-    src: url('/alice_guy_expo/fonts/oddlini/oddlini-thin.woff2') format('woff2'),
-         url('/alice_guy_expo/fonts/oddlini/oddlini-thin.woff') format('woff');
-    font-weight: light;
+    src: url('../fonts/oddlini/oddlini-thin.woff2') format('woff2'),
+         url('../fonts/oddlini/oddlini-thin.woff') format('woff');
+    font-weight: 200;
     font-style: normal;
 }

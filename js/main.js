@@ -18,18 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // nav active link
-document.addEventListener('DOMContentLoaded', function () {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+// document.addEventListener('DOMContentLoaded', function () {
+//     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    const links = document.querySelectorAll('.menu a');
+//     const links = document.querySelectorAll('.menu a');
 
-    links.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage) {
-            link.classList.add('active');
-        }
-    });
-});
+//     links.forEach(link => {
+//         const linkHref = link.getAttribute('href');
+//         if (linkHref === currentPage) {
+//             link.classList.add('active');
+//         }
+//     });
+// });
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     const links = document.querySelectorAll('.menu a');
