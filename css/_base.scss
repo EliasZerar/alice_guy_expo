@@ -27,7 +27,7 @@ body {
     font-family: 'Casablanca Serial', sans-serif;
     font-weight: bold;
     color: $secondary-color;
-    font-size: 3.3rem;
+    font-size: 3rem;
     display: block;
 }
 
@@ -35,8 +35,8 @@ body {
     color: $primary-color;
     font-family: 'Oddlini Bold', sans-serif;
     font-weight: bold;
-    font-size: 1.9rem;
-    line-height: 30px;
+    font-size: 1.7rem;
+    line-height: 20px;
 }
 
 .part-1 {
@@ -49,7 +49,7 @@ body {
 
 
 // title tablet
-@media (min-width: 700px) {
+@media (min-width: 500px) {
     .title-1 {
         font-size: 4rem;
         margin-bottom: 0;
@@ -72,4 +72,8 @@ body {
         font-size: 3.438rem;
         line-height: normal;
     }
+}
+
+.bold {
+    font-weight: 600;
 }
