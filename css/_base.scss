@@ -14,6 +14,8 @@ body {
     background-color: black;
     margin: 0;
     height: 100%;
+    font-family: 'Satoshi';
+    color: $secondary-color;
 }
 
 /* nav */
@@ -134,7 +136,6 @@ header {
 
 .menu a:hover {
     color: $primary-color;
-    // font-family: 'Oddlini Regular';
 }
 
 .burger.open {
@@ -276,34 +277,111 @@ header {
         text-underline-offset: 30px;
     }
 
-    .underline {
-        position: absolute;
-        bottom: -1px;
-        height: 1px;
-        left: 0; 
-        width: 0; 
-        background-color: $primary-color; 
-        transition: left 0.3s ease, width 0.3s ease; 
-    }
+    // .underline {
+    //     position: absolute;
+    //     bottom: -1px;
+    //     height: 1px;
+    //     left: 0; 
+    //     width: 0; 
+    //     background-color: $primary-color; 
+    //     transition: left 0.3s ease, width 0.3s ease; 
+    // }
 }
 
 /* title */ 
+
+.title {
+    margin: 0;
+}
+
 .title-1 {
     font-family: 'Casablanca Serial';
     font-weight: bold;
     color: $secondary-color;
-    font-size: 6.25rem;
+    font-size: 2.5rem;
     display: block;
     margin-top: 100px;
+    margin-bottom: 10px;
 }
 
 .title-2 {
     color: $primary-color;
     font-family: 'Oddlini';
     font-weight: bold;
-    font-size: 3.438rem;
+    font-size: 1.4rem;
+    line-height: 5px;
 }
 
 .part-1 {
     display: block;
+}
+
+.five {
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0 0 50px;
+}
+
+.infos {
+    font-weight: 600;
+    font-size: 0.60rem;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.date {
+    margin: 0;
+}
+
+// title tablet
+@media (min-width: 700px) {
+    .title-1 {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+    
+    .title-2 {
+        font-size: 2.25rem;
+        line-height: normal;
+    }
+
+    .five {
+        font-size: 1.8rem;
+    }
+
+    .infos {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+
+}
+
+// title desktop
+@media (min-width: 900px) {
+    .title-1 {
+        font-size: 6.25rem;
+        margin-bottom: 0;
+    }
+    
+    .title-2 {
+        font-size: 3.438rem;
+        line-height: normal;
+    }
+
+    .five {
+        font-size: 2.8rem;
+        font-weight: 300;
+    }
+
+    .infos {
+        font-weight: 400;
+        font-size: 1.2rem;
+    }
+
 }
