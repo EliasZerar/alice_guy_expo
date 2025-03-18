@@ -2,32 +2,57 @@
     display: flex;
     // justify-content: space-around;
     min-height: 100vh;
-    display: flex;
     margin-top: 40px;
     margin-left: 25px;
+    background-image: url(../img/alice-guy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 60px 0;
 }
 
-.home-left {
+// .home-left {
     
-}
+// }
 
 .five {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 0 0 50px;
 }
 
 .infos {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .date {
     margin: 0;
 }
 
-// tablet
+.street {
+    margin-top: 15px;
+}
+
+
+// img 
+@media (min-width: 500px) {
+    .home {
+        background-size: 500px;
+        background-position: 150% 0;
+    }
+}
+
+// img 
 @media (min-width: 700px) {
+    .home {
+        background-size: 550px;
+        background-position: 120% 0;
+    }
+}
+
+// tablet
+@media (min-width: 500px) {
 
     .five {
         font-size: 1.8rem;
@@ -37,6 +62,23 @@
     .infos {
         font-weight: 400;
         font-size: 0.9rem;
+    }
+
+    .bold {
+        font-weight: 600;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .five {
+        font-size: 2rem;
+        margin: 0 0 50px;
+    }
+
+    .infos {
+        font-weight: 400;
+        font-size: 1rem;
     }
 
     .bold {

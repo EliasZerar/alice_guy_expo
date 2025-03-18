@@ -32,10 +32,6 @@
   font-weight: 200;
   font-style: normal;
 }
-.bold {
-  font-weight: 600;
-}
-
 /* nav */
 .logo {
   display: flex;
@@ -317,7 +313,7 @@ body {
   font-family: "Casablanca Serial", sans-serif;
   font-weight: bold;
   color: #FFF;
-  font-size: 3.3rem;
+  font-size: 3rem;
   display: block;
 }
 
@@ -325,8 +321,8 @@ body {
   color: #EA5B28;
   font-family: "Oddlini Bold", sans-serif;
   font-weight: bold;
-  font-size: 1.9rem;
-  line-height: 30px;
+  font-size: 1.7rem;
+  line-height: 20px;
 }
 
 .part-1 {
@@ -337,7 +333,7 @@ body {
   font-weight: 600;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   .title-1 {
     font-size: 4rem;
     margin-bottom: 0;
@@ -357,30 +353,54 @@ body {
     line-height: normal;
   }
 }
+.bold {
+  font-weight: 600;
+}
+
 .home {
   display: flex;
   min-height: 100vh;
-  display: flex;
   margin-top: 40px;
   margin-left: 25px;
+  background-image: url(../img/alice-guy.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: 60px 0;
 }
 
 .five {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0 0 50px;
 }
 
 .infos {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .date {
   margin: 0;
 }
 
+.street {
+  margin-top: 15px;
+}
+
+@media (min-width: 500px) {
+  .home {
+    background-size: 500px;
+    background-position: 150% 0;
+  }
+}
 @media (min-width: 700px) {
+  .home {
+    background-size: 550px;
+    background-position: 120% 0;
+  }
+}
+@media (min-width: 500px) {
   .five {
     font-size: 1.8rem;
     margin: 0 0 50px;
@@ -388,6 +408,19 @@ body {
   .infos {
     font-weight: 400;
     font-size: 0.9rem;
+  }
+  .bold {
+    font-weight: 600;
+  }
+}
+@media (min-width: 700px) {
+  .five {
+    font-size: 2rem;
+    margin: 0 0 50px;
+  }
+  .infos {
+    font-weight: 400;
+    font-size: 1rem;
   }
   .bold {
     font-weight: 600;
