@@ -214,12 +214,6 @@ header {
     width: 40px;
     height: 1.5px;
   }
-  .burger::before {
-    top: -13px;
-  }
-  .burger::after {
-    bottom: -13px;
-  }
   .burger::before,
   .burger::after {
     content: "";
@@ -865,7 +859,7 @@ body {
   margin: auto;
 }
 
-/* Tablet responsive */
+/* Form responsive */
 @media (min-width: 682px) {
   .form-group-container {
     gap: 2rem;

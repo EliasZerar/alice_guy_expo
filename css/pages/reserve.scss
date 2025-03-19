@@ -401,7 +401,7 @@
   }
   
   
-  /* Tablet responsive */
+  /* Form responsive */
   @media (min-width: 682px) {
     .form-group-container {
       gap: 2rem;
@@ -456,3 +456,12 @@
       gap: 2rem;
     }
   }
+
+
+//   @media (min-width: 768px) {
+//     .reservation-container {
+//       margin-top: 50px;
+//       flex-direction: row;
+//       justify-content: space-around;
+//     }
+//   }
