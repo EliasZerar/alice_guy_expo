@@ -61,8 +61,21 @@ body {
     }
 }
 
+// title tablet
+@media (min-width: 700px) {
+    .title-1 {
+        font-size: 4.4rem;
+        margin-bottom: 0;
+    }
+    
+    .title-2 {
+        font-size: 2.8rem;
+        line-height: normal;
+    }
+}
+
 // title desktop
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
     .title-1 {
         font-size: 6.25rem;
         margin-bottom: 0;
