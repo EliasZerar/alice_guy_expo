@@ -37,6 +37,12 @@ td {
   }
 }
 
+.tdActions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 .input {
   width: 100%;
   max-width: 250px; 
