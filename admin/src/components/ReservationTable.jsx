@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/Reservations.module.css';
 
 export default function ReservationTable({
@@ -11,12 +11,28 @@ export default function ReservationTable({
   setFormValues
 }) {
   const [selectedIds, setSelectedIds] = useState([]);
+  const [allSelected, setAllSelected] = useState(false);
+
 
   const toggleCheckbox = (id) => {
     setSelectedIds(prev =>
       prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
     );
   };
+
+  const toggleAllCheckboxes = () => {
+    if (allSelected) {
+      setSelectedIds([]);
+    } else {
+      setSelectedIds(reservations.map(res => res.id));
+    }
+    setAllSelected(!allSelected);
+  };
+
+  useEffect(() => {
+    setAllSelected(selectedIds.length === reservations.length && reservations.length > 0);
+  }, [selectedIds, reservations]);
+
 
   const handleDeleteSelected = () => {
     if (selectedIds.length === 0) return alert("Aucune réservation sélectionnée.");
@@ -30,16 +46,16 @@ export default function ReservationTable({
   const handleEditChange = (e, field) => {
     let value = e.target.value;
 
-  if (field === 'participants') {
-    value = Math.max(1, Math.min(10, Number(value)));
-  }
+    if (field === 'participants') {
+      value = Math.max(1, Math.min(10, Number(value)));
+    }
 
-  setFormValues({ ...formValues, [field]: value });
+    setFormValues({ ...formValues, [field]: value });
   };
 
   return (
     <>
-     <button
+      <button
         className={`${styles.btn} ${styles.btnDelete}`}
         onClick={handleDeleteSelected}
         style={{ marginBottom: '1rem' }}
@@ -51,7 +67,13 @@ export default function ReservationTable({
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
-            <th className={styles.th}></th> {/* Colonne checkbox */}
+            <th className={styles.th}>
+              <input
+                type="checkbox"
+                checked={allSelected}
+                onChange={toggleAllCheckboxes}
+              />
+            </th>
             <th className={styles.th}>Nom</th>
             <th className={styles.th}>Prénom</th>
             <th className={styles.th}>Téléphone</th>
@@ -93,7 +115,7 @@ export default function ReservationTable({
                     <input type='number' min='1' max='10' className={styles.input} value={formValues.participants || ''} onChange={e => handleEditChange(e, 'participants')} />
                   </td>
                   <td className={styles.td}>
-                  <input type='checkbox' className={styles.input} checked={formValues.promo_code === '1'} onChange={e => handleEditChange({ target: { value: e.target.checked ? '1' : '0' } }, 'promo_code')} />
+                    <input type='checkbox' className={styles.input} checked={formValues.promo_code === '1'} onChange={e => handleEditChange({ target: { value: e.target.checked ? '1' : '0' } }, 'promo_code')} />
                   </td>
                   <td className={styles.td}>
                     <button className={`${styles.btn} ${styles.btnEdit}`} onClick={() => { onSave(res.id, formValues); setEditId(null); }}>Enregistrer</button>

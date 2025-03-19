@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import styles from '../styles/Reservations.module.css';
+import { Link } from 'react-router-dom';
+import styles from '../styles/Dashboard.module.css';
 import ReservationTable from './ReservationTable.jsx';
 import { fetchWithAuth } from '../utils/fetchWithAuth';
 
 export default function Dashboard({ token, onLogout }) {
-  const [reservations, setReservations] = useState([]);
+  const [lastReservations, setLastReservations] = useState([]);
+  const [allReservations, setAllReservations] = useState([]);
   const [editId, setEditId] = useState(null);
   const [formValues, setFormValues] = useState({});
 
-  const fetchReservations = async () => {
+  const fetchLastReservations = async () => {
     const response = await fetchWithAuth(
       'https://tahar.projetsmmichamps.fr/API/index.php?last5=true',
       {
@@ -20,73 +22,103 @@ export default function Dashboard({ token, onLogout }) {
       },
       onLogout
     );
-
     if (!response) return;
-
     const data = await response.json();
-    setReservations(data);
+    setLastReservations(data);
   };
 
-  useEffect(() => {
-    fetchReservations();
-  }, []);
-
-  const deleteReservation = async (id) => {
-    const confirmDelete = confirm('Supprimer cette réservation ?');
-    if (!confirmDelete) return;
-
+  const fetchAllReservations = async () => {
     const response = await fetchWithAuth(
       'https://tahar.projetsmmichamps.fr/API/index.php',
       {
-        method: 'DELETE',
+        method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id }),
       },
       onLogout
     );
-
     if (!response) return;
+    const data = await response.json();
+    setAllReservations(data);
+  };
+
+  const deleteReservation = async (id) => {
+
+    const response = await fetch('https://tahar.projetsmmichamps.fr/API/index.php', {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id }),
+    });
 
     const data = await response.json();
     if (data.success) {
-      fetchReservations();
+      fetchLastReservations();
+      window.location.reload();
     } else {
       alert('Erreur suppression : ' + data.message);
     }
   };
 
   const saveReservation = async (id, updatedData) => {
-    const response = await fetchWithAuth(
-      'https://tahar.projetsmmichamps.fr/API/index.php',
-      {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, ...updatedData }),
+    const response = await fetch('https://tahar.projetsmmichamps.fr/API/index.php', {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
-      onLogout
-    );
-
-    if (!response) return;
+      body: JSON.stringify({ id, ...updatedData }),
+    });
 
     const data = await response.json();
     if (data.success) {
-      fetchReservations();
+      fetchLastReservations();
     } else {
       alert('Erreur mise à jour : ' + data.message);
     }
   };
 
+  useEffect(() => {
+    fetchLastReservations();
+    fetchAllReservations();
+  }, []);
+
+  const today = new Date().toISOString().split('T')[0];
+  const todayReservations = allReservations.filter(r => r.date === today);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Tableau de bord</h2>
+
+      <div className={styles.statsGrid}>
+        <div className={`${styles.statCard} ${styles.cardBlue}`}>
+          <h4>Total réservations</h4>
+          <p>{allReservations.length}</p>
+        </div>
+        <div className={`${styles.statCard} ${styles.cardGreen}`}>
+          <h4>Total participants</h4>
+          <p>{allReservations.reduce((sum, r) => sum + Number(r.participants), 0)}</p>
+        </div>
+        <div className={`${styles.statCard} ${styles.cardYellow}`}>
+          <h4>Avec code promo</h4>
+          <p>{allReservations.filter(r => r.promo_code === '1').length}</p>
+        </div>
+        <div className={`${styles.statCard} ${styles.cardPink}`}>
+          <h4>Réservations aujourd’hui</h4>
+          <p>{todayReservations.length}</p>
+        </div>
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <Link to="/stats" className={styles.buttonLink}>Voir plus de statistiques</Link>
+      </div>
+
+      <h3 className={styles.subTitle}>5 dernières réservations</h3>
       <ReservationTable
-        reservations={reservations}
+        reservations={lastReservations}
         onDelete={deleteReservation}
         onSave={saveReservation}
         editId={editId}
@@ -94,6 +126,9 @@ export default function Dashboard({ token, onLogout }) {
         formValues={formValues}
         setFormValues={setFormValues}
       />
+      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <Link to="/reservations" className={styles.buttonLink}>Voir toutes les réservations</Link>
+      </div>
     </div>
   );
 }
