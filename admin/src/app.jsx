@@ -32,7 +32,7 @@ export default function App() {
       ) : (
         <div style={{ display: 'flex' }}>
           <SideBar onLogout={handleLogout} />
-          <div>
+          <div style={{width: '100%'}}>
             <Routes>
               <Route path="/dashboard" element={<Dashboard token={token} onLogout={handleLogout} />} />
               <Route path="/reservations" element={<Reservations token={token} onLogout={handleLogout} />} />

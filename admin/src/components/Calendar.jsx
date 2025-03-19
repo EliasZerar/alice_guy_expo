@@ -4,6 +4,7 @@ import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
 import { fetchWithAuth } from '../utils/fetchWithAuth';
+import '../styles/Calendar.css'
 
 export default function Calendar({ token, onLogout }) {
     const [events, setEvents] = useState([]);
@@ -53,7 +54,6 @@ export default function Calendar({ token, onLogout }) {
                 slotMinTime="10:00:00"
                 slotMaxTime="20:00:00"
                 height="auto"
-
                 validRange={{
                     start: '2025-03-24',
                     end: '2025-05-25'

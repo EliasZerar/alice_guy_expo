@@ -1,5 +1,6 @@
 .container {
     padding: 2rem;
+    width: 100%;
   }
   
   .title {
@@ -9,5 +10,9 @@
   
   .graphContainer {
     margin-bottom: 3rem;
+    padding-right: 2rem;
+    width: 100%;
+    min-height: 300px;
   }
+  
   

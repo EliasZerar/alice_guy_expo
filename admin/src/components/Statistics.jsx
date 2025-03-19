@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchWithAuth } from '../utils/fetchWithAuth';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts';
 import styles from '../styles/Statistics.module.css';
 
 export default function Statistics({ token, onLogout }) {
@@ -28,16 +28,18 @@ export default function Statistics({ token, onLogout }) {
     fetchData();
   }, []);
 
-  // Regroupement par date
   const reservationsByDay = reservations.reduce((acc, r) => {
-    const date = r.date_time;
+    const date = r.date_time.split(' ')[0];
+  
     if (!acc[date]) {
       acc[date] = { date, count: 0, participants: 0 };
     }
+  
     acc[date].count++;
     acc[date].participants += Number(r.participants);
     return acc;
   }, {});
+  
 
   const formatDate = (isoDate) => {
     const d = new Date(isoDate);
@@ -69,22 +71,26 @@ export default function Statistics({ token, onLogout }) {
 
       <div className={styles.graphContainer}>
         <h3>Réservations par jour</h3>
-        <BarChart width={600} height={300} data={dataByDay}>
+        <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={dataByDay}>
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />
           <Bar dataKey="count" fill="#8884d8" />
         </BarChart>
+        </ResponsiveContainer>
       </div>
 
       <div className={styles.graphContainer}>
         <h3>Moyenne de participants par jour</h3>
-        <BarChart width={600} height={300} data={dataByDay}>
+        <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={dataByDay}>
           <XAxis dataKey="date" />
           <YAxis />
           <Tooltip />
-          <Bar dataKey={(entry) => (entry.participants / entry.count).toFixed(2)} fill="#82ca9d" />
+          <Bar dataKey={(entry) => Math.round(entry.participants / entry.count)} fill="#82ca9d" />
         </BarChart>
+        </ResponsiveContainer>
       </div>
 
       <div className={styles.graphContainer}>

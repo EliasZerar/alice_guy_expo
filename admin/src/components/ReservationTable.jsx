@@ -130,7 +130,7 @@ export default function ReservationTable({
                   <td className={styles.td}>{res.date_time}</td>
                   <td className={styles.td}>{res.participants}</td>
                   <td className={styles.td}>{res.promo_code === '0' ? 'Non' : 'Oui'}</td>
-                  <td className={styles.td}>
+                  <td className={`${styles.td} ${styles.tdActions}`}>
                     <button className={`${styles.btn} ${styles.btnEdit}`} onClick={() => {
                       setEditId(res.id);
                       setFormValues(res);
