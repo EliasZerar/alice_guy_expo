@@ -1,9 +1,21 @@
+  .reservation-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+    .five {
+        margin-bottom: 1rem;
+    }
+  }
+  
   .reservation-form {
     padding: 1rem 0;
     max-width: 660px;
     width: 100%;
     min-height: 600px;
-    margin: 0 0.5rem;
+    margin: 0 auto;
     background-color: $secondary-color;
     color: #2c2c2a;
     border-radius: 5px;

@@ -19,7 +19,7 @@
 }
 
 .language {
-    margin-right: 40px;
+    margin-right: 20px;
     cursor: pointer;
     background-color: transparent;
     border:0;
@@ -55,21 +55,22 @@ header {
 }
 
 .menu-icon {
-    display: block;
-    width: 20px;
-    height: 70px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 24px;
     position: relative;
     cursor: pointer;
     z-index: 3;
-    transform: translateY(50%);
+    margin-right: 22px;
+    // transform: translateY(50%);
 }
 
 .burger {
     width: 30px;
     height: 1px;
     background-color: $secondary-color;
-    position: absolute;
-    right: 22px;
+    // position: absolute;
     transition: all 0.3s ease-in-out;
 }
 
@@ -84,11 +85,11 @@ header {
 }
 
 .burger::before {
-    top: -10px;
+    top: 0px;
 }
 
 .burger::after {
-    bottom: -10px;
+    bottom: 0px;
 }
 
 .burger:hover,
@@ -125,8 +126,8 @@ header {
 
 .burger.open::before,
 .burger.open::after {
-    top: 0; 
-    width: 40px; 
+    top: 50%; 
+    width: 120%; 
 }
 
 .burger.open::before {
@@ -134,7 +135,7 @@ header {
 }
 
 .burger.open::after {
-    transform: rotate(-45deg); 
+    transform: rotate(-45deg);
 }
 
 .language {
@@ -143,7 +144,7 @@ header {
     font-family: 'Oddlini Thin', sans-serif;
     background-color: transparent;
     border: 0;
-    margin-right: 40px;
+    // margin-right: 40px;
     cursor: pointer;
 }
 
