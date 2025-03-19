@@ -19,6 +19,9 @@ export default function Sidebar({ onLogout }) {
                     <NavLink to="/stats" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
                         Statistiques
                     </NavLink>
+                    <NavLink to="/calendar" className={({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link}>
+                        Calendrier
+                    </NavLink>
                 </nav>
             </div>
             <button className={styles.logoutBtn} onClick={onLogout}>

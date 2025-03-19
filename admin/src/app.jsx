@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import LoginForm from './components/LoginForm'
 import Dashboard from './components/Dashboard'
 import Reservations from './components/Reservations'
+import Calendar from './components/Calendar'
 import Statistics from './components/Statistics'
 import SideBar from './components/SideBar'
 import './styles/index.css'
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/dashboard" element={<Dashboard token={token} onLogout={handleLogout} />} />
               <Route path="/reservations" element={<Reservations token={token} onLogout={handleLogout} />} />
               <Route path="/stats" element={<Statistics token={token} onLogout={handleLogout} />} />
+              <Route path="/calendar" element={<Calendar token={token} onLogout={handleLogout} />} />
               <Route path="/" element={<Navigate to="/dashboard" />} />
             </Routes>
           </div>
