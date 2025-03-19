@@ -341,7 +341,17 @@ body {
     line-height: normal;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 700px) {
+  .title-1 {
+    font-size: 4.4rem;
+    margin-bottom: 0;
+  }
+  .title-2 {
+    font-size: 2.8rem;
+    line-height: normal;
+  }
+}
+@media (min-width: 1000px) {
   .title-1 {
     font-size: 6.25rem;
     margin-bottom: 0;
@@ -355,13 +365,27 @@ body {
   font-weight: 600;
 }
 
+.button-orange {
+  color: black;
+  background-color: #EA5B28;
+}
+
+.button-black {
+  color: #EA5B28;
+  background-color: black;
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
 .home {
   display: flex;
   min-height: 100vh;
   margin-top: 40px;
   margin-left: 25px;
   background-image: url(../img/alice-guy.png);
-  background-size: cover;
+  background-size: auto 100vh;
   background-repeat: no-repeat;
   background-size: 110%;
   background-position: 60px 0;
@@ -387,18 +411,6 @@ body {
 }
 
 @media (min-width: 500px) {
-  .home {
-    background-size: 500px;
-    background-position: 150% 0;
-  }
-}
-@media (min-width: 700px) {
-  .home {
-    background-size: 550px;
-    background-position: 120% 0;
-  }
-}
-@media (min-width: 500px) {
   .five {
     font-size: 1.8rem;
     margin: 0 0 50px;
@@ -410,29 +422,59 @@ body {
   .bold {
     font-weight: 600;
   }
+  .home {
+    background-size: 550px;
+    background-position: 150% 0;
+    margin-left: 50px;
+  }
 }
 @media (min-width: 700px) {
   .five {
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin: 0 0 50px;
   }
   .infos {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .bold {
     font-weight: 600;
   }
+  .home {
+    background-size: 650px;
+    background-position: 120% 0;
+    margin-left: 70px;
+  }
 }
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .five {
     font-size: 2.8rem;
     font-weight: 300;
-    margin: 0 0 70px;
+    margin: 0 0 80px;
   }
   .infos {
     font-weight: 400;
     font-size: 1.2rem;
+  }
+  .home {
+    background-size: 90%;
+    background-position: 120% -3%;
+    padding-top: 5%;
+    margin-top: 0;
+    margin-left: 90px;
+  }
+}
+@media (min-width: 1200px) {
+  .home {
+    padding-left: 150px;
+    background-size: auto 125%;
+    background-position: 100% -3%;
+    padding-top: 5%;
+    margin-top: 0;
+    max-width: 1800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .reservation-container {
