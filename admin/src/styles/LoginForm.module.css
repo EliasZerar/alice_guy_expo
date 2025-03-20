@@ -20,10 +20,11 @@
   }
   
   .title {
+    font-family: 'Oddlini', sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #ea5b28;
+    color: #ffffff;
     text-align: center;
   }
   

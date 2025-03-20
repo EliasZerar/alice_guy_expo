@@ -53,6 +53,17 @@ export default function ReservationTable({
     setFormValues({ ...formValues, [field]: value });
   };
 
+  const formatDateTime = (isoString) => {
+    const date = new Date(isoString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}/${month}/${year} ${hours}:${minutes}`;
+  };
+  
+
   return (
     <>
       <button
@@ -64,6 +75,7 @@ export default function ReservationTable({
         Supprimer la sélection ({selectedIds.length})
       </button>
 
+      <div className={styles.tableWrapper}>
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
@@ -127,7 +139,7 @@ export default function ReservationTable({
                   <td className={styles.td}>{res.first_name}</td>
                   <td className={styles.td}>{res.phone_number}</td>
                   <td className={styles.td}>{res.email}</td>
-                  <td className={styles.td}>{res.date_time}</td>
+                  <td className={styles.td}>{formatDateTime(res.date_time)}</td>
                   <td className={styles.td}>{res.participants}</td>
                   <td className={styles.td}>{res.promo_code === '0' ? 'Non' : 'Oui'}</td>
                   <td className={`${styles.td}`}>
@@ -145,6 +157,7 @@ export default function ReservationTable({
           ))}
         </tbody>
       </table>
+      </div>
     </>
   );
 }

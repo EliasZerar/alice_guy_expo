@@ -42,7 +42,7 @@
   
   .link:hover,
   .active {
-    /* color: #2c2c2a; */
+    font-weight: 500;
     background-color: rgba(205, 205, 205, 0.3);
   }
   

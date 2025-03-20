@@ -93,32 +93,35 @@ export default function Dashboard({ token, onLogout }) {
     const resDate = new Date(r.date_time).toISOString().split('T')[0];
     return resDate === today;
   });
-  
+
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Tableau de bord</h2>
+    <div className={`${styles.container} container`}>
+      <h2 className={`${styles.title} title`}>Tableau de bord</h2>
 
-      <div className={styles.statsGrid}>
-        <div className={`${styles.statCard} ${styles.cardBlue}`}>
-          <h4>Total réservations</h4>
-          <p>{allReservations.length}</p>
+      <div className={styles.statsContainer}>
+        <h3 className={styles.subTitle}>Statistiques</h3>
+        <div className={styles.statsGrid}>
+          <div className={`${styles.statCard} ${styles.cardBlue}`}>
+            <h4>Total réservations</h4>
+            <p>{allReservations.length}</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.cardGreen}`}>
+            <h4>Total participants</h4>
+            <p>{allReservations.reduce((sum, r) => sum + Number(r.participants), 0)}</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.cardYellow}`}>
+            <h4>Avec code promo</h4>
+            <p>{allReservations.filter(r => r.promo_code === '1').length}</p>
+          </div>
+          <div className={`${styles.statCard} ${styles.cardPink}`}>
+            <h4>Réservations aujourd’hui</h4>
+            <p>{todayReservations.length}</p>
+          </div>
         </div>
-        <div className={`${styles.statCard} ${styles.cardGreen}`}>
-          <h4>Total participants</h4>
-          <p>{allReservations.reduce((sum, r) => sum + Number(r.participants), 0)}</p>
+        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+          <Link to="/stats" className={styles.buttonLink}>Voir plus de statistiques</Link>
         </div>
-        <div className={`${styles.statCard} ${styles.cardYellow}`}>
-          <h4>Avec code promo</h4>
-          <p>{allReservations.filter(r => r.promo_code === '1').length}</p>
-        </div>
-        <div className={`${styles.statCard} ${styles.cardPink}`}>
-          <h4>Réservations aujourd’hui</h4>
-          <p>{todayReservations.length}</p>
-        </div>
-      </div>
-      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-        <Link to="/stats" className={styles.buttonLink}>Voir plus de statistiques</Link>
       </div>
 
       <h3 className={styles.subTitle}>5 dernières réservations</h3>

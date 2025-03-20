@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import frLocale from '@fullcalendar/core/locales/fr';
+import { FaUser, FaCalendarAlt, FaUsers, FaEnvelope, FaPhone, FaTag } from 'react-icons/fa';
 import { fetchWithAuth } from '../utils/fetchWithAuth';
 import '../styles/Calendar.css';
 
 export default function Calendar({ token, onLogout }) {
     const [events, setEvents] = useState([]);
-    const [selectedEvent, setSelectedEvent] = useState(null); 
-    const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const fetchReservations = async () => {
         const response = await fetchWithAuth(
@@ -51,9 +52,9 @@ export default function Calendar({ token, onLogout }) {
 
     const handleEventClick = (info) => {
         const eventId = info.event.id;
-        const event = events.find(e => e.id === eventId); 
-        setSelectedEvent(event); 
-        setIsModalOpen(true); 
+        const event = events.find(e => e.id === eventId);
+        setSelectedEvent(event);
+        setIsModalOpen(true);
     };
 
     const closeModal = () => {
@@ -62,8 +63,8 @@ export default function Calendar({ token, onLogout }) {
 
 
     return (
-        <div style={{ padding: '1rem', flexGrow: 1 }}>
-            <h2 style={{ marginBottom: '1rem' }}>Calendrier des réservations</h2>
+        <div className='container'>
+            <h2 className="title">Calendrier des réservations</h2>
             <FullCalendar
                 plugins={[timeGridPlugin]}
                 initialView="timeGridWeek"
@@ -78,21 +79,26 @@ export default function Calendar({ token, onLogout }) {
                     end: '2025-05-25'
                 }}
                 initialDate="2025-03-24"
-                eventClick={handleEventClick} 
+                eventClick={handleEventClick}
             />
 
             {isModalOpen && selectedEvent && (
                 <div className="modal">
                     <div className="modal-content">
-                        <span className="close-btn" onClick={closeModal}>&times;</span>
-                        <h3>Détails de la réservation</h3>
+                        <div className="modal-header">
+                            <h3>Détails de la réservation</h3>
+                            <span className="close-btn" onClick={closeModal}>&times;</span>
+                        </div>
                         <div className="modal-body">
-                            <p><strong>Nom complet:</strong> {selectedEvent.first_name} {selectedEvent.last_name}</p>
-                            <p><strong>Date et Heure:</strong> {new Date(selectedEvent.start).toLocaleString()}</p>
-                            <p><strong>Participants:</strong> {selectedEvent.participants} personnes</p>
-                            <p><strong>Email:</strong> {selectedEvent.email}</p>
-                            <p><strong>Téléphone:</strong> {selectedEvent.phone_number}</p>
-                            <p><strong>Code promo:</strong> {selectedEvent.promo_code === '1' ? 'Oui' : 'Non'}</p>
+                            <p><FaUser className="icon" /> <strong>Nom complet:</strong> <span className="value">{selectedEvent.first_name} {selectedEvent.last_name}</span></p>
+                            <p><FaCalendarAlt className="icon" /> <strong>Date et Heure:</strong> <span className="value">{new Date(selectedEvent.start).toLocaleString('fr-FR', {
+                                day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
+                            })}</span></p>
+                            <p><FaUsers className="icon" /> <strong>Participants:</strong> <span className="value">{selectedEvent.participants} personne{selectedEvent.participants > 1 ? 's' : ''}</span></p>
+                            <p><FaEnvelope className="icon" /> <strong>Email:</strong> <span className="value">{selectedEvent.email}</span></p>
+                            <p><FaPhone className="icon" /> <strong>Téléphone:</strong> <span className="value">{selectedEvent.phone_number}</span></p>
+                            <p><FaTag className="icon" /> <strong>Code promo:</strong> <span className="value">{selectedEvent.promo_code === '1' ? 'Oui' : 'Non'}</span></p>
+
                         </div>
                     </div>
                 </div>
