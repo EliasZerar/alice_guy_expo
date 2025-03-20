@@ -31,13 +31,14 @@
 
 td {
   text-align: center;
+  height: fit-content;
 
   &:not(:last-child) {
     border-right: 1px solid #cdcdcd;
   }
 }
 
-.tdActions {
+.actions {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -50,7 +51,7 @@ td {
   font-size: 0.95rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Ensures padding and border are within the width */
+  box-sizing: border-box; 
 }
 
 .btn {
