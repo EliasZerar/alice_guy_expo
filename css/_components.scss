@@ -1,13 +1,75 @@
+.buttons {
+    margin-top: 40px;
+}
+
 .button-orange {
     color: black;
     background-color: $primary-color;
+    margin-right: 16px;
+    padding: 7px 6px 7px 8px;
 }
 
 .button-black {
     color: $primary-color;
-    background-color: black;
+    background-color: transparent;
+    padding: 7px 11px 7px 8px;
+}
+
+.button-black svg {
+    color: $primary-color;
+}
+
+.buttons svg {
+    height: 15px;
+}
+
+.button-black:hover svg,
+.button-orange:hover svg {
+    transition: ease-in-out 0.2s;
+    transform: translate(6px, -2px);
 }
 
 .buttons a {
     text-decoration: none;
+    border: solid $primary-color 1px;
+    border-radius: 4px;
+}
+
+@media (min-width: 700px) {
+    .buttons {
+        margin-top: 80px;
+    }
+    
+    .buttons a {
+        border-radius: 4px;
+        font-size: 1.3rem;
+    }
+
+    .icon-arrow {
+        width: 20px;
+    }
+
+    .buttons svg {
+        height: 18px;
+    }
+
+    .button-black {
+        padding-right: 13px;
+    }
+}
+
+@media (min-width: 1000px) {
+    
+    .buttons a {
+        border-radius: 4px;
+        font-size: 1.4rem;
+    }
+
+    .icon-arrow {
+        width: 22px;
+    }
+
+    .button-black {
+        padding-right: 14px;
+    }
 }
