@@ -11,9 +11,9 @@ import './styles/index.css'
 // Ce composant permet de gérer la logique avec navigation
 function AuthenticatedApp({ token, onLogout }) {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', width: '100%' }}>
       <SideBar onLogout={onLogout} />
-      <div style={{ width: '100%' }}>
+      <div style={{ flex: 1, overflowX: 'auto' }}>
         <Routes>
           <Route path="/dashboard" element={<Dashboard token={token} onLogout={onLogout} />} />
           <Route path="/reservations" element={<Reservations token={token} onLogout={onLogout} />} />

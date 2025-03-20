@@ -69,8 +69,8 @@ export default function Reservations({ token, onLogout }) {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Réservations</h2>
+    <div className={`${styles.container} container`}>
+      <h2 className={`${styles.title} title`}>Réservations</h2>
       <ReservationTable
         reservations={reservations}
         onDelete={deleteReservation}

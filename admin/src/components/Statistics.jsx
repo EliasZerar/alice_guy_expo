@@ -72,7 +72,7 @@ export default function Statistics({ token, onLogout }) {
 
     const totalPromo = promoData.reduce((sum, item) => sum + item.value, 0);
 
-    const CustomBarTooltip = ({ active, payload, label }) => {
+    const CustomFirstBarTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length > 0) {
             const { value } = payload[0];
             return (
@@ -80,19 +80,59 @@ export default function Statistics({ token, onLogout }) {
                     backgroundColor: 'white',
                     border: '1px solid #ccc',
                     padding: '0.5rem',
-                    borderRadius: '4px',
-                    color: '#ea5b28',
+                    borderRadius: '4px'
                 }}>
-                    <strong>{label}</strong><br />
-                    {value} réservation{value > 1 ? 's' : ''}
+                    <div style={{ color: '#000'}}>{label}</div>
+                    <div style={{ color: '#ea5b28' }}>
+                        {value} réservation{value > 1 ? 's' : ''}
+                    </div>
+                </div>
+            );
+        }
+        return null;
+    };
+
+    const CustomSecondBarTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length > 0) {
+            const { value } = payload[0];
+            return (
+                <div style={{
+                    backgroundColor: 'white',
+                    border: '1px solid #ccc',
+                    padding: '0.5rem',
+                    borderRadius: '4px'
+                }}>
+                    <div style={{ color: '#000'}}>{label}</div>
+                    <div style={{ color: '#ea5b28' }}>
+                        {value} participant{value > 1 ? 's' : ''}
+                    </div>
                 </div>
             );
         }
         return null;
     };
     
+    const CustomThirdBarTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length > 0) {
+            const { value } = payload[0];
+            return (
+                <div style={{
+                    backgroundColor: 'white',
+                    border: '1px solid #ccc',
+                    padding: '0.5rem',
+                    borderRadius: '4px'
+                }}>
+                    <div style={{ color: '#000'}}>{label}</div>
+                    <div style={{ color: '#ea5b28' }}>
+                        {value} participant{value > 1 ? 's' : ''}
+                    </div>
+                </div>
+            );
+        }
+        return null;
+    };
 
-    const CustomTooltip = ({ active, payload }) => {
+    const CustomPromoTooltip = ({ active, payload }) => {
         if (active && payload && payload.length > 0) {
             const { name, value } = payload[0];
             const percent = ((value / totalPromo) * 100).toFixed(1);
@@ -103,9 +143,11 @@ export default function Statistics({ token, onLogout }) {
                     padding: '0.5rem',
                     borderRadius: '4px'
                 }}>
-                    <strong>{name}</strong><br />
+                    <strong style={{ color: '#000' }}>{name}</strong><br />
+                    <div style={{ color: '#ea5b28' }}>
                     {value} réservation{value > 1 ? 's' : ''}<br />
                     {percent}%
+                    </div>
                 </div>
             );
         }
@@ -123,8 +165,8 @@ export default function Statistics({ token, onLogout }) {
 
 
     return (
-        <div className={styles.container}>
-            <h2 className={styles.title}>Statistiques</h2>
+        <div className={`${styles.container} container`}>
+            <h2 className={`${styles.title} title`}>Statistiques</h2>
 
             <div className={styles.graphContainer}>
                 <h3>Nombre de réservations par jour</h3>
@@ -135,7 +177,7 @@ export default function Statistics({ token, onLogout }) {
                             ticks={ticks}
                         />
                         <YAxis />
-                        <Tooltip content={<CustomBarTooltip />} />
+                        <Tooltip content={<CustomFirstBarTooltip />} />
                         <Bar dataKey="count" fill="#ea5b28" />
                     </BarChart>
                 </ResponsiveContainer>
@@ -150,7 +192,7 @@ export default function Statistics({ token, onLogout }) {
                             ticks={ticks}
                         />
                         <YAxis />
-                        <Tooltip />
+                        <Tooltip content={<CustomSecondBarTooltip />} />
                         <Bar dataKey="participants" fill="#2c2c2a" />
                     </BarChart>
                 </ResponsiveContainer>
@@ -162,7 +204,7 @@ export default function Statistics({ token, onLogout }) {
                     <BarChart data={participantsByWeekday}>
                         <XAxis dataKey="day" />
                         <YAxis />
-                        <Tooltip />
+                        <Tooltip content={<CustomThirdBarTooltip />} />
                         <Bar dataKey="participants" fill="#ea5b28" />
                     </BarChart>
                 </ResponsiveContainer>
@@ -186,7 +228,7 @@ export default function Statistics({ token, onLogout }) {
                             <Cell key={`cell-${index}`} fill={COLORS[index]} />
                         ))}
                     </Pie>
-                    <Tooltip content={<CustomTooltip />} />
+                    <Tooltip content={<CustomPromoTooltip />} />
                     <Legend />
                 </PieChart>
             </div>
