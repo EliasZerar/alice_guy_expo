@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 import styles from '../styles/LoginForm.module.css'
 
@@ -6,6 +6,10 @@ export default function LoginForm({ onLoginSuccess }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [redirectToDashboard, setRedirectToDashboard] = useState(false)
+
+  useEffect(() => {
+    document.title = 'Connexion - Backoffice | Alice Guy'
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()

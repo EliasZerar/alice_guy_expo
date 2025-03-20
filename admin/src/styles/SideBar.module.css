@@ -56,7 +56,7 @@
     cursor: pointer;
     transition: background-color 0.2s;
     margin-top: auto;
-    font-weight: bold;
+    font-weight: 500;
   }
   
   .logoutBtn:hover {
