@@ -61,7 +61,7 @@ export default function ReservationTable({
         style={{ marginBottom: '1rem' }}
         disabled={selectedIds.length === 0}
       >
-        Supprimer la sélection
+        Supprimer la sélection ({selectedIds.length})
       </button>
 
       <table className={styles.table}>
@@ -130,12 +130,14 @@ export default function ReservationTable({
                   <td className={styles.td}>{res.date_time}</td>
                   <td className={styles.td}>{res.participants}</td>
                   <td className={styles.td}>{res.promo_code === '0' ? 'Non' : 'Oui'}</td>
-                  <td className={`${styles.td} ${styles.tdActions}`}>
-                    <button className={`${styles.btn} ${styles.btnEdit}`} onClick={() => {
-                      setEditId(res.id);
-                      setFormValues(res);
-                    }}>Modifier</button>
-                    <button className={`${styles.btn} ${styles.btnDelete}`} onClick={() => onDelete(res.id)}>Supprimer</button>
+                  <td className={`${styles.td}`}>
+                    <div className={styles.actions}>
+                      <button className={`${styles.btn} ${styles.btnEdit}`} onClick={() => {
+                        setEditId(res.id);
+                        setFormValues(res);
+                      }}>Modifier</button>
+                      <button className={`${styles.btn} ${styles.btnDelete}`} onClick={() => onDelete(res.id)}>Supprimer</button>
+                    </div>
                   </td>
                 </>
               )}

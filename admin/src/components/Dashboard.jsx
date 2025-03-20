@@ -88,7 +88,12 @@ export default function Dashboard({ token, onLogout }) {
   }, []);
 
   const today = new Date().toISOString().split('T')[0];
-  const todayReservations = allReservations.filter(r => r.date === today);
+  console.log(today);
+  const todayReservations = allReservations.filter(r => {
+    const resDate = new Date(r.date_time).toISOString().split('T')[0];
+    return resDate === today;
+  });
+  
 
   return (
     <div className={styles.container}>
