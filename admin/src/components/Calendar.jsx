@@ -48,6 +48,7 @@ export default function Calendar({ token, onLogout }) {
 
     useEffect(() => {
         fetchReservations();
+        document.title = 'Calendrier - Backoffice | Alice Guy'
     }, []);
 
     const handleEventClick = (info) => {

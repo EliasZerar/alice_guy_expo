@@ -29,6 +29,7 @@ export default function Reservations({ token, onLogout }) {
 
   useEffect(() => {
     fetchReservations();
+      document.title = 'Réservations - Backoffice | Alice Guy'
   }, []);
 
   const deleteReservation = async (id) => {

@@ -26,6 +26,8 @@ export default function Statistics({ token, onLogout }) {
         };
 
         fetchData();
+
+            document.title = 'Statistiques - Backoffice | Alice Guy'
     }, []);
 
     const reservationsByDay = reservations.reduce((acc, r) => {

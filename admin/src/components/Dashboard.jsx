@@ -85,6 +85,7 @@ export default function Dashboard({ token, onLogout }) {
   useEffect(() => {
     fetchLastReservations();
     fetchAllReservations();
+    document.title = 'Tableau de bord - Backoffice | Alice Guy'
   }, []);
 
   const today = new Date().toISOString().split('T')[0];
