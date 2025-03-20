@@ -1,0 +1,68 @@
+.slider {
+    width: 500px;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-right: 0;
+    padding-top: 20%;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+}
+
+.date-movie {
+    margin: 0;
+}
+
+.name-movie {
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: calc(180px * 4); /* Ajusté en fonction du nombre de slides x2 pour la répétition */
+}
+
+.slide {
+    display: flex;
+    height: auto; 
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 30px;
+    font-weight: 100;
+}
+
+.slide img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.slider::before, .slider::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+}
+
+.slider {
+    -webkit-mask-image: linear-gradient(to left, transparent, black 50px, black calc(100% - 50px), transparent);
+    mask-image: linear-gradient(to left, transparent, black 50px, black calc(100% - 50px), transparent);
+}
