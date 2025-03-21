@@ -1,5 +1,5 @@
 const loadTranslations = async (fileName) => {
-    const response = await fetch(`../json/${fileName}.json`);
+    const response = await fetch(`json/${fileName}.json`);
     const data = await response.json();
     return data;
 };
