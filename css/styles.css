@@ -207,20 +207,19 @@ header {
     width: 30px;
   }
   .logo img {
-    width: 70px;
+    width: 72px;
     height: auto;
+    margin-top: 9px;
+    margin-bottom: 9px;
   }
   .burger {
-    width: 40px;
-    height: 1.5px;
+    width: 60px;
+    height: 1.2px;
   }
   .burger::before,
   .burger::after {
     content: "";
     height: 1.5px;
-  }
-  .menu a {
-    padding-bottom: 0;
   }
 }
 @media (min-width: 900px) {
@@ -259,6 +258,7 @@ header {
   .menu a {
     display: inline-block;
     text-decoration: none;
+    padding-bottom: 0;
   }
   .menu a.active {
     position: relative;
@@ -449,7 +449,7 @@ body {
 .slide-track {
   display: flex;
   animation: scroll 20s linear infinite;
-  width: 720px; /* Ajusté en fonction du nombre de slides x2 pour la répétition */
+  width: 720px;
 }
 
 .slide {
@@ -498,6 +498,80 @@ body {
   mask-image: linear-gradient(to left, transparent, black 50px, black calc(100% - 50px), transparent);
 }
 
+@media (max-width: 1200px) {
+  .slide img {
+    width: 130px;
+  }
+  .slider {
+    width: 400px;
+  }
+  .name-movie {
+    font-size: 0.9rem;
+  }
+  .date-movie {
+    font-size: 0.9rem;
+  }
+  .slide-track {
+    width: 640px;
+  }
+}
+@media (max-width: 1000px) {
+  .slide img {
+    width: 120px;
+  }
+  .slider {
+    width: 360px;
+  }
+  .name-movie {
+    margin-top: 6px;
+    margin-bottom: 2px;
+    font-size: 0.8rem;
+  }
+  .date-movie {
+    font-size: 0.8rem;
+  }
+  .slide-track {
+    width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .slide img {
+    width: 100px;
+  }
+  .slider {
+    width: 450px; /* Utilise toute la largeur disponible */
+    padding-top: 0;
+  }
+  .slide-track {
+    width: 520px;
+  }
+  .name-movie {
+    max-width: 100px;
+  }
+}
+@media (max-width: 700px) {
+  .slider {
+    margin-top: 70px;
+    width: 300px; /* Utilise toute la largeur disponible */
+    padding-top: 0;
+  }
+}
+@media (max-width: 500px) {
+  .slide img {
+    width: 70px;
+  }
+  .slider {
+    margin: 0;
+    margin-top: 70px;
+    width: 100%; /* Utilise toute la largeur disponible */
+  }
+  .slide-track {
+    width: 400px;
+  }
+  .name-movie {
+    max-width: 70px;
+  }
+}
 .home {
   display: flex;
   min-height: 100vh;
@@ -510,6 +584,11 @@ body {
   background-position: 60px 0;
 }
 
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* basculer en mode colonne pour empiler verticalement */
+  }
+}
 .five {
   font-weight: 500;
   font-size: 1.3rem;
