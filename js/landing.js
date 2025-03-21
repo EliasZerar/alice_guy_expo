@@ -1,10 +1,18 @@
 window.onload = function() {
-    setTimeout(function() {
-        var landingPage = document.getElementById('landing-page');
-        landingPage.style.opacity = 0;
-        
-        setTimeout(function() {
-            landingPage.remove(); 
-        }, 500); // durée de la transition CSS
-    }, 3100); // durée avant que la landing page commence à disparaître
+    const landingPage = document.getElementById('landing-page');
+
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    if (!hasVisited) {
+        sessionStorage.setItem('hasVisited', 'true');
+
+        setTimeout(() => {
+            landingPage.style.opacity = 0;
+            setTimeout(() => {
+                landingPage.remove();
+            }, 500); // Durée de la transition CSS
+        }, 3100); // Attente avant de faire disparaître la landing page
+    } else {
+        landingPage.remove();
+    }
 };

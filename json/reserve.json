@@ -1,0 +1,140 @@
+{
+  "fr": {
+    "lang-home-title1": "au pays des",
+    "lang-home-title2": "premières",
+
+    "lang-reserve-rooms": "5 salles / 5 épreuves",
+
+    "lang-reserve-from-date": "Du",
+    "lang-reserve-to-date": "au",
+    "lang-reserve-date-start": "24 mars",
+    "lang-reserve-date-end": "24 mai 2025",
+
+    "lang-reserve-from-hours": "de",
+    "lang-reserve-hours-start": "10H",
+    "lang-reserve-to-hours": "à",
+    "lang-reserve-hours-end": "18H",
+
+    "lang-reserve-address": "22 Rue du Départ, 75015 Paris",
+
+    "lang-reserve-duration-text": "L'exposition dure au total",
+    "lang-reserve-duration-time": "1h30",
+
+    "lang-reserve-payment-online": "La réservation se fait en ligne",
+    "lang-reserve-and": "et",
+    "lang-reserve-payment-onsite": "le règlement",
+    "lang-reserve-payment-location": "sur place.",
+
+    "lang-reserve-price-label": "Prix de la séance :",
+    "lang-reserve-price-amount": "35€",
+
+
+    "lang-step1-title": "Choix de la date et de l'heure",
+
+
+    "lang-step2-title": "Informations personnelles",
+
+    "lang-step2-instructions": "Veuillez saisir vos informations personnelles pour réserver vos places.",
+    "lang-required-fields": "champs obligatoires",
+
+    "lang-step2-lastname": "Nom",
+    "lang-step2-firstname": "Prénom",
+    "lang-step2-phone": "Téléphone",
+    "lang-step2-participants": "Nombre de participants",
+    "lang-step2-promo": "Code promotionnel",
+    "lang-step2-validate-promo": "-10% sur votre réservation",
+
+    "lang-step2-name-info": "Le nom renseigné vous sera demandé à votre arrivée à l'exposition.",
+
+
+    "lang-step3-title": "Récapitulatif de votre réservation",
+
+    "lang-step3-intro": "Veuillez vérifier vos informations avant de confirmer.",
+
+    "lang-step3-personal-info": "Informations personnelles",
+    "lang-step3-recap-lastname": "Nom :",
+    "lang-step3-recap-firstname": "Prénom :",
+    "lang-step3-recap-phone": "Téléphone :",
+
+    "lang-step3-reservation": "Réservation",
+    "lang-step3-recap-datetime": "Date et heure :",
+    "lang-step3-recap-participants": "Participants :",
+    "lang-step3-recap-promo": "Code promo :",
+
+    "lang-step3-signature": "À très bientôt, ",
+
+
+    "lang-prev-btn": "Précédent",
+    "lang-next-btn": "Suivant",
+    "lang-confirm-btn": "Confirmer"
+  },
+  "en": {
+    "lang-home-title1": "in the land of",
+    "lang-home-title2": "firsts",
+
+    "lang-reserve-rooms": "5 rooms / 5 challenges",
+
+    "lang-reserve-from-date": "From",
+    "lang-reserve-to-date": "to",
+    "lang-reserve-date-start": "March 24",
+    "lang-reserve-date-end": "May 24, 2025",
+
+    "lang-reserve-from-hours": "from",
+    "lang-reserve-hours-start": "10AM",
+    "lang-reserve-to-hours": "to",
+    "lang-reserve-hours-end": "6PM",
+
+    "lang-reserve-address": "22 Rue du Départ, 75015 Paris",
+
+    "lang-reserve-duration-text": "The exhibition lasts a total of",
+    "lang-reserve-duration-time": "1h30",
+
+    "lang-reserve-payment-online": "Reservation is made online",
+    "lang-reserve-and": "and",
+    "lang-reserve-payment-onsite": "payment",
+    "lang-reserve-payment-location": "on site.",
+    
+    "lang-reserve-price-label": "Session price:",
+    "lang-reserve-price-amount": "€35",
+
+
+    "lang-step1-title": "Choose the date and time",
+
+
+    "lang-step2-title": "Personal information",
+
+    "lang-step2-instructions": "Please enter your personal information to reserve your spots.",
+    "lang-required-fields": "required fields",
+
+    "lang-step2-lastname": "Last name",
+    "lang-step2-firstname": "First name",
+    "lang-step2-phone": "Phone",
+    "lang-step2-participants": "Number of participants",
+    "lang-step2-promo": "Promo code",
+    "lang-step2-validate-promo": "-10% on your reservation",
+
+    "lang-step2-name-info": "The name you provide will be requested upon arrival at the exhibition.",
+
+
+    "lang-step3-title": "Summary of your reservation",
+
+    "lang-step3-intro": "Please check your information before confirming.",
+
+    "lang-step3-personal-info": "Personal information",
+    "lang-step3-recap-lastname": "Last name:",
+    "lang-step3-recap-firstname": "First name:",
+    "lang-step3-recap-phone": "Phone:",
+
+    "lang-step3-reservation": "Reservation",
+    "lang-step3-recap-datetime": "Date and time:",
+    "lang-step3-recap-participants": "Participants:",
+    "lang-step3-recap-promo": "Promo code:",
+
+    "lang-step3-signature": "See you soon, ",
+
+
+    "lang-prev-btn": "Previous",
+    "lang-next-btn": "Next",
+    "lang-confirm-btn": "Confirm"
+  }
+}
