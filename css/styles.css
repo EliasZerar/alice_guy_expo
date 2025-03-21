@@ -722,6 +722,7 @@ html, body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  overflow-x: hidden;
 }
 
 .camera-img {
