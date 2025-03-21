@@ -766,7 +766,7 @@ html, body {
   .small {
     font-size: 0.8rem;
   }
-  .dates {
+  .dates-alice {
     font-size: 1.3rem;
   }
   .camera-img {
@@ -802,7 +802,7 @@ html, body {
   .alice {
     margin-left: 70px;
   }
-  .dates {
+  .dates-alice {
     font-size: 1.5rem;
   }
   .ground-img {
@@ -846,7 +846,7 @@ html, body {
   .alice {
     margin-left: 90px;
   }
-  .dates {
+  .dates-alice {
     font-size: 1.9rem;
   }
   .life {
@@ -885,7 +885,7 @@ html, body {
     max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
-    width: 100vw;
+    width: 100%;
   }
   .camera-img {
     width: 360px;
