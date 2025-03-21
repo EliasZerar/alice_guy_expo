@@ -1,4 +1,4 @@
-#landing-page {
+#loading-page {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     transition: opacity 0.5s ease-out;
 }
 
-.landing-text {
+.loading-text {
     color: black;
     font-family: "Casablanca Serial", sans-serif;
     font-size: 3rem;
@@ -23,28 +23,28 @@
     50% { opacity: 1; }
 }
 
-.landing-text {
+.loading-text {
     animation: blink 1.8s linear infinite;
     animation-iteration-count: 2; 
 }
 
 // p tablet
 @media (min-width: 500px) {
-    .landing-text {
+    .loading-text {
         font-size: 3rem;
     }
 }
 
 // p tablet
 @media (min-width: 700px) {
-    .landing-text {
+    .loading-text {
         font-size: 4.4rem;
     }
 }
 
 // p desktop
 @media (min-width: 1000px) {
-    .landing-text {
+    .loading-text {
         font-size: 6.25rem;
     }
 }
