@@ -600,11 +600,37 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 0 auto;
-  margin-bottom: 50px;
+  max-width: 1400px;
+  margin: 1rem auto;
 }
 .reservation-container .five {
   margin-bottom: 1rem;
+}
+
+.reservation-info-container,
+.reservation-form-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.reservation-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.reservation-info-container .title-1 {
+  font-size: 4rem;
+}
+.reservation-info-container .title-2 {
+  font-size: 2.2rem;
+}
+.reservation-info-container .five {
+  font-size: 1.5rem;
+}
+.reservation-info-container .infos {
+  font-size: 1rem;
 }
 
 .reservation-form {
@@ -977,11 +1003,36 @@ body {
 .confirmation-container {
   max-width: 650px;
   width: 100%;
-  background-color: #FFF;
-  color: #2c2c2a;
+  background-color: #EA5B28;
+  color: #FFF;
+  text-align: center;
   border-radius: 5px;
-  padding: 2rem 3rem;
+  padding: 1.5rem 1rem;
   margin: auto;
+}
+.confirmation-container .confirmation-title {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  margin-bottom: 2rem;
+}
+.confirmation-container .confirmation-message {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #fff;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.confirmation-container .confirmation-text {
+  font-size: 1rem;
+}
+.confirmation-container .studio24-bold {
+  color: #fff;
+}
+.confirmation-container .signature {
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /* Form responsive */
@@ -1024,6 +1075,59 @@ body {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .confirmation-container {
+    max-width: 650px;
+    width: 100%;
+    background-color: #EA5B28;
+    color: #FFF;
+    text-align: center;
+    border-radius: 5px;
+    padding: 2rem 3rem;
+    margin: auto;
+  }
+  .confirmation-container .confirmation-title {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .confirmation-container .confirmation-message {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  .confirmation-container .confirmation-text {
+    font-size: 1.2rem;
+  }
+  .confirmation-container .studio24-bold {
+    color: #fff;
+  }
+  .confirmation-container .signature {
+    text-align: center;
+  }
+  .reservation-container {
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .reservation-info-container .title-1 {
+    font-size: 4.4rem;
+  }
+  .reservation-info-container .title-2 {
+    font-size: 2.8rem;
+  }
+  .reservation-info-container .five {
+    font-size: 2.3rem;
+  }
+  .reservation-info-container .infos {
+    font-size: 1.2rem;
   }
 }
 
