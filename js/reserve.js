@@ -1,5 +1,5 @@
 const heures = Array.from({ length: 9 }, (_, i) => `${10 + i}:00`);
-const joursSemaine = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
+let joursSemaine = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.'];
 
 const selectedSlotsByDate = {};
 const minDate = new Date('2025-03-24');
@@ -27,13 +27,13 @@ function updateDaysPerPage() {
     maxDate = new Date('2025-05-25');
   } else if (screenWidth >= 900 && screenWidth <= 1000) {
     daysPerPage = 4;
-    maxDate = new Date('2025-05-27');
+    maxDate = new Date('2025-05-26');
   } else if (screenWidth >= 1000 && screenWidth <= 1100) {
     daysPerPage = 5;
     maxDate = new Date('2025-05-27');
   } else if (screenWidth >= 1100 && screenWidth <= 1200) {
     daysPerPage = 6;
-    maxDate = new Date('2025-05-25');
+    maxDate = new Date('2025-05-28');
   } else {
     daysPerPage = 7;
     maxDate = new Date('2025-05-25');
@@ -50,9 +50,21 @@ let currentStartIndex = 0;
 
 const datesContainer = document.getElementById("datesContainer");
 
-function formatDateFr(date) {
-  return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+let currentLanguage = localStorage.getItem('selectedLang') || navigator.language.split('-')[0]; 
+
+if (currentLanguage !== 'fr' && currentLanguage !== 'en') {
+  currentLanguage = 'fr';
 }
+
+
+function formatDate(date) {
+  if (currentLanguage === 'fr') {
+    return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+  } else if (currentLanguage === 'en') {
+    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  }
+}
+
 
 function getSlotKey(date) {
   return date.toISOString().slice(0, 10);
@@ -75,12 +87,12 @@ function generateDays() {
     dayCol.className = "day";
 
     const dayName = document.createElement("div");
-    dayName.className = "day-name";
+    dayName.className = "day-name"; 
     dayName.textContent = joursSemaine[date.getDay() === 0 ? 6 : date.getDay() - 1];
 
     const dayDate = document.createElement("div");
     dayDate.className = "day-date";
-    dayDate.textContent = formatDateFr(date);
+    dayDate.textContent = formatDate(date);
 
     const slotsDiv = document.createElement("div");
     slotsDiv.className = "slots";
@@ -117,6 +129,13 @@ function generateDays() {
     datesContainer.appendChild(dayCol);
   });
 }
+
+document.querySelector('.language').addEventListener('change', function(event) {
+  currentLanguage = event.target.value; 
+  generateDays(); 
+});
+
+
 
 function isSlotInPast(dateString, timeString) {
   const now = new Date();
@@ -207,7 +226,8 @@ function updateSummary() {
     const [_, time] = slot.split(" ");
     selectedTime = time;
 
-    formattedDate = new Date(selectedDate).toLocaleDateString('fr-FR', {
+    const locale = currentLanguage === 'fr' ? 'fr-FR' : 'en-US';
+    formattedDate = new Date(selectedDate).toLocaleDateString(locale, {
       weekday: 'long',
       day: 'numeric',
       month: 'long',
@@ -219,7 +239,7 @@ function updateSummary() {
   document.getElementById("recap-firstname").textContent = firstname;
   document.getElementById("recap-email").textContent = email;
   document.getElementById("recap-phone").textContent = phone;
-  document.getElementById("recap-datetime").textContent = formattedDate && selectedTime ? `${formattedDate} à ${selectedTime}` : "Aucun créneau sélectionné";
+  document.getElementById("recap-datetime").textContent = formattedDate && selectedTime ? `${formattedDate} ${currentLanguage === 'fr' ? 'à' : 'at'} ${selectedTime}` : "Aucun créneau sélectionné";
   document.getElementById("recap-participants").textContent = participants;
   document.getElementById("recap-promo").textContent = promo ? `${promo} (-10%)` : "Aucun";
 }
@@ -323,16 +343,33 @@ function validatePromoCode(input) {
 }
 
 function getErrorMessage(input) {
+  const messages = {
+    fr: {
+      valueMissing: "Ce champ est requis.",
+      typeMismatch: "Format invalide.",
+      patternMismatch: "Format incorrect.",
+      default: "Champ invalide."
+    },
+    en: {
+      valueMissing: "This field is required.",
+      typeMismatch: "Invalid format.",
+      patternMismatch: "Incorrect format.",
+      default: "Invalid field."
+    }
+  };
+
+  const langMessages = messages[currentLanguage] || messages.fr;
+
   if (input.validity.valueMissing) {
-    return "Ce champ est requis.";
+    return langMessages.valueMissing;
   }
   if (input.validity.typeMismatch) {
-    return "Format invalide.";
+    return langMessages.typeMismatch;
   }
   if (input.validity.patternMismatch) {
-    return "Format incorrect.";
+    return langMessages.patternMismatch;
   }
-  return "Champ invalide.";
+  return langMessages.default;
 }
 
 

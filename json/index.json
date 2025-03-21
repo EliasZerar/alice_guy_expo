@@ -1,0 +1,46 @@
+{
+  "fr": {
+    "lang-home-title1": "au pays des",
+    "lang-home-title2": "premières",
+
+    "lang-reserve-rooms": "5 salles / 5 épreuves",
+
+    "lang-reserve-from-date": "Du",
+    "lang-reserve-date-start": "24 mars",
+    "lang-reserve-to-date": "au",
+    "lang-reserve-date-end": "24 mai 2025",
+
+    "lang-reserve-from-hours": "de",
+    "lang-reserve-hours-start": "10H",
+    "lang-reserve-to-hours": "à",
+    "lang-reserve-hours-end": "18H",
+
+    "lang-reserve-street": "22 Rue du Départ,",
+    "lang-reserve-city": "75015 Paris",
+
+    "lang-reserve-btn-book": "Réserver",
+    "lang-reserve-btn-play": "Jouer"
+  },
+  "en": {
+    "lang-home-title1": "in the land of",
+    "lang-home-title2": "firsts",
+
+    "lang-reserve-rooms": "5 rooms / 5 tests",
+
+    "lang-reserve-from-date": "From",
+    "lang-reserve-date-start": "March 24",
+    "lang-reserve-to-date": "to",
+    "lang-reserve-date-end": "May 24, 2025",
+
+    "lang-reserve-from-hours": "from",
+    "lang-reserve-hours-start": "10AM",
+    "lang-reserve-to-hours": "to",
+    "lang-reserve-hours-end": "6PM",
+
+    "lang-reserve-street": "22 Rue du Départ,",
+    "lang-reserve-city": "75015 Paris",
+
+    "lang-reserve-btn-book": "Book",
+    "lang-reserve-btn-play": "Play"
+  }
+}
