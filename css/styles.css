@@ -263,14 +263,14 @@ header {
   .menu a.active {
     position: relative;
     color: #EA5B28;
-    text-decoration: none; /* Retirer l'underline CSS par défaut */
+    text-decoration: none;
   }
   .menu a.active::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -25px; /* Déplacez l'underline plus bas sans affecter le lien */
+    bottom: -25px;
     height: 1px;
     width: 100%;
     background-color: #EA5B28;
@@ -539,7 +539,7 @@ body {
     width: 100px;
   }
   .slider {
-    width: 450px; /* Utilise toute la largeur disponible */
+    width: 450px;
     padding-top: 0;
   }
   .slide-track {
@@ -552,7 +552,7 @@ body {
 @media (max-width: 700px) {
   .slider {
     margin-top: 70px;
-    width: 300px; /* Utilise toute la largeur disponible */
+    width: 300px;
     padding-top: 0;
   }
 }
@@ -563,13 +563,61 @@ body {
   .slider {
     margin: 0;
     margin-top: 70px;
-    width: 100%; /* Utilise toute la largeur disponible */
+    width: 100%;
   }
   .slide-track {
     width: 400px;
   }
   .name-movie {
     max-width: 70px;
+  }
+}
+#landing-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #EA5B28;
+  z-index: 30000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-out;
+}
+
+.landing-text {
+  color: black;
+  font-family: "Casablanca Serial", sans-serif;
+  font-size: 3rem;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.landing-text {
+  animation: blink 1.8s linear infinite; /* Réglage pour qu'il clignote toutes les 2 secondes */
+  animation-iteration-count: 2; /* Fait clignoter le texte trois fois */
+}
+
+@media (min-width: 500px) {
+  .landing-text {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 700px) {
+  .landing-text {
+    font-size: 4.4rem;
+  }
+}
+@media (min-width: 1000px) {
+  .landing-text {
+    font-size: 6.25rem;
   }
 }
 .home {
@@ -586,7 +634,7 @@ body {
 
 @media (max-width: 768px) {
   .home {
-    flex-direction: column; /* basculer en mode colonne pour empiler verticalement */
+    flex-direction: column;
   }
 }
 .five {
