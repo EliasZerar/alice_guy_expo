@@ -19,9 +19,21 @@ function updateDaysPerPage() {
   } else if (screenWidth >= 550 && screenWidth <= 640) {
     daysPerPage = 5;
     maxDate = new Date('2025-05-27');
-  } else if (screenWidth >= 640 && screenWidth <= 730) {
+  } else if (screenWidth >= 640 && screenWidth <= 768) {
     daysPerPage = 6;
     maxDate = new Date('2025-05-28');
+  } else if (screenWidth >= 768 && screenWidth <= 900) {
+    daysPerPage = 3;
+    maxDate = new Date('2025-05-25');
+  } else if (screenWidth >= 900 && screenWidth <= 1000) {
+    daysPerPage = 4;
+    maxDate = new Date('2025-05-27');
+  } else if (screenWidth >= 1000 && screenWidth <= 1100) {
+    daysPerPage = 5;
+    maxDate = new Date('2025-05-27');
+  } else if (screenWidth >= 1100 && screenWidth <= 1200) {
+    daysPerPage = 6;
+    maxDate = new Date('2025-05-25');
   } else {
     daysPerPage = 7;
     maxDate = new Date('2025-05-25');
@@ -224,9 +236,9 @@ function updateNextButtonState() {
         selectedSlotsByDate[dateKey]
       );
     });
-  
+
     nextBtn.disabled = !hasSelectedSlot;
-    nextBtn.style.backgroundColor = hasSelectedSlot ? "#EA5B28" : "#ccc";  
+    nextBtn.style.backgroundColor = hasSelectedSlot ? "#EA5B28" : "#ccc";
   } else if (currentStep === 1) {
     const isFormValid = document.getElementById("multiStepForm").checkValidity();
     const promoCode = document.getElementById("promo").value.trim();
@@ -363,12 +375,12 @@ submitBtn.addEventListener("click", () => {
       .then(response => response.json())
       .then(data => {
         const form = document.getElementById('multiStepForm');
-const confirmationMessage = document.getElementById('confirmationMessage');
+        const confirmationMessage = document.getElementById('confirmationMessage');
         form.style.display = 'none';
-  confirmationMessage.style.display = 'block';
+        confirmationMessage.style.display = 'block';
       })
       .catch(error => {
-        alert("Une erreur est survenue lors de l'enregistrement de la réservation.");
+        alert("Une erreur est survenue lors de l'enregistrement de la réservation là.");
         console.error("Error:", error);
       });
   }
