@@ -11,6 +11,12 @@
     background-position: 60px 0;
 }
 
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+    }
+}
+
 .five {
     font-weight: 500;
     font-size: 1.3rem;

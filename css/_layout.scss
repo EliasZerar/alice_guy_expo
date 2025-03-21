@@ -181,21 +181,15 @@ header {
     }
 
     .logo img {
-        width: 70px;
+        width: 72px;
         height: auto;
+        margin-top: 9px;
+        margin-bottom: 9px;
     }
 
     .burger {
-        width: 40px;
-        height: 1.5px;
-    }
-
-    .burger::before {
-        top: -13px;
-    }
-    
-    .burger::after {
-        bottom: -13px;
+        width: 60px;
+        height: 1.2px;
     }
 
     .burger::before,
@@ -204,9 +198,6 @@ header {
         height: 1.5px;
     }
 
-    .menu a {
-        padding-bottom: 0;
-    }
 }
 
 // nav desktop
@@ -254,12 +245,13 @@ header {
        
         display: inline-block;
         text-decoration: none;
+        padding-bottom: 0;
     }
 
     .menu a.active {
         position: relative;
         color: $primary-color;
-        text-decoration: none; /* Retirer l'underline CSS par défaut */
+        text-decoration: none;
     }
 
     .menu a.active::after {
@@ -267,7 +259,7 @@ header {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -25px; /* Déplacez l'underline plus bas sans affecter le lien */
+        bottom: -25px;
         height: 1px;
         width: 100%;
         background-color: $primary-color;
