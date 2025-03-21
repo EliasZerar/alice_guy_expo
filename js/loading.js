@@ -1,5 +1,5 @@
 window.onload = function() {
-    const landingPage = document.getElementById('landing-page');
+    const loadingPage = document.getElementById('loading-page');
 
     const hasVisited = sessionStorage.getItem('hasVisited');
 
@@ -7,12 +7,12 @@ window.onload = function() {
         sessionStorage.setItem('hasVisited', 'true');
 
         setTimeout(() => {
-            landingPage.style.opacity = 0;
+            loadingPage.style.opacity = 0;
             setTimeout(() => {
-                landingPage.remove();
+                loadingPage.remove();
             }, 500); // Durée de la transition CSS
         }, 3100); // Attente avant de faire disparaître la landing page
     } else {
-        landingPage.remove();
+        loadingPage.remove();
     }
 };

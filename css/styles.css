@@ -328,6 +328,26 @@ html, body {
   font-weight: 600;
 }
 
+.titles {
+  font-family: "Oddlini Bold", sans-serif;
+  margin: 0;
+  margin-bottom: 30px;
+  margin-top: 80px;
+  line-height: 0.8;
+}
+
+.titles-orange {
+  color: #EA5B28;
+}
+
+.point {
+  font-family: "Satoshi", sans-serif;
+}
+
+.block {
+  display: block;
+}
+
 @media (min-width: 500px) {
   .title-1 {
     font-size: 4rem;
@@ -337,6 +357,9 @@ html, body {
     font-size: 2.25rem;
     line-height: normal;
   }
+  .titles {
+    font-size: 2.25rem;
+  }
 }
 @media (min-width: 700px) {
   .title-1 {
@@ -345,7 +368,9 @@ html, body {
   }
   .title-2 {
     font-size: 2.8rem;
-    line-height: normal;
+  }
+  .titles {
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 1000px) {
@@ -355,13 +380,11 @@ html, body {
   }
   .title-2 {
     font-size: 3.438rem;
-    line-height: normal;
+  }
+  .titles {
+    font-size: 3.8rem;
   }
 }
-.bold {
-  font-weight: 600;
-}
-
 .buttons {
   margin-top: 40px;
 }
@@ -524,6 +547,7 @@ html, body {
   }
   .slider {
     width: 360px;
+    padding-top: 5%;
   }
   .name-movie {
     margin-top: 6px;
@@ -538,6 +562,11 @@ html, body {
   }
 }
 @media (max-width: 768px) {
+  .slider {
+    margin-top: 70px;
+    width: 300px;
+    padding-top: 0;
+  }
   .slide img {
     width: 100px;
   }
@@ -552,20 +581,13 @@ html, body {
     max-width: 100px;
   }
 }
-@media (max-width: 700px) {
-  .slider {
-    margin-top: 70px;
-    width: 300px;
-    padding-top: 0;
-  }
-}
 @media (max-width: 500px) {
   .slide img {
     width: 70px;
   }
   .slider {
     margin: 0;
-    margin-top: 70px;
+    margin-top: 100px;
     width: 100%;
   }
   .slide-track {
@@ -575,7 +597,7 @@ html, body {
     max-width: 70px;
   }
 }
-#landing-page {
+#loading-page {
   position: fixed;
   top: 0;
   left: 0;
@@ -589,7 +611,7 @@ html, body {
   transition: opacity 0.5s ease-out;
 }
 
-.landing-text {
+.loading-text {
   color: black;
   font-family: "Casablanca Serial", sans-serif;
   font-size: 3rem;
@@ -603,29 +625,28 @@ html, body {
     opacity: 1;
   }
 }
-.landing-text {
-  animation: blink 1.8s linear infinite; /* Réglage pour qu'il clignote toutes les 2 secondes */
-  animation-iteration-count: 2; /* Fait clignoter le texte trois fois */
+.loading-text {
+  animation: blink 1.8s linear infinite;
+  animation-iteration-count: 2;
 }
 
 @media (min-width: 500px) {
-  .landing-text {
+  .loading-text {
     font-size: 3rem;
   }
 }
 @media (min-width: 700px) {
-  .landing-text {
+  .loading-text {
     font-size: 4.4rem;
   }
 }
 @media (min-width: 1000px) {
-  .landing-text {
+  .loading-text {
     font-size: 6.25rem;
   }
 }
 .home {
   display: flex;
-  min-height: 100vh;
   margin-top: 40px;
   margin-left: 25px;
   background-image: url(../img/alice-guy.png);
@@ -635,7 +656,7 @@ html, body {
   background-position: 60px 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .home {
     flex-direction: column;
   }
@@ -659,6 +680,59 @@ html, body {
   margin-top: 15px;
 }
 
+.alice {
+  margin-left: 25px;
+  margin-right: 60px;
+}
+
+.text-alice {
+  margin: 0;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.small {
+  font-size: 0.6rem;
+}
+
+.life {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.life-dates {
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.life p {
+  margin: 0;
+}
+
+.ground-img {
+  width: 100%;
+  margin-top: 60px;
+  z-index: -2;
+}
+
+.alice-img {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Par défaut en colonne pour mobile */
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.camera-img {
+  position: absolute;
+  right: -5%; /* Position à droite avec un peu de marge */
+  top: 78%; /* Position verticalement centrée */
+  transform: translateY(-50%); /* Décalage pour un centrage parfait */
+  width: 130px; /* Largeur relative pour adaptation */
+  z-index: -1; /* Assure que la caméra reste au-dessus du sol mais sous le texte */
+}
+
 @media (min-width: 500px) {
   .five {
     font-size: 1.8rem;
@@ -676,8 +750,32 @@ html, body {
     background-position: 150% 0;
     margin-left: 50px;
   }
+  .date {
+    font-size: 1.1rem;
+  }
+  .text-alice {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+  .alice {
+    margin-left: 50px;
+  }
+  .small {
+    font-size: 0.8rem;
+  }
+  .dates {
+    font-size: 1.3rem;
+  }
+  .camera-img {
+    width: 180px;
+    right: -4%;
+    top: 70%;
+  }
 }
 @media (min-width: 700px) {
+  .life-dates {
+    line-height: 1.1;
+  }
   .five {
     font-size: 2.3rem;
     margin: 0 0 50px;
@@ -694,6 +792,24 @@ html, body {
     background-position: 120% 0;
     margin-left: 70px;
   }
+  .text-alice {
+    font-size: 1.1rem;
+    max-width: 550px;
+  }
+  .alice {
+    margin-left: 70px;
+  }
+  .dates {
+    font-size: 1.5rem;
+  }
+  .ground-img {
+    margin-top: 80px;
+  }
+  .camera-img {
+    width: 220px;
+    right: 3%;
+    top: 64%;
+  }
 }
 @media (min-width: 1000px) {
   .five {
@@ -705,12 +821,44 @@ html, body {
     font-weight: 400;
     font-size: 1.2rem;
   }
+  .date {
+    font-size: 1.2rem;
+  }
   .home {
     background-size: 90%;
     background-position: 120% -3%;
     padding-top: 5%;
     margin-top: 0;
     margin-left: 90px;
+    min-height: 100vh;
+  }
+  .text-alice {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+  .alice-img {
+    min-height: 100vh;
+  }
+  .alice {
+    margin-left: 90px;
+  }
+  .dates {
+    font-size: 1.9rem;
+  }
+  .life {
+    gap: 120px;
+  }
+  .small {
+    font-size: 0.9rem;
+  }
+  .ground-img {
+    margin-top: 140px;
+  }
+  .camera-img {
+    width: 300px;
+    right: 5%;
+    top: 50%;
   }
 }
 @media (min-width: 1200px) {
@@ -724,6 +872,21 @@ html, body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .text-alice {
+    font-size: 1.3rem;
+  }
+  .alice {
+    padding-left: 150px;
+    padding-top: 20px;
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .camera-img {
+    width: 360px;
+    right: 10%;
+    top: 50%;
   }
 }
 .reservation-container {

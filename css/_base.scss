@@ -51,8 +51,27 @@ html, body {
     font-weight: 600;
 }
 
+.titles {
+    font-family: "Oddlini Bold", sans-serif;
+    margin: 0;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    line-height: 0.8;
+}
 
-// title tablet
+.titles-orange {
+    color: $primary-color;
+}
+
+.point {
+    font-family: "Satoshi", sans-serif;
+}
+
+.block {
+    display: block;
+}
+
+// titles tablet
 @media (min-width: 500px) {
     .title-1 {
         font-size: 4rem;
@@ -63,9 +82,12 @@ html, body {
         font-size: 2.25rem;
         line-height: normal;
     }
+
+    .titles {
+        font-size: 2.25rem;
+    }
 }
 
-// title tablet
 @media (min-width: 700px) {
     .title-1 {
         font-size: 4.4rem;
@@ -74,11 +96,14 @@ html, body {
     
     .title-2 {
         font-size: 2.8rem;
-        line-height: normal;
+    }
+
+    .titles {
+        font-size: 2.8rem;
     }
 }
 
-// title desktop
+// titles desktop
 @media (min-width: 1000px) {
     .title-1 {
         font-size: 6.25rem;
@@ -87,10 +112,10 @@ html, body {
     
     .title-2 {
         font-size: 3.438rem;
-        line-height: normal;
+    }
+
+    .titles {
+        font-size: 3.8rem;
     }
 }
 
-.bold {
-    font-weight: 600;
-}
