@@ -27,13 +27,13 @@ function updateDaysPerPage() {
     maxDate = new Date('2025-05-25');
   } else if (screenWidth >= 900 && screenWidth <= 1000) {
     daysPerPage = 4;
-    maxDate = new Date('2025-05-27');
+    maxDate = new Date('2025-05-26');
   } else if (screenWidth >= 1000 && screenWidth <= 1100) {
     daysPerPage = 5;
     maxDate = new Date('2025-05-27');
   } else if (screenWidth >= 1100 && screenWidth <= 1200) {
     daysPerPage = 6;
-    maxDate = new Date('2025-05-25');
+    maxDate = new Date('2025-05-28');
   } else {
     daysPerPage = 7;
     maxDate = new Date('2025-05-25');
