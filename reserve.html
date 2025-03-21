@@ -15,9 +15,9 @@
         <img src="img/logo.svg" alt="Aller à l'accueil">
       </a>
       <div class="menu">
-        <a class="m-top" id="accueil-link" href="index.html">Accueil</a>
-        <a id="exhibition-link" href="exhibition.html">Découvrir l'exposition</a>
-        <a id="reserve-link" class="active" href="reserve.html">Réserver</a>
+        <a class="m-top lang-nav-home" id="accueil-link" href="index.html">Accueil</a>
+        <a id="exhibition-link" class="lang-nav-discover" href="exhibition.html">Découvrir l'exposition</a>
+        <a id="reserve-link" class="lang-nav-reserve active" href="reserve.html">Réserver</a>
         <div class="underline"></div>
       </div>
       <div class="right-container">
@@ -37,18 +37,44 @@
       <h1 class="title">
         <span class="title-1">Alice Guy</span>
         <span class="title-2">
-          <span class="part-1">au pays des</span>
-          <span class="part-2">premières</span>
+          <span class="part-1 lang-home-title1">au pays des</span>
+          <span class="part-2 lang-home-title2">premières</span>
         </span>
       </h1>
-      <p class="five">5 salles / 5 épreuves</p>
+      <p class="five lang-reserve-rooms">5 salles / 5 épreuves</p>
       <div class="infos">
-        <p class="date">Du <span class="bold">24 mars</span> au <span class="bold">24 mai 2025</span></p>
-        <p class="date">de <span class="bold">10H</span> à <span class="bold">18H</span></p>
-        <p>22 Rue du Départ, 75015 Paris</p>
-        <p class="duration-info">L'exposition dure au total <span class="bold">1h30</span>.</p>
-        <p class="payment-info">La réservation se fait en ligne et le règlement <br> sur place.</p>
-        <p class="price-info">Prix de la séance: <span class="bold">35€</span></p>
+        <p class="date lang-reserve-date">
+          <span class="lang-reserve-from-date">Du</span>
+          <span class="bold lang-reserve-date-start">24 mars</span>
+          <span class="lang-reserve-to-date">au</span>
+          <span class="bold lang-reserve-date-end">24 mai 2025</span>
+        </p>
+
+        <p class="date lang-reserve-hours">
+          <span class="lang-reserve-from-hours">de</span>
+          <span class="bold lang-reserve-hours-start">10H</span>
+          <span class="lang-reserve-to-hours">à</span>
+          <span class="bold lang-reserve-hours-end">18H</span>
+        </p>
+
+        <p class="lang-reserve-address">22 Rue du Départ, 75015 Paris</p>
+
+        <p class="duration-info lang-reserve-duration">
+          <span class="lang-reserve-duration-text">L'exposition dure au total</span>
+          <span class="bold lang-reserve-duration-time">1h30</span>.
+        </p>
+
+        <p class="payment-info lang-reserve-payment">
+          <span class="lang-reserve-payment-online">La réservation se fait en ligne</span>
+          <span class="lang-reserve-and">et</span>
+          <span class="lang-reserve-payment-onsite">le règlement</span><br>
+          <span class="lang-reserve-payment-location">sur place.</span>
+        </p>
+
+        <p class="price-info lang-reserve-price">
+          <span class="lang-reserve-price-label">Prix de la séance :</span>
+          <span class="bold lang-reserve-price-amount">35€</span>
+        </p>
       </div>
     </div>
     <div class="reservation-form-container">
@@ -56,7 +82,7 @@
         <div class="steps-wrapper">
           <div class="form-step active" id="step-1">
             <div class="title-info">
-              <h2 class="form-title">Choix de la date et heure</h2>
+              <h2 class="form-title lang-step1-title">Choix de la date et de l'heure</h2>
             </div>
             <div class="navigation">
               <button type="button" class="nav-btn" id="prevWeekBtn">
@@ -71,19 +97,19 @@
           </div>
           <div class="form-step step-2" id="step-2">
             <div class="title-info">
-              <h2 class="form-title">Informations personnelles</h2>
-              <p class="form-instructions">Veuillez saisir vos informations personnelles pour réserver vos places.</p>
-              <span class="required-fields"><i class="asterisk">*</i> champs obligatoires</span>
+                <h2 class="form-title lang-step2-title">Informations personnelles</h2>
+                <p class="form-instructions lang-step2-instructions">Veuillez saisir vos informations personnelles pour réserver vos places.</p>
+                <span class="required-fields"><i class="asterisk">*</i> <span class="lang-required-fields">champs obligatoires</span></span>
             </div>
             <div class="form-group-container">
               <div class="form-group-row">
                 <div class="form-group">
-                  <label for="lastname">Nom <i class="asterisk">*</i></label>
+                  <label for="lastname"><span class="lang-step2-lastname">Nom</span> <i class="asterisk">*</i></label>
                   <input type="text" id="lastname" name="lastname" required>
                   <span class="error-message" id="lastname-error"></span>
                 </div>
                 <div class="form-group">
-                  <label for="firstname">Prénom <i class="asterisk">*</i></label>
+                    <label for="firstname"><span class="lang-step2-firstname">Prénom</span> <i class="asterisk">*</i></label>
                   <input type="text" id="firstname" name="firstname" required>
                   <span class="error-message" id="firstname-error"></span>
                 </div>
@@ -95,14 +121,14 @@
                   <span class="error-message" id="email-error"></span>
                 </div>
                 <div class="form-group">
-                  <label for="phone">Téléphone <i class="asterisk">*</i></label>
+                    <label for="phone"><span class="lang-step2-phone">Téléphone</span> <i class="asterisk">*</i></label>
                   <input type="tel" pattern="[0-9]{10}" minlength="10" max="10" id="phone" name="phone" required>
                   <span class="error-message" id="phone-error"></span>
                 </div>
               </div>
               <div class="form-group-row">
                 <div class="form-group">
-                  <label for="participants">Nombre de participants <i class="asterisk">*</i></label>
+                    <label for="participants"><span class="lang-step2-participants">Nombre de participants</span> <i class="asterisk">*</i></label>
                   <select name="participants" id="participants" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -118,47 +144,47 @@
                   <span class="error-message" id="participants-error"></span>
                 </div>
                 <div class="form-group">
-                  <label for="promo">Code promotionnel</label>
+                    <label for="promo" class="lang-step2-promo">Code promotionnel</label>
                   <input type="text" name="promo" id="promo">
                   <span class="error-message" id="promo-error"></span>
-                  <span class="validate-promo" id="validate-promo">-10% sur votre réservation</span>
+                    <span class="validate-promo lang-step2-validate-promo" id="validate-promo">-10% sur votre réservation</span>
                 </div>
               </div>
-              <span class="name-info">Le nom renseigné vous sera demandé à votre arrivée à l'exposition.</span>
+                <span class="name-info lang-step2-name-info">Le nom renseigné vous sera demandé à votre arrivée à l'exposition.</span>
             </div>
           </div>
           <div class="form-step" id="step-3">
             <div class="details-reservation">
-              <h2 class="form-title">Récapitulatif de votre réservation</h2>
-              <p class="intro">Veuillez vérifier vos informations avant de confirmer.</p>
+                <h2 class="form-title lang-step3-title">Récapitulatif de votre réservation</h2>
+                <p class="intro lang-step3-intro">Veuillez vérifier vos informations avant de confirmer.</p>
               <div class="info-group">
                 <div class="personal-info card">
-                  <h3>Informations personnelles</h3>
+                    <h3 class="lang-step3-personal-info">Informations personnelles</h3>
                   <ul class="recap-list-columns">
                     <div class="recap-column">
-                      <li><strong>Nom :</strong> <span class="recap-value" id="recap-lastname"></span></li>
+                      <li><strong class="lang-step3-recap-lastname">Nom :</strong> <span class="recap-value" id="recap-lastname"></span></li>
                       <li><strong>Email :</strong> <span class="recap-value" id="recap-email"></span></li>
                     </div>
                     <div class="recap-column">
-                      <li><strong>Prénom :</strong> <span class="recap-value" id="recap-firstname"></span></li>
-                      <li><strong>Téléphone :</strong> <span class="recap-value" id="recap-phone"></span></li>
+                      <li><strong class="lang-step3-recap-firstname">Prénom :</strong> <span class="recap-value" id="recap-firstname"></span></li>
+                      <li><strong class="lang-step3-recap-phone">Téléphone :</strong> <span class="recap-value" id="recap-phone"></span></li>
                     </div>
                   </ul>
                 </div>
                 <div class="reservation-info card">
-                  <h3>Réservation</h3>
+                    <h3 class="lang-step3-reservation">Réservation</h3>
                   <ul class="recap-list-rows">
                     <div class="recap-row">
-                      <li><strong>Date et heure :</strong> <span class="recap-value" id="recap-datetime"></span></li>
+                      <li><strong class="lang-step3-recap-datetime">Date et heure :</strong> <span class="recap-value" id="recap-datetime"></span></li>
                     </div>
                     <div class="recap-row">
-                      <li><strong>Participants :</strong> <span class="recap-value" id="recap-participants"></span></li>
-                      <li><strong>Code promo :</strong> <span class="recap-value" id="recap-promo"></span></li>
+                        <li><strong class="lang-step3-recap-participants">Participants :</strong> <span class="recap-value" id="recap-participants"></span></li>
+                        <li><strong class="lang-step3-recap-promo">Code promo :</strong> <span class="recap-value" id="recap-promo"></span></li>
                     </div>
                   </ul>
                 </div>
               </div>
-              <p class="signature">À très bientôt, <span class="studio24-bold">Studio24</span></p>
+                <p class="signature"><span class="lang-step3-signature">À très bientôt, </span><span class="studio24-bold">Studio24</span></p>
             </div>
           </div>
         </div>
@@ -169,9 +195,9 @@
             <span class="dot"></span>
           </div>
           <div class="form-navigation">
-            <button type="button" id="prevBtn" class="nav-form-btn previous-btn">Précédent</button>
-            <button type="button" id="nextBtn" class="next-btn">Suivant</button>
-            <button type="submit" id="submitBtn" class="next-btn" style="display:none;">Confirmer</button>
+            <button type="button" id="prevBtn" class="nav-form-btn previous-btn lang-prev-btn">Précédent</button>
+            <button type="button" id="nextBtn" class="next-btn lang-next-btn">Suivant</button>
+            <button type="submit" id="submitBtn" class="next-btn lang-confirm-btn" style="display:none;">Confirmer</button>
           </div>
         </div>
       </form>
@@ -194,6 +220,7 @@
 
   <script src="js/main.js"></script>
   <script src="js/reserve.js"></script>
+  <script src="js/translate.js"></script>
 </body>
 
 </html>

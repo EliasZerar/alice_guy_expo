@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
 </head>
+
 <body>
     <div id="landing-page">
         <p class="landing-text">Alice Guy</p>
@@ -19,9 +21,9 @@
                 <img src="img/logo.svg" alt="Aller à l'accueil">
             </a>
             <div class="menu">
-                <a class="m-top active" id="accueil-link" href="index.html">Accueil</a>
-                <a id="exhibition-link" href="exhibition.html">Découvrir l'exposition</a>
-                <a id="reserve-link" href="reserve.html">Réserver</a>
+                <a class="m-top active lang-nav-home" id="accueil-link" href="index.html">Accueil</a>
+                <a id="exhibition-link" class="lang-nav-discover" href="exhibition.html">Découvrir l'exposition</a>
+                <a id="reserve-link" class="lang-nav-reserve" href="reserve.html">Réserver</a>
                 <div class="underline"></div>
             </div>
             <div class="right-container">
@@ -36,86 +38,101 @@
         </nav>
     </header>
     <section class="home">
-    <div class="home-left">
-        <h1 class="title">
-            <span class="title-1">Alice Guy</span>
-            <span class="title-2">
-                <span class="part-1">au pays des</span>
-                <span class="part-2">premières</span>
-            </span>
-        </h1>
-        <p class="five">5 salles / 5 épreuves</p>
-        <div class="infos">
-            <p class="date">Du <span class="bold">24 mars</span> au <span class="bold">24 mai 2025</span></p>
-            <p class="date">de <span class="bold">10H</span> à <span class="bold">18H</span></p>
-            <p class="date street">22 Rue du Départ,</p>
-            <p class="date">75015 Paris</p>
-        </div>
-        <div class="buttons">
-            <a class="button-orange" href="reserve.html">
-                Réserver
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                                    
-            </a>
-            <a class="button-black" href="exhibition.html">
-                Jouer
-                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                
-            </a>
-        </div>        
-    </div>
-    <div class="slider">
-        <div class="slide-track">
-
-            <div class="slide">
-                <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
-                <p class="name-movie">La fée aux choux</p>
-                <p class="date-movie">1896</p>
-            </div>
-            <div class="slide">
-                <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
-                <p class="name-movie">Madame a des envies</p>
-                <p class="date-movie">1907</p>
-            </div>
-            <div class="slide">
-                <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
-                <p class="name-movie">A fool and his money</p>
-                <p class="date-movie">1912</p>
-            </div>
-            <div class="slide">
-                <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
-                <p class="name-movie">The Ocean Waif</p>
-                <p class="date-movie">1916</p>
+        <div class="home-left">
+            <h1 class="title">
+                <span class="title-1">Alice Guy</span>
+                <span class="title-2">
+                    <span class="part-1 lang-home-title1">au pays des</span>
+                    <span class="part-2 lang-home-title2">premières</span>
+                </span>
+            </h1>
+            <p class="five lang-reserve-rooms">5 salles / 5 épreuves</p>
+            <div class="infos">
+                <p class="date lang-reserve-date">
+                    <span class="lang-reserve-from-date">Du</span>
+                    <span class="bold lang-reserve-date-start">24 mars</span>
+                    <span class="lang-reserve-to-date">au</span>
+                    <span class="bold lang-reserve-date-end">24 mai 2025</span>
+                </p>
+                <p class="date lang-reserve-hours">
+                    <span class="lang-reserve-from-hours">de</span>
+                    <span class="bold lang-reserve-hours-start">10H</span>
+                    <span class="lang-reserve-to-hours">à</span>
+                    <span class="bold lang-reserve-hours-end">18H</span>
+                </p>
+                <p class="date street lang-reserve-street">22 Rue du Départ,</p>
+                <p class="date lang-reserve-city">75015 Paris</p>
             </div>
 
-            <div class="slide">
-                <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
-                <p class="name-movie">La fée aux choux</p>
-                <p class="date-movie">1896</p>
-            </div>
-            <div class="slide">
-                <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
-                <p class="name-movie">Madame a des envies</p>
-                <p class="date-movie">1907</p>
-            </div>
-            <div class="slide">
-                <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
-                <p class="name-movie">A fool and his money</p>
-                <p class="date-movie">1912</p>
-            </div>
-            <div class="slide">
-                <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
-                <p class="name-movie">The Ocean Waif</p>
-                <p class="date-movie">1916</p>
+            <div class="buttons">
+                <a class="button-orange" href="reserve.html">
+                    <span class="lang-reserve-btn-book">Réserver</span>
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a class="button-black" href="exhibition.html">
+                    <span class="lang-reserve-btn-play">Jouer</span>
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
             </div>
         </div>
-    </div>        
+        <div class="slider">
+            <div class="slide-track">
+
+                <div class="slide">
+                    <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
+                    <p class="name-movie">La fée aux choux</p>
+                    <p class="date-movie">1896</p>
+                </div>
+                <div class="slide">
+                    <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
+                    <p class="name-movie">Madame a des envies</p>
+                    <p class="date-movie">1907</p>
+                </div>
+                <div class="slide">
+                    <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
+                    <p class="name-movie">A fool and his money</p>
+                    <p class="date-movie">1912</p>
+                </div>
+                <div class="slide">
+                    <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
+                    <p class="name-movie">The Ocean Waif</p>
+                    <p class="date-movie">1916</p>
+                </div>
+
+                <div class="slide">
+                    <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
+                    <p class="name-movie">La fée aux choux</p>
+                    <p class="date-movie">1896</p>
+                </div>
+                <div class="slide">
+                    <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
+                    <p class="name-movie">Madame a des envies</p>
+                    <p class="date-movie">1907</p>
+                </div>
+                <div class="slide">
+                    <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
+                    <p class="name-movie">A fool and his money</p>
+                    <p class="date-movie">1912</p>
+                </div>
+                <div class="slide">
+                    <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
+                    <p class="name-movie">The Ocean Waif</p>
+                    <p class="date-movie">1916</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script src="js/landing.js"></script>
     <script src="js/main.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/translate.js"></script>
 </body>
+
 </html>
