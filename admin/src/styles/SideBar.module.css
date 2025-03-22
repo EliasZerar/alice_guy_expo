@@ -42,8 +42,11 @@
   
   .link:hover,
   .active {
-    font-weight: 500;
     background-color: rgba(205, 205, 205, 0.3);
+  }
+
+  .active {
+    font-weight: 500;
   }
   
   .logoutBtn {
