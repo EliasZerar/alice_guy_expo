@@ -737,6 +737,14 @@ html, body {
   position: relative;
 }
 
+.titles-firsts {
+  margin-left: 25px;
+}
+
+.firsts {
+  min-height: 100vh;
+}
+
 @media (min-width: 500px) {
   .five {
     font-size: 1.8rem;
@@ -774,6 +782,9 @@ html, body {
     width: 180px;
     right: -4%;
     top: -30px;
+  }
+  .titles-firsts {
+    margin-left: 50px;
   }
 }
 @media (min-width: 700px) {
@@ -813,6 +824,9 @@ html, body {
     width: 220px;
     right: 3%;
     top: -40px;
+  }
+  .titles-firsts {
+    margin-left: 70px;
   }
 }
 @media (min-width: 1000px) {
@@ -864,6 +878,9 @@ html, body {
     right: 5%;
     top: -50px;
   }
+  .titles-firsts {
+    margin-left: 90px;
+  }
 }
 @media (min-width: 1200px) {
   .home {
@@ -892,6 +909,12 @@ html, body {
     width: 360px;
     right: 10%;
     top: -60px;
+  }
+  .title-firsts {
+    padding-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1800px;
   }
 }
 .reservation-container {
