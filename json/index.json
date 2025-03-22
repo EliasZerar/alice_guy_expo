@@ -19,7 +19,27 @@
     "lang-reserve-city": "75015 Paris",
 
     "lang-reserve-btn-book": "Réserver",
-    "lang-reserve-btn-play": "Jouer"
+    "lang-reserve-btn-play": "Jouer",
+
+
+    "lang-alice-in": "ALICE GUY EN",
+    "lang-alice-few": "QUELQUES",
+    "lang-alice-words": "MOTS",
+
+    "lang-alice-text-part1": "Née en 1873 à Saint-Mandé en France et décédée à Wayne aux États-Unis en 1968, Alice Guy Blaché est une pionnière engagée du cinéma, reconnue comme l'une des premières réalisatrices de l'histoire. Elle a dirigé plus de 700 films, en particulier chez Gaumont, et a innové avec des techniques comme le son synchronisé.",
+    "lang-alice-text-part2": "Bien que son travail ait longtemps été ignoré, elle est aujourd'hui considérée comme une figure clé du cinéma.",
+
+    "lang-alice-birth": "Naissance",
+    "lang-alice-birth-date": "1 JUIL 1873",
+    "lang-alice-birth-place": "Saint-Mandé, France",
+
+    "lang-alice-death": "Décès",
+    "lang-alice-death-date": "24 MARS 1968",
+    "lang-alice-death-place": "Wayne, États-Unis",
+
+
+    "lang-firsts-woman": "LA FEMME DES",
+    "lang-firsts-firsts": "PREMIÈRES"
   },
   "en": {
     "lang-home-title1": "in the land of",
@@ -41,6 +61,26 @@
     "lang-reserve-city": "75015 Paris",
 
     "lang-reserve-btn-book": "Book",
-    "lang-reserve-btn-play": "Play"
+    "lang-reserve-btn-play": "Play",
+
+
+    "lang-alice-in": "ALICE GUY IN",
+    "lang-alice-few": "A FEW",
+    "lang-alice-words": "WORDS",
+
+    "lang-alice-text-part1": "Born in 1873 in Saint-Mandé, France, and died in Wayne, United States in 1968, Alice Guy Blaché is a committed pioneer of cinema, recognized as one of the first directors in history. She directed more than 700 films, especially at Gaumont, and innovated with techniques such as synchronized sound.",
+    "lang-alice-text-part2": "Although her work was long ignored, she is now considered a key figure in cinema.",
+
+    "lang-alice-birth": "Birth",
+    "lang-alice-birth-date": "JUL 1, 1873",
+    "lang-alice-birth-place": "Saint-Mandé, France",
+
+    "lang-alice-death": "Death",
+    "lang-alice-death-date": "MAR 24, 1968",
+    "lang-alice-death-place": "Wayne, United States",
+
+    
+    "lang-firsts-woman": "THE WOMAN OF",
+    "lang-firsts-firsts": "FIRSTS"
   }
 }
