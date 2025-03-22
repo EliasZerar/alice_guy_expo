@@ -737,7 +737,7 @@ html, body {
   position: relative;
 }
 
-.titles-firsts {
+.title-firsts {
   margin-left: 25px;
 }
 
@@ -783,7 +783,7 @@ html, body {
     right: -4%;
     top: -30px;
   }
-  .titles-firsts {
+  .title-firsts {
     margin-left: 50px;
   }
 }
@@ -825,7 +825,7 @@ html, body {
     right: 3%;
     top: -40px;
   }
-  .titles-firsts {
+  .title-firsts {
     margin-left: 70px;
   }
 }
@@ -878,7 +878,7 @@ html, body {
     right: 5%;
     top: -50px;
   }
-  .titles-firsts {
+  .title-firsts {
     margin-left: 90px;
   }
 }
