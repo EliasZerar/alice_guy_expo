@@ -1,0 +1,60 @@
+.part-2-ex {
+    position: relative;
+    top: -8px;
+}
+
+.ex-top {
+    padding: 40px 25px;
+    width: 100%;
+    max-width: 1800px;
+}
+
+.game-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    max-width: 550px;
+}
+
+.clic {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 600;
+}
+
+@media (min-width: 500px) {
+    .part-2-ex {
+        top: 0;
+    }
+
+    .ex-top {
+        padding: 40px 50px;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .ex-top {
+        padding: 40px 70px;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .ex-top {
+        padding-top: 5%;
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .ex-top {
+        padding-top: 5%;
+        margin-top: 0;
+        padding-left: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+    
