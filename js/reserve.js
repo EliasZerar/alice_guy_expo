@@ -61,7 +61,7 @@ function formatDate(date) {
   if (currentLanguage === 'fr') {
     return date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
   } else if (currentLanguage === 'en') {
-    return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
   }
 }
 
@@ -417,7 +417,7 @@ submitBtn.addEventListener("click", () => {
         confirmationMessage.style.display = 'block';
       })
       .catch(error => {
-        alert("Une erreur est survenue lors de l'enregistrement de la réservation là.");
+        alert("Bah alors on rentre pas une vraie adresse e-mail ???");
         console.error("Error:", error);
       });
   }
