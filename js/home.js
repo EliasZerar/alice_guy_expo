@@ -1,32 +1,42 @@
 // animation 5 salles 5 épreuves
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const textElement = document.querySelector('.text-animation');
-    let phrases = ["salles", "épreuves"];
+    let currentLang = localStorage.getItem('selectedLang') || (navigator.language || 'fr').substring(0, 2);
+    const phrases = {
+        fr: ['salles', 'épreuves'],
+        en: ['rooms', 'challenges']
+    };
+
     let currentPhrase = 0;
     let currentChar = 0;
     let isDeleting = false;
     let lastTime = Date.now();
-    let typingSpeed = 190;
-    let deletingSpeed = 90;
+    const typingSpeed = 190;
+    const deletingSpeed = 90;
+
+    function updateLang() {
+        currentLang = localStorage.getItem('selectedLang') || 'fr';
+    }
 
     function type() {
         let now = Date.now();
         let delta = now - lastTime;
 
+        updateLang(); // ⬅️ Langue mise à jour à chaque frame
+
         if ((isDeleting && delta > deletingSpeed) || (!isDeleting && delta > typingSpeed)) {
             if (isDeleting) {
                 if (currentChar > 0) {
                     currentChar--;
-                    textElement.textContent = phrases[currentPhrase].substring(0, currentChar);
+                    textElement.textContent = phrases[currentLang][currentPhrase].substring(0, currentChar);
                 } else {
                     isDeleting = false;
-                    currentPhrase = (currentPhrase + 1) % phrases.length;
-                    lastTime = now;
+                    currentPhrase = (currentPhrase + 1) % phrases[currentLang].length;
                 }
             } else {
-                if (currentChar < phrases[currentPhrase].length) {
+                if (currentChar < phrases[currentLang][currentPhrase].length) {
                     currentChar++;
-                    textElement.textContent = phrases[currentPhrase].substring(0, currentChar);
+                    textElement.textContent = phrases[currentLang][currentPhrase].substring(0, currentChar);
                 } else {
                     isDeleting = true;
                     lastTime = now + 1000;
@@ -34,14 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             lastTime = now;
         }
+
         requestAnimationFrame(type);
     }
 
     requestAnimationFrame(type);
 });
 
+
 // animation caméra
-window.onload = function() {
+window.onload = function () {
     gsap.registerPlugin(ScrollTrigger);
     const camera = document.querySelector('.camera-img');
 
@@ -65,7 +77,9 @@ window.onload = function() {
         }
     }
 
-    gsap.from(camera, {
+    gsap.set(camera, { right: startPosition() });
+
+    gsap.to(camera, {
         scrollTrigger: {
             trigger: ".alice-img",
             start: "top bottom",
@@ -73,13 +87,43 @@ window.onload = function() {
             scrub: true,
             markers: false
         },
-        right: startPosition(),
+        right: window.innerWidth >= 1200 ? "4%" : "0%",
         ease: "none"
     });
 
-    adjustCameraPosition();
     window.addEventListener('resize', () => {
-        adjustCameraPosition();
         gsap.set(camera, { right: startPosition() });
+        ScrollTrigger.refresh()
     });
 };
+
+// animation compteurs années
+function animateCounter(target, endValue) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(target, 
+        { innerText: 0 },
+        {
+            innerText: endValue,
+            duration: 2,
+            scrollTrigger: {
+                trigger: target,
+                start: "top center",
+                end: "top 50%",
+                toggleActions: "play none none none",
+                markers: false
+            },
+            snap: { innerText: 1 },
+            ease: "power1.out",
+            onUpdate: function () {
+                target.innerText = Math.floor(target.innerText);
+            }
+        }
+    );
+}
+
+const birthYear = document.getElementById('birthYear');
+const deathYear = document.getElementById('deathYear');
+
+animateCounter(birthYear, 1873);
+animateCounter(deathYear, 1968);

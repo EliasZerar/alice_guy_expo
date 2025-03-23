@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon pour thème clair -->
+    <link rel="icon" href="img/favicon-dark.ico" media="(prefers-color-scheme: light)">
+
+    <!-- Favicon pour thème sombre -->
+    <link rel="icon" href="img/favicon-light.ico" media="(prefers-color-scheme: dark)">
+
     <title>Alice guy - Alice au pays des premières</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
- 
+
     <script src="js/loading.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/home.js" defer></script>
@@ -43,131 +49,140 @@
         </nav>
     </header>
     <main>
-    <section class="home">
-        <div class="home-left">
-            <h1 class="title">
-                <span class="title-1">Alice Guy</span>
-                <span class="title-2">
-                    <span class="part-1 lang-home-title1">au pays des</span>
-                    <span class="part-2 lang-home-title2">premières</span>
-                </span>
-            </h1>
-            <div class="five-group">
-            <p class="five">5</p>
-            <p class="five lang-reserve-rooms text-animation"></p>
-            </div>
-            <div class="infos">
-                <p class="date lang-reserve-date">
-                    <span class="lang-reserve-from-date">Du</span>
-                    <span class="bold lang-reserve-date-start">24 mars</span>
-                    <span class="lang-reserve-to-date">au</span>
-                    <span class="bold lang-reserve-date-end">24 mai 2025</span>
-                </p>
-                <p class="date lang-reserve-hours">
-                    <span class="lang-reserve-from-hours">de</span>
-                    <span class="bold lang-reserve-hours-start">10H</span>
-                    <span class="lang-reserve-to-hours">à</span>
-                    <span class="bold lang-reserve-hours-end">18H</span>
-                </p>
-                <p class="date street lang-reserve-street">22 Rue du Départ,</p>
-                <p class="date lang-reserve-city">75015 Paris</p>
-            </div>
-
-            <div class="buttons">
-                <a class="button-orange" href="reserve.html">
-                    <span class="lang-reserve-btn-book">Réserver</span>
-                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
-                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-                <a class="button-black" href="exhibition.html">
-                    <span class="lang-reserve-btn-play">Jouer</span>
-                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
-                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="slide-track">
-
-                <div class="slide">
-                    <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
-                    <p class="name-movie">La fée aux choux</p>
-                    <p class="date-movie">1896</p>
+        <section class="home">
+            <div class="home-left">
+                <h1 class="title">
+                    <span class="title-1">Alice Guy</span>
+                    <span class="title-2">
+                        <span class="part-1 lang-home-title1">au pays des</span>
+                        <span class="part-2 lang-home-title2">premières</span>
+                    </span>
+                </h1>
+                <div class="five-group">
+                    <p class="five">5</p>
+                    <p class="five lang-reserve-rooms text-animation"></p>
                 </div>
-                <div class="slide">
-                    <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
-                    <p class="name-movie">Madame a des envies</p>
-                    <p class="date-movie">1907</p>
-                </div>
-                <div class="slide">
-                    <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
-                    <p class="name-movie">A fool and his money</p>
-                    <p class="date-movie">1912</p>
-                </div>
-                <div class="slide">
-                    <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
-                    <p class="name-movie">The Ocean Waif</p>
-                    <p class="date-movie">1916</p>
+                <div class="infos">
+                    <p class="date lang-reserve-date">
+                        <span class="lang-reserve-from-date">Du</span>
+                        <span class="bold lang-reserve-date-start">24 mars</span>
+                        <span class="lang-reserve-to-date">au</span>
+                        <span class="bold lang-reserve-date-end">24 mai 2025</span>
+                    </p>
+                    <p class="date lang-reserve-hours">
+                        <span class="lang-reserve-from-hours">de</span>
+                        <span class="bold lang-reserve-hours-start">10H</span>
+                        <span class="lang-reserve-to-hours">à</span>
+                        <span class="bold lang-reserve-hours-end">18H</span>
+                    </p>
+                    <p class="date street lang-reserve-street">22 Rue du Départ,</p>
+                    <p class="date lang-reserve-city">75015 Paris</p>
                 </div>
 
-                <div class="slide">
-                    <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
-                    <p class="name-movie">La fée aux choux</p>
-                    <p class="date-movie">1896</p>
-                </div>
-                <div class="slide">
-                    <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
-                    <p class="name-movie">Madame a des envies</p>
-                    <p class="date-movie">1907</p>
-                </div>
-                <div class="slide">
-                    <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
-                    <p class="name-movie">A fool and his money</p>
-                    <p class="date-movie">1912</p>
-                </div>
-                <div class="slide">
-                    <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
-                    <p class="name-movie">The Ocean Waif</p>
-                    <p class="date-movie">1916</p>
+                <div class="buttons">
+                    <a class="button-orange" href="reserve.html">
+                        <span class="lang-reserve-btn-book">Réserver</span>
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a class="button-black" href="exhibition.html">
+                        <span class="lang-reserve-btn-play">Jouer</span>
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="alice-img">
-    <div class="alice">
-        <h2 class="titles">
-            <span class="lang-alice-in">ALICE GUY EN</span>
-            <span class="block"><span class="lang-alice-few">QUELQUES</span> <span class="titles-orange lang-alice-words">MOTS</span><span class="point">.</span></span>
-        </h2>        
-        <p class="text-alice"><span class="lang-alice-text-part1">Née en 1873 à Saint-Mandé en France et décédée à Wayne aux États-Unis en 1968, Alice Guy Blaché est une pionnière engagée du cinéma, reconnue comme l'une des premières réalisatrices de l'histoire. Elle a dirigé plus de 700 films, en particulier chez Gaumont, et a innové avec des techniques comme le son synchronisé. </span><br><br><span class="lang-alice-text-part2">Bien que son travail ait été longtemps ignoré, elle est aujourd'hui considérée comme une figure clé du cinéma.</span></p>
-        <div class="life">
-            <div class="life-dates">
-                <p class="small lang-alice-birth">Naissance</p>
-                <p class="bold dates-alice lang-alice-birth-date"><span id="birthYear">1873</span></p>
-                <p class="small lang-alice-birth-place">Saint-Mandé, France</p>
+            <div class="slider">
+                <div class="slide-track">
+
+                    <div class="slide">
+                        <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
+                        <p class="name-movie">La fée aux choux</p>
+                        <p class="date-movie">1896</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
+                        <p class="name-movie">Madame a des envies</p>
+                        <p class="date-movie">1907</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
+                        <p class="name-movie">A fool and his money</p>
+                        <p class="date-movie">1912</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
+                        <p class="name-movie">The Ocean Waif</p>
+                        <p class="date-movie">1916</p>
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/la-fee-aux-choux.webp" alt="La fée aux choux">
+                        <p class="name-movie">La fée aux choux</p>
+                        <p class="date-movie">1896</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/madame-a-des-envies.webp" alt="Madame a des envies">
+                        <p class="name-movie">Madame a des envies</p>
+                        <p class="date-movie">1907</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/a-fool-and-his-money.webp" alt="A Fool and His Money">
+                        <p class="name-movie">A fool and his money</p>
+                        <p class="date-movie">1912</p>
+                    </div>
+                    <div class="slide">
+                        <img src="img/the-ocean-waif.jpg" alt="The Ocean Waif">
+                        <p class="name-movie">The Ocean Waif</p>
+                        <p class="date-movie">1916</p>
+                    </div>
+                </div>
             </div>
-            <div class="life-dates">
-                <p class="small lang-alice-death">Décès</p>
-                <p class="bold dates-alice lang-alice-death-date"><span id="deathYear">1968</span></p>
-                <p class="small lang-alice-death-place">Wayne, États-Unis</p>
+        </section>
+        <section class="alice-img">
+            <div class="alice">
+                <h2 class="titles">
+                    <span class="lang-alice-in">ALICE GUY EN</span>
+                    <span class="block"><span class="lang-alice-few">QUELQUES</span> <span
+                            class="titles-orange lang-alice-words">MOTS</span><span class="point">.</span></span>
+                </h2>
+                <p class="text-alice"><span class="lang-alice-text-part1">Née en 1873 à Saint-Mandé en France et décédée
+                        à Wayne aux États-Unis en 1968, Alice Guy Blaché est une pionnière engagée du cinéma, reconnue
+                        comme l'une des premières réalisatrices de l'histoire. Elle a dirigé plus de 700 films, en
+                        particulier chez Gaumont, et a innové avec des techniques comme le son synchronisé.
+                    </span><br><br><span class="lang-alice-text-part2">Bien que son travail ait été longtemps ignoré,
+                        elle est aujourd'hui considérée comme une figure clé du cinéma.</span></p>
+                <div class="life">
+                    <div class="life-dates">
+                        <p class="small lang-alice-birth">Naissance</p>
+                        <p class="bold dates-alice lang-alice-birth-date"><span id="birthYear">1873</span></p>
+                        <p class="small lang-alice-birth-place">Saint-Mandé, France</p>
+                    </div>
+                    <div class="life-dates">
+                        <p class="small lang-alice-death">Décès</p>
+                        <p class="bold dates-alice lang-alice-death-date"><span id="deathYear">1968</span></p>
+                        <p class="small lang-alice-death-place">Wayne, États-Unis</p>
+                    </div>
+                </div>
             </div>
-        </div>        
-    </div>
-        <div class="ground-camera">
-            <img class="ground-img" src="img/ground.svg" alt="">
-            <img class="camera-img" src="img/camera.svg" alt="">
-        </div>
-    </section>
-    <section class="firsts">
-        <h2 class="titles title-firsts">
-            <span class="lang-firsts-woman">LA FEMME DES</span>
-            <span class="block"><span class="titles-orange lang-firsts-firsts">PREMIÈRES</span><span class="point">.</span></span>
-        </h2>
-    </section>
+            <div class="ground-camera">
+                <img class="ground-img" src="img/ground.svg" alt="">
+                <img class="camera-img" src="img/camera.svg" alt="">
+            </div>
+        </section>
+        <section class="firsts">
+            <h2 class="titles title-firsts">
+                <span class="lang-firsts-woman">LA FEMME DES</span>
+                <span class="block"><span class="titles-orange lang-firsts-firsts">PREMIÈRES</span><span
+                        class="point">.</span></span>
+            </h2>
+        </section>
     </main>
     <footer>
         <a class="logo" href="index.html">
@@ -177,8 +192,9 @@
             <a href="mentions.html">Mentions légales</a>
             <a href="contacts.html">Contacts</a>
         </div>
-            <p class="right">Alice Guy © 2025</p>
+        <p class="right">Alice Guy © 2025</p>
     </footer>
 
 </body>
+
 </html>
