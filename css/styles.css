@@ -1365,6 +1365,14 @@ html, body {
     justify-content: flex-start;
   }
 }
+.testLocal {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .reservation-container {
   display: flex;
   flex-direction: column;
