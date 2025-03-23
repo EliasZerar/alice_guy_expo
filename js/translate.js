@@ -1,5 +1,5 @@
 const loadTranslations = async (fileName) => {
-    const response = await fetch(`json/${fileName}.json`);
+    const response = await fetch(`/json/${fileName}.json`);
     const data = await response.json();
     return data;
 };
@@ -15,9 +15,20 @@ const applyTranslations = (translations) => {
 
 const getCurrentPageName = () => {
     const path = window.location.pathname;
-    const pageName = path.split('/').pop().replace('.html', '');
-    return pageName || 'index';
+    const segments = path.split('/').filter(seg => seg.length > 0);
+
+    // Si on est sur / => index
+    if (segments.length === 0) return 'index';
+
+    // Si le dernier segment est index.html => on prend le dossier précédent comme nom de page
+    if (segments[segments.length - 1] === 'index.html') {
+        return segments.length >= 2 ? segments[segments.length - 2] : 'index';
+    }
+
+    // Sinon, on prend le nom du fichier sans .html
+    return segments[segments.length - 1].replace('.html', '');
 };
+
 
 const changeLanguage = (select) => {
     const selectedLanguage = select.value;
