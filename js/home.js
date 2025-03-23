@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let now = Date.now();
         let delta = now - lastTime;
 
-        updateLang(); // ⬅️ Langue mise à jour à chaque frame
+        updateLang();
 
         if ((isDeleting && delta > deletingSpeed) || (!isDeleting && delta > typingSpeed)) {
             if (isDeleting) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // animation caméra
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function () {
     gsap.registerPlugin(ScrollTrigger);
     const camera = document.querySelector('.camera-img');
 
@@ -95,4 +95,5 @@ window.onload = function () {
         gsap.set(camera, { right: startPosition() });
         ScrollTrigger.refresh()
     });
-};
+});
+
