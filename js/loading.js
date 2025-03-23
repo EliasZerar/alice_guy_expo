@@ -1,11 +1,9 @@
-window.onload = function() {
+window.addEventListener('load', function() {
     const loadingPage = document.getElementById('loading-page');
-
     const hasVisited = sessionStorage.getItem('hasVisited');
 
     if (!hasVisited) {
         sessionStorage.setItem('hasVisited', 'true');
-
         setTimeout(() => {
             loadingPage.style.opacity = 0;
             setTimeout(() => {
@@ -15,4 +13,4 @@ window.onload = function() {
     } else {
         loadingPage.remove();
     }
-};
+});

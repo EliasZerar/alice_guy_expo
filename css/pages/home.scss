@@ -82,7 +82,7 @@
 
 .camera-img {
     position: absolute;
-    right: -5%;
+    right: -6%;
     top: -20px;
     transform: translateY(-50%);
     width: 130px;
@@ -268,7 +268,7 @@
 
     .camera-img {
         width: 300px;
-        right: 5%;
+        right: 6%;
         top: -50px;
     }
 
@@ -310,7 +310,7 @@
 
     .camera-img {
         width: 360px;
-        right: 10%;
+        right: 12%;
         top: -60px;
     }
 
@@ -319,5 +319,17 @@
         margin-left: auto;
         margin-right: auto;
         max-width: 1800px;
+    }
+}
+
+.five-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+}
+
+@media (min-width: 1000px) {
+    .five-group {
+        gap: 2%;
     }
 }
