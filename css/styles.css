@@ -306,6 +306,7 @@ main {
     background-color: transparent;
   }
   .menu a {
+    box-sizing: border-box;
     display: inline-block;
     text-decoration: none;
     padding-bottom: 0;
@@ -315,15 +316,15 @@ main {
     color: #EA5B28;
     text-decoration: none;
   }
-  .menu a.active::after {
-    content: "";
+  .menu {
+    position: relative;
+  }
+  .underline {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -25px;
+    bottom: 0px;
     height: 1px;
-    width: 100%;
     background-color: #EA5B28;
+    transition: left 0.4s ease, width 0.4s ease;
   }
 }
 *,

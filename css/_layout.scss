@@ -295,7 +295,7 @@ main {
     }
 
     .menu a {
-       
+        box-sizing: border-box;
         display: inline-block;
         text-decoration: none;
         padding-bottom: 0;
@@ -307,16 +307,19 @@ main {
         text-decoration: none;
     }
 
-    .menu a.active::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -25px;
-        height: 1px;
-        width: 100%;
-        background-color: $primary-color;
+    .menu {
+        position: relative;
     }
+    
+    .underline {
+        position: absolute;
+        bottom: 0px;
+        height: 1px;
+        background-color: #EA5B28;
+        transition: left 0.4s ease, width 0.4s ease;
+    }
+    
+    
     
 
     // .underline {

@@ -96,34 +96,3 @@ window.onload = function () {
         ScrollTrigger.refresh()
     });
 };
-
-// animation compteurs années
-function animateCounter(target, endValue) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.fromTo(target, 
-        { innerText: 0 },
-        {
-            innerText: endValue,
-            duration: 2,
-            scrollTrigger: {
-                trigger: target,
-                start: "top center",
-                end: "top 50%",
-                toggleActions: "play none none none",
-                markers: false
-            },
-            snap: { innerText: 1 },
-            ease: "power1.out",
-            onUpdate: function () {
-                target.innerText = Math.floor(target.innerText);
-            }
-        }
-    );
-}
-
-const birthYear = document.getElementById('birthYear');
-const deathYear = document.getElementById('deathYear');
-
-animateCounter(birthYear, 1873);
-animateCounter(deathYear, 1968);
