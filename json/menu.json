@@ -2,11 +2,15 @@
     "fr": {
         "lang-nav-home": "Accueil",
         "lang-nav-discover": "Découvrir l'exposition",
-        "lang-nav-reserve": "Réserver"
+        "lang-nav-reserve": "Réserver",
+
+        "lang-footer-mentions": "Mentions légales"
     },
     "en": {
         "lang-nav-home": "Home",
         "lang-nav-discover": "Discover the exhibition",
-        "lang-nav-reserve": "Reserve"
+        "lang-nav-reserve": "Reserve",
+
+        "lang-footer-mentions": "Legal notices"
     }
 }
