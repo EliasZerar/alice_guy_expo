@@ -4,23 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
-  <script src="js/reserve.js" defer></script>
-  <script src="js/translate.js" defer></script>
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <link rel="icon" href="../img/favicon-dark.ico" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="../img/favicon-light.ico" media="(prefers-color-scheme: dark)">
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/reserve.js" defer></script>
+  <script src="../js/translate.js" defer></script>
+  <script src="../js/nav.js" defer></script>
   <title>Réserver - Alice au pays des premières</title>
 </head>
 
 <body>
   <header>
     <nav>
-      <a class="logo" href="index.html">
-        <img src="img/logo.svg" alt="Aller à l'accueil">
+      <a class="logo" href="../">
+        <img src="../img/logo.svg" alt="Aller à l'accueil">
       </a>
       <div class="menu">
-        <a class="m-top lang-nav-home" id="accueil-link" href="index.html">Accueil</a>
-        <a id="exhibition-link" class="lang-nav-discover" href="exhibition.html">Découvrir l'exposition</a>
-        <a id="reserve-link" class="lang-nav-reserve active" href="reserve.html">Réserver</a>
+        <a class="m-top lang-nav-home" id="accueil-link" href="../">Accueil</a>
+        <a id="exhibition-link" class="lang-nav-discover" href="../exhibition">Découvrir l'exposition</a>
+        <a id="reserve-link" class="lang-nav-reserve active" href="../reserve">Réserver</a>
         <div class="underline"></div>
       </div>
       <div class="right-container">
@@ -90,11 +95,11 @@
             </div>
             <div class="navigation">
               <button type="button" class="nav-btn" id="prevWeekBtn">
-                <img src="img/icons/arrow-left-orange.svg" alt="Semaine précédente">
+                <img src="../img/icons/arrow-left-orange.svg" alt="Semaine précédente">
               </button>
               <div class="dates" id="datesContainer"></div>
               <button type="button" class="nav-btn" id="nextWeekBtn">
-                <img src="img/icons/arrow-right-orange.svg" alt="Semaine suivante">
+                <img src="../img/icons/arrow-right-orange.svg" alt="Semaine suivante">
               </button>
             </div>
             <div class="pagination" id="weekInfo"></div>
@@ -224,12 +229,12 @@
 </main>
 
 <footer>
-  <a class="logo" href="index.html">
-      <img src="img/logo.svg" alt="Aller à l'accueil">
+  <a class="logo" href="../">
+      <img src="../img/logo.svg" alt="Aller à l'accueil">
   </a>
   <div class="center">
-      <a href="mentions.html">Mentions légales</a>
-      <a href="contacts.html">Contacts</a>
+      <a href="../mentions.html" class="lang-footer-mentions">Mentions légales</a>
+      <a href="../contacts.html">Contacts</a>
   </div>
       <p class="right">Alice Guy © 2025</p>
 </footer>

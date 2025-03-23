@@ -52,11 +52,9 @@
     .text-play {
         font-size: 1.1rem;
     }
-
 }
 
 @media (min-width: 700px) {
-
     .ex-top {
         padding: 40px 70px;
     }
@@ -64,11 +62,9 @@
     .text-play {
         font-size: 1.2rem;
     }
-
 }
 
 @media (min-width: 1000px) {
-
     .ex-top {
         padding-top: 5%;
         margin-top: 0;
@@ -93,7 +89,6 @@
 }
 
 @media (min-width: 1200px) {
-
     .ex-top {
         padding-top: 5%;
         margin-top: 0;
@@ -116,5 +111,320 @@
         height: 500px;
         margin-right: 6%;
         margin-top: 5%;
+    }
+}
+
+// --------------------------------------------------------
+
+.timeline {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    font-family: 'Satoshi';
+    margin: 0 auto;
+    margin-bottom: 200px;
+    max-width: 945px;
+    gap: 2rem;
+}
+
+.svg-container {
+    position: relative;
+    margin-left: 15px;
+    max-width: 10px;
+    min-height: 100%;
+    background-color: white;
+    z-index: 1;
+    border-radius: 5px;
+    flex: 1;
+}
+
+#path-svg {
+    display: none;
+}
+
+.dot-timeline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #f37036;
+    border-radius: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+#dot-desktop {
+    display: none;
+}
+
+.collection-steps {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 100px;
+    margin-right: 0.75rem;
+}
+
+.collection-step {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 1;
+    gap: 2rem;
+    margin-right: 1rem;
+}
+
+.collection-card {
+    background-color: #de623d;
+    padding: 1rem;
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    flex: 3;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid white;
+        border-radius: 15px;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.collection-card-title {
+    font-family: "Oddlini Bold", sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.collection-card-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.img-container {
+    width: 70%;
+    // height: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border: 1px solid #fff;
+    padding: 2rem;
+    border-radius: 15px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (768px < width < 1100px) {
+    @media (min-width: 768px) {
+        .collection-steps {
+            gap: 50px;
+        }
+
+        .collection-step {
+            flex-direction: row-reverse;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .img-container {
+            width: 20vw;
+            min-height: 100%;
+            justify-content: flex-end;
+            padding: 0 2rem;
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    #path-svg {
+        max-width: 945px;
+    }
+
+    .svg-container {
+        max-width: 100%;
+    }
+
+    .dot-timeline {
+        width: 30px;
+        height: 30px;
+    }
+
+    #dot-desktop {
+        display: block;
+    }
+
+    #dot-mobile {
+        display: none;
+    }
+
+    .timeline {
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        margin: 0 auto;
+        margin-bottom: 400px;
+        max-width: 945px;
+        padding: 50px 0;
+    }
+
+    .svg-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        height: 100%;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+        margin: auto 0;
+    }
+
+    #path-svg {
+        max-width: 945px;
+        display: block;
+    }
+
+    .dot-timeline {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #f37036;
+        border-radius: 50%;
+        z-index: 10;
+        transform: translate(-50%, -50%);
+    }
+
+    #path-svg {
+        max-width: 945px;
+    }
+
+    .svg-container {
+        max-width: 100%;
+    }
+
+    .dot-timeline {
+        width: 30px;
+        height: 30px;
+    }
+
+    .collection-steps {
+        margin-top: 199px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 6.5px;
+    }
+
+    .collection-step {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        height: 452px;
+        margin-right: 0;
+        margin-left: 80px;
+    }
+
+    .collection-card-img {
+        display: flex;
+        height: fit-content;
+    }
+
+    .collection-card {
+        background-color: #de623d;
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        position: relative;
+        right: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        flex: 2;
+
+        &.collection-card-right {
+            right: 0;
+            left: 40px;
+        }
+
+        &::before {
+            border-radius: 30px;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+
+    .collection-card-title {
+        font-family: "Oddlini Bold", sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .collection-card-text {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .collection-step:nth-child(even) .collection-card-img {
+        flex-direction: row-reverse;
+    }
+
+    .collection-step:nth-child(odd) .collection-card-img .img-container {
+        margin-right: 80px;
+        margin-left: 0;
+    }
+
+    .img-container {
+        aspect-ratio: 1;
+        min-height: 100%;
+        flex: 1;
+        position: relative;
+        padding-right: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        border: 1px solid #fff;
+        padding: 0;
+        border-radius: 15px;
+
+        &.img-container-left {
+            justify-content: flex-start;
+            // padding-right: 0;
+        }
+
+        // .img {
+        //     img {
+        //         background-color: #000;
+        //         border: 1px solid #fff;
+        //         padding: 2rem;
+        //         border-radius: 15px;
+        //     }
+        // }
     }
 }

@@ -1,5 +1,5 @@
 const loadTranslations = async (fileName) => {
-    const response = await fetch(`json/${fileName}.json`);
+    const response = await fetch(`/json/${fileName}.json`);
     const data = await response.json();
     return data;
 };
@@ -7,6 +7,12 @@ const loadTranslations = async (fileName) => {
 const applyTranslations = (translations) => {
     Object.keys(translations).forEach(key => {
         const translation = translations[key];
+
+        if (key === 'lang-title') {
+            document.title = translation;
+            return;
+        }
+
         document.querySelectorAll(`.${key}`).forEach(el => {
             el.textContent = translation;
         });
@@ -15,13 +21,23 @@ const applyTranslations = (translations) => {
 
 const getCurrentPageName = () => {
     const path = window.location.pathname;
-    const pageName = path.split('/').pop().replace('.html', '');
-    return pageName || 'index';
+    const segments = path.split('/').filter(seg => seg.length > 0);
+
+    if (segments.length === 0) return 'index';
+
+    if (segments[segments.length - 1] === 'index.html') {
+        return segments.length >= 2 ? segments[segments.length - 2] : 'index';
+    }
+
+    return segments[segments.length - 1].replace('.html', '');
 };
+
 
 const changeLanguage = (select) => {
     const selectedLanguage = select.value;
     localStorage.setItem('selectedLang', selectedLanguage);
+
+    document.documentElement.lang = selectedLanguage;
 
     loadTranslations('menu').then(menuTranslations => {
         if (!menuTranslations[selectedLanguage]) {

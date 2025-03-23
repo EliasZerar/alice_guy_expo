@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link rel="icon" href="../img/favicon-dark.ico" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="../img/favicon-light.ico" media="(prefers-color-scheme: dark)">
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/translate.js" defer></script>
+    <script src="../js/exhibition.js" defer></script>
+    <script src="../js/nav.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <title>Exposition - Alice au pays des premières</title>
+</head>
+
+<body class="exhibition">
+    <header>
+        <nav>
+            <a class="logo" href="../">
+                <img src="../img/logo.svg" alt="Aller à l'accueil">
+            </a>
+            <div class="menu">
+                <a class="m-top lang-nav-home" id="accueil-link" href="../">Accueil</a>
+                <a id="exhibition-link" class="lang-nav-discover active" href="../exhibition">Découvrir
+                    l'exposition</a>
+                <a id="reserve-link" class="lang-nav-reserve" href="../reserve">Réserver</a>
+                <div class="underline"></div>
+            </div>
+            <div class="right-container">
+                <select class="language" onchange="changeLanguage(this)">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+                <div class="menu-icon">
+                    <div class="burger"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="ex-top">
+            <div class="ex-left">
+                <h1 class="title">
+                    <span class="title-1">Alice Guy</span>
+                    <span class="title-2">
+                        <span class="part-1 lang-home-title1">au pays des</span>
+                        <span class="part-2 part-2-ex lang-home-title2">premières</span>
+                    </span>
+                </h1>
+                <div class="game-text">
+                    <p class="date lang-game-text1">Jouez et récupérez les cinq objets pour gagner un code promo et
+                        découvrir les
+                        premières d’Alice Guy. Vous les retrouverez dans les salles d’escape game lors de l’exposition.
+                    </p><br>
+                    <p class="date"><span class="lang-game-hurry">Trop pressé pour jouer ?</span> <a href=""
+                            class="clic lang-game-click">Cliquez ici</a> <span class="lang-game-discover">
+                            pour découvrir les
+                            premières d’Alice Guy… mais dites adieu au code promo !
+                        </span></p>
+
+                    <div class="buttons b-bis">
+                        <a class="button-orange" href="../game">
+                            <span class="text-play lang-game-play">Jouer</span>
+                            <svg class="button-play" width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0.679938 23.2446L24.0343 0.839844M24.0343 0.839844H0.680103M24.0343 0.839844V23.2446"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <img class="game-img" src="../img/game.png" alt="">
+        </div>
+
+        <section class="object-collection">
+            <div class="timeline">
+                <div class="svg-container">
+                    <svg id="path-svg" height="2739" viewBox="0 0 945 2739" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="scrollPath"
+                            d="M4 4.17969V144.714C4 199.942 48.7715 244.714 104 244.714H534.668H840C895.228 244.714 940 289.485 940 344.714V604.5C940 659.729 895.228 704.5 840 704.5H472H104C48.7715 704.5 4 749.272 4 804.5V1060.45C4 1115.41 48.3501 1160.07 103.307 1160.45L841.865 1165.57C896.95 1165.95 941.353 1210.81 941.171 1265.9L940.329 1520.83C940.147 1575.93 895.429 1620.5 840.33 1620.5H472H104C48.7715 1620.5 4 1665.27 4 1720.5L4 1979C4 2034.23 48.7715 2079 104 2079H472H840C895.228 2079 940 2123.77 940 2179V2438.5C940 2493.73 895.228 2538.5 840 2538.5H472H104C48.7715 2538.5 4 2583.27 4 2638.5V2734.54"
+                            stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+
+
+                    <div class="dot-timeline" id="dot-mobile"></div>
+                    <div class="dot-timeline" id="dot-desktop"></div>
+                </div>
+
+                <!-- Étapes -->
+                <div class="collection-steps">
+                    <div class="collection-step step1">
+                        <div class="collection-card-img">
+                            <div class="collection-card">
+                                <h2 class="collection-card-title lang-card1-title">Le premier film narratif de l'histoire</h2>
+                                <p class="collection-card-text"><span class="lang-card1-text1">À la fin du 19e siècle,
+                                        le cinéma n’en est qu’à ses débuts. Les frères Lumière viennent d’inventer le
+                                        cinématographe en 1895, mais leurs films se limitent à des scènes de la vie
+                                        quotidienne. Alice Guy, secrétaire chez Gaumont, voit rapidement le potentiel du
+                                        cinéma pour raconter des histoires et devient la première à réaliser un film
+                                        narratif avec La Fée aux Choux en 1896.</span> <br> <br>
+                                    <span class="lang-card1-text2">Plongez dans les coulisses du tout premier film
+                                        narratif de l’histoire… mais rien ne se passe comme prévu. Alice Guy a besoin de
+                                        vous pour le terminer Serez-vous à la hauteur ?</span>
+                                </p>
+                            </div>
+                            <div class="img-container img-container-right">
+                                <div class="img">
+                                    <img src="../img/collection/cabbage.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-step step2">
+                        <div class="collection-card-img">
+                            <div class="collection-card collection-card-right">
+                                <h2 class="collection-card-title lang-card2-title">La première à expérimenter le son synchronisé</h2>
+                                <p class="collection-card-text"><span class="lang-card2-text1">Au début du XXème siècle, Alice Guy crée la Phonoscène, l’un des premiers films sonores. Avec le chronophone, elle réussit à synchroniser l’image et le son, ouvrant la voie au cinéma parlant. Le chronophone représente cette innovation : il marque les débuts du film sonore et rappelle le rôle visionnaire d’Alice Guy dans l’histoire du cinéma.
+                                </span> <br> <br>
+                                    <span class="lang-card2-text2">Mais saurez-vous retrouver le bon son parmi une multitude pour recréer cette magie ? Écoutez bien, chaque détail compte…</span>
+                                </p>
+                            </div>
+                            <div class="img-container img-container-left">
+                                <div class="img">
+                                    <img src="../img/collection/chronophone.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-step step3">
+                        <div class="collection-card-img">
+                            <div class="collection-card">
+                                <h2 class="collection-card-title lang-card3-title">Le premier studio de cinéma dirigé
+                                    par une femme</h2>
+                                <p class="collection-card-text"><span class="lang-card3-text1">En 1910, Alice Guy fonde
+                                        Solax Company, devenant l’une des premières femmes à diriger son propre studio
+                                        de cinéma. Elle y réalise de nombreux films et innove dans le monde du cinéma.
+                                        La clé symbolise l’accès à son studio et à l’innovation, elle représente
+                                        l’ouverture d’un nouvel espace de création où Alice Guy affirme sa place de
+                                        pionnière du cinéma.</span> <br> <br>
+                                    <span class="lang-card3-text2">Mais attention… le studio est fermé. À vous de
+                                        retrouver la clé pour en pousser les portes et rejoindre son univers
+                                        visionnaire.</span>
+                                </p>
+                            </div>
+                            <div class="img-container img-container-right">
+                                <div class="img">
+                                    <img src="../img/collection/key.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-step step4">
+                        <div class="collection-card-img">
+                            <div class="collection-card collection-card-right">
+                                <h2 class="collection-card-title lang-card4-title">La première à inclure des acteurs noirs dans ses films</h2>
+                                <p class="collection-card-text"><span class="lang-card4-text1">Dans A Fool and His Money (1912), Alice Guy réalise une comédie sur les erreurs humaines. Ce film se distingue par le choix de ses acteurs : face au refus des acteurs blancs de tourner avec des acteurs noirs, ce sont ces derniers qui ont accepté de jouer, ce qui était rare à l’époque. Le parchemin symbolise ici la narration, mais aussi un moyen de changer les choses. Il rappelle l'importance de donner une voix à ceux qui étaient souvent oubliés dans le cinéma.
+                                </span> <br> <br>
+                                    <span class="lang-card4-text2">Mais encore faut-il réussir à faire entendre cette voix… Saurez-vous convaincre ceux qui refusent toujours d’écouter ? </span>
+                                </p>
+                            </div>
+                            <div class="img-container img-container-left">
+                                <div class="img">
+                                    <img src="../img/collection/script.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collection-step step5">
+                        <div class="collection-card-img">
+                            <div class="collection-card">
+                                <h2 class="collection-card-title lang-card5-title">A participé à la création des effets spéciaux</h2>
+                                <p class="collection-card-text"><span class="lang-card5-text1">Alice guy et Georges Méliès explorent l’art de la surimpression, une technique qui permet de superposer plusieurs images pour créer des effets visuels. La caméra est l’outil qui rend tout cela possible. Elle filme, superpose et transforme les images, permettant à Alice Guy d’explorer de nouvelles dimensions visuelles et d’élargir les possibilités créatives du cinéma.</span> <br> <br>
+                                    <span class="lang-card5-text2">Mais certaines images ne révèlent leur secret qu’à ceux qui savent les superposer… À vous de trouver comment faire apparaître ce qui est encore invisible.</span>
+                                </p>
+                            </div>
+                            <div class="img-container img-container-right">
+                                <div class="img">
+                                    <img src="../img/collection/camera.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a class="logo" href="../">
+            <img src="../img/logo.svg" alt="Aller à l'accueil">
+        </a>
+        <div class="center">
+            <a href="mentions.html" class="lang-footer-mentions">Mentions légales</a>
+            <a href="contacts.html">Contacts</a>
+        </div>
+        <p class="right">Alice Guy © 2025</p>
+    </footer>
+
+</body>
+
+</html>
