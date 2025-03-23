@@ -403,5 +403,14 @@
             padding-left: 50px;
             padding-right: 0;
         }
+
+        .img {
+            img {
+                background-color: #000;
+    border: 1px solid #fff;
+    padding: 2rem;
+    border-radius: 15px;
+            }
+        }
     }
 }
