@@ -20,17 +20,14 @@ export class WinScene extends Scene {
         const { width, height } = this.sys.game.config;
         this.cameras.main.setBackgroundColor('rgba(0, 0, 0, 0.8)');
 
-        // Texte de victoire
         const winText = this.add.text(width / 2, height / 5, 'Vous avez gagné !', {
             font: '50px oddini-bold',
             fill: '#ea5b28',
         }).setOrigin(0.5);
 
-        // Image d'Alice
         const aliceImage = this.add.image(width / 2 - 280, 150, 'alice').setScale(0.25); 
         aliceImage.setOrigin(0.5);
 
-        // Texte des règles
         const rulesText = 
             "Après avoir exploré le labyrinthe et récupéré les 5 objets d’Alice Guy, vous avez enfin atteint la porte. Grâce à votre courage et votre détermination, son histoire ne sombrera pas dans l’oubli.\n\n" +
             "Là où d’autres voulaient effacer son nom, vous avez rétabli la vérité. Alice Guy retrouvera enfin la reconnaissance qu’elle mérite.\n\n" +
@@ -44,7 +41,6 @@ export class WinScene extends Scene {
             align: 'left'
         }).setOrigin(0.5);
 
-        // Affichage du temps écoulé
         const minutes = Math.floor(this.elapsedTime / 60);
         const seconds = Math.floor(this.elapsedTime % 60); 
         this.add.text(width / 2, height / 3, `Temps écoulé : ${minutes}m ${seconds}s`, {
@@ -54,7 +50,6 @@ export class WinScene extends Scene {
             fontStyle: 'bold'
         }).setOrigin(0.5);
 
-        // Stocker le temps du joueur dans le classement
         const playerTime = {
             time: this.elapsedTime,
             date: new Date().toLocaleString()
@@ -62,12 +57,11 @@ export class WinScene extends Scene {
 
         let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
         leaderboard.push(playerTime);
-        leaderboard.sort((a, b) => a.time - b.time); // Trier les temps du plus rapide au plus lent
-        leaderboard = leaderboard.slice(0, 10); // Garder seulement les 10 meilleurs temps
+        leaderboard.sort((a, b) => a.time - b.time); 
+        leaderboard = leaderboard.slice(0, 3); 
         localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 
-        // Bouton pour voir le classement
-        const buttonWidth = 170;
+        const buttonWidth = 200;
         const buttonHeight = 40;
         const borderRadius = 10;
 
@@ -116,17 +110,17 @@ export class WinScene extends Scene {
 
         const closeButtonBg = this.add.graphics();
         closeButtonBg.fillStyle(0xffffff, 1);
-        closeButtonBg.fillRoundedRect(width - 300 - buttonWidth / 2, height - 200 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
+        closeButtonBg.fillRoundedRect(width - 520 - buttonWidth / 2, height - 150 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
 
         let isHovering = false;
 
-        closeButtonBg.setInteractive(new Phaser.Geom.Rectangle(width - 300 - buttonWidth / 2, height - 200 - buttonHeight / 2, buttonWidth, buttonHeight), Phaser.Geom.Rectangle.Contains);
+        closeButtonBg.setInteractive(new Phaser.Geom.Rectangle(width - 520 - buttonWidth / 2, height - 150 - buttonHeight / 2, buttonWidth, buttonHeight), Phaser.Geom.Rectangle.Contains);
 
         closeButtonBg.on('pointerover', () => {
             isHovering = true;
             closeButtonBg.clear();
             closeButtonBg.fillStyle(0xcdcdcd, 1); 
-            closeButtonBg.fillRoundedRect(width - 300 - buttonWidth / 2, height - 200 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
+            closeButtonBg.fillRoundedRect(width - 520 - buttonWidth / 2, height - 150 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
             this.input.setDefaultCursor('pointer');
         });
 
@@ -134,11 +128,11 @@ export class WinScene extends Scene {
             isHovering = false;
             closeButtonBg.clear();
             closeButtonBg.fillStyle(0xffffff, 1); 
-            closeButtonBg.fillRoundedRect(width - 300 - buttonWidth / 2, height - 200 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
+            closeButtonBg.fillRoundedRect(width - 520 - buttonWidth / 2, height - 150 - buttonHeight / 2, buttonWidth, buttonHeight, borderRadius);
             this.input.setDefaultCursor('default');
         });
 
-        const closeButtonText = this.add.text(width - 300, height - 200, "Découvrir l'exposition", {
+        const closeButtonText = this.add.text(width - 520, height - 150, "Découvrir l'exposition", {
             font: '18px satoshi-variable',
             fill: '#000000',
         }).setOrigin(0.5).setInteractive();
