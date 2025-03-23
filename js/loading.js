@@ -8,8 +8,8 @@ window.addEventListener('load', function() {
             loadingPage.style.opacity = 0;
             setTimeout(() => {
                 loadingPage.remove();
-            }, 500); // Durée de la transition CSS
-        }, 3100); // Attente avant de faire disparaître la landing page
+            }, 500); 
+        }, 3100);
     } else {
         loadingPage.remove();
     }
