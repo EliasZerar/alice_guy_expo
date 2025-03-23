@@ -7,6 +7,12 @@ const loadTranslations = async (fileName) => {
 const applyTranslations = (translations) => {
     Object.keys(translations).forEach(key => {
         const translation = translations[key];
+
+        if (key === 'lang-title') {
+            document.title = translation;
+            return;
+        }
+
         document.querySelectorAll(`.${key}`).forEach(el => {
             el.textContent = translation;
         });
@@ -33,6 +39,8 @@ const getCurrentPageName = () => {
 const changeLanguage = (select) => {
     const selectedLanguage = select.value;
     localStorage.setItem('selectedLang', selectedLanguage);
+
+    document.documentElement.lang = selectedLanguage;
 
     loadTranslations('menu').then(menuTranslations => {
         if (!menuTranslations[selectedLanguage]) {
