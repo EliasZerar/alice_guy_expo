@@ -215,10 +215,9 @@
     margin: 0;
 }
 
-
 .img-container {
     width: 70%;
-    height: fit-content;
+    // height: fit-content;
     position: relative;
     display: flex;
     align-items: center;
@@ -336,7 +335,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 6.5px;
     }
 
     .collection-step {
@@ -346,8 +345,14 @@
         justify-content: space-between;
         position: relative;
         z-index: 1;
-        height: 369px;
+        height: 452px;
         margin-right: 0;
+        margin-left: 80px;
+    }
+
+    .collection-card-img {
+        display: flex;
+        height: fit-content;
     }
 
     .collection-card {
@@ -380,37 +385,46 @@
         font-size: 1.2rem;
     }
 
+    .collection-card-text {
+        font-size: 1rem;
+        font-weight: 500;
+    }
 
-    .collection-step:nth-child(even) {
+    .collection-step:nth-child(even) .collection-card-img {
         flex-direction: row-reverse;
     }
 
+    .collection-step:nth-child(odd) .collection-card-img .img-container {
+        margin-right: 80px;
+        margin-left: 0;
+    }
+
     .img-container {
-        width: 100%;
-        height: 100%;
+        aspect-ratio: 1;
+        min-height: 100%;
         flex: 1;
         position: relative;
         padding-right: 50px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        background-color: transparent;
-        border: none;
-        border-radius: 0;
+        justify-content: center;
+        background-color: #000;
+        border: 1px solid #fff;
+        padding: 0;
+        border-radius: 15px;
 
         &.img-container-left {
             justify-content: flex-start;
-            padding-left: 50px;
-            padding-right: 0;
+            // padding-right: 0;
         }
 
-        .img {
-            img {
-                background-color: #000;
-    border: 1px solid #fff;
-    padding: 2rem;
-    border-radius: 15px;
-            }
-        }
+        // .img {
+        //     img {
+        //         background-color: #000;
+        //         border: 1px solid #fff;
+        //         padding: 2rem;
+        //         border-radius: 15px;
+        //     }
+        // }
     }
 }
