@@ -998,6 +998,9 @@ html, body {
   padding: 40px 25px;
   width: 100%;
   max-width: 1800px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
 }
 
 .game-text {
@@ -1012,6 +1015,22 @@ html, body {
   font-weight: 600;
 }
 
+.b-bis {
+  margin-top: 40px;
+}
+
+.text-play {
+  font-size: 1rem;
+}
+
+.button-play {
+  margin-right: 5px;
+}
+
+.game-img {
+  display: none;
+}
+
 @media (min-width: 500px) {
   .part-2-ex {
     top: 0;
@@ -1019,10 +1038,16 @@ html, body {
   .ex-top {
     padding: 40px 50px;
   }
+  .text-play {
+    font-size: 1.1rem;
+  }
 }
 @media (min-width: 700px) {
   .ex-top {
     padding: 40px 70px;
+  }
+  .text-play {
+    font-size: 1.2rem;
   }
 }
 @media (min-width: 1000px) {
@@ -1030,6 +1055,19 @@ html, body {
     padding-top: 5%;
     margin-top: 0;
     margin-left: 20px;
+  }
+  .button-play {
+    margin-right: 6.5px;
+  }
+  .text-play {
+    font-size: 1.4rem;
+  }
+  .game-img {
+    display: block;
+    width: 350px;
+    height: 350px;
+    margin-right: 2%;
+    margin-top: 10%;
   }
 }
 @media (min-width: 1200px) {
@@ -1039,6 +1077,20 @@ html, body {
     padding-left: 150px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .game-img {
+    width: 400px;
+    height: 400px;
+    margin-right: 3%;
+    margin-top: 6%;
+  }
+}
+@media (min-width: 1400px) {
+  .game-img {
+    width: 500px;
+    height: 500px;
+    margin-right: 6%;
+    margin-top: 5%;
   }
 }
 .reservation-container {
