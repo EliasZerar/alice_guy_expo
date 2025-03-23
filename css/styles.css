@@ -1466,7 +1466,8 @@ html, body {
     border-radius: 15px;
   }
   .img-container.img-container-left {
-    justify-content: flex-start;
+    justify-content: center;
+    padding-right: 0;
   }
 }
 .testLocal {
