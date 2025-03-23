@@ -76,3 +76,8 @@
  window.addEventListener('scroll', updateDotPosition);
  window.addEventListener('resize', updateDotPosition);
  window.addEventListener('load', updateDotPosition);
+
+ const testLocal = () => {
+    localStorage.removeItem('gameFinished');
+    console.log(localStorage);
+ }
