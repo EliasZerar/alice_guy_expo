@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateUnderline() {
+        const activeLink = document.querySelector(".menu a.active");
         if (activeLink) {
             const { left, width } = getOffset(activeLink);
             underline.style.left = `${left}px`;
@@ -41,5 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 window.location.href = href;
             }, 400);
         });
+    });
+
+    window.addEventListener("load", () => {
+        setTimeout(updateUnderline, 100);
+    });
+
+    const selectLang = document.querySelector('.language');
+    selectLang.addEventListener('change', () => {
+        setTimeout(() => {
+            updateUnderline();
+        }, 300); 
     });
 });
