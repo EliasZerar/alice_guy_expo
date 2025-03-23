@@ -5,12 +5,12 @@ import { MenuScene } from './scenes/MenuScene';
 import { RulesScene } from './scenes/RulesScene';
 import { GameScene } from './scenes/GameScene';
 import { SettingsScene } from './scenes/SettingsScene';
-import RexBBCodeTextPlugin from 'phaser3-rex-plugins/plugins/bbcodetext-plugin.js';
+import RexBBCodeTextPlugin from 'phaser3-rex-plugins/plugins/bbcodetext-plugin';
 import Phaser, { Game } from 'phaser';
 import { GameOverScene } from './scenes/GameOverScene';
 import { WinScene } from './scenes/WinScene'
-import RexWebFontLoaderPlugin from 'phaser3-rex-plugins/plugins/webfontloader-plugin.js';
-import VirtualJoystickPlugin from 'phaser3-rex-plugins/plugins/virtualjoystick-plugin.js';
+import RexWebFontLoaderPlugin from 'phaser3-rex-plugins/plugins/webfontloader-plugin';
+import VirtualJoystickPlugin from 'phaser3-rex-plugins/plugins/virtualjoystick-plugin';
 import { LeaderboardScene } from './scenes/LeaderboardScene';
 
 const config = {

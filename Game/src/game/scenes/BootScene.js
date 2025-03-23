@@ -1,5 +1,5 @@
 import { Scene } from 'phaser';
-import 'phaser3-rex-plugins/plugins/webfontloader.js';
+import 'phaser3-rex-plugins/plugins/webfontloader';
 import '../../assets/fonts/public/fonts.css';
 
 export class BootScene extends Scene {
