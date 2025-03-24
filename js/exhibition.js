@@ -64,24 +64,20 @@ document.querySelectorAll(".collection-step").forEach((step) => {
     );
 });
 
-const testLocal = () => {
-    if (localStorage.getItem("gameFinished") === "true") {
-        localStorage.removeItem("gameFinished");
-    } else {
-        localStorage.setItem("gameFinished", "true");
-    }
-    location.reload();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     const gameFinished = localStorage.getItem("gameFinished");
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameWinParam = urlParams.get('gameWin');
 
-    if (gameFinished === "true") {
+    if (gameFinished === "true" && gameWinParam === "true") {
         setTimeout(() => {
             toSection();
         }, 300);
+    } else if (gameFinished === "true") {
+        unlockImagesAndShowCards();
     }
 });
+
 
 
 function unlockImagesAndShowCards() {
@@ -124,33 +120,40 @@ clic.addEventListener("click", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const promoButton = document.getElementById("promo-button");
+    const promoBtn = document.getElementById("promo-button");
     const popup = document.getElementById("promo-popup");
-    const closeBtn = document.getElementById("close-popup");
+    const closePopup = document.getElementById("close-popup");
+    const promoCodeElement = document.querySelector(".promo-code strong"); 
+    const promoCode = "SOLAX10";
 
-    // Vérifie si le jeu est terminé
-    if (localStorage.getItem("gameFinished") === "true") {
-        promoButton.disabled = false;
-        promoButton.classList.add("enabled"); 
+    const isFinished = localStorage.getItem("gameFinished") === "true";
+
+    if (isFinished) {
+        promoBtn.disabled = false;
+        promoBtn.classList.add("enabled");
+
+        if (promoCodeElement) {
+            promoCodeElement.textContent = promoCode; 
+        }
+
+        promoBtn.addEventListener("click", () => {
+            if (!promoBtn.disabled) {
+                popup.classList.remove("hidden");
+                document.body.classList.add("popup-open"); 
+            }
+        });
     }
 
-    // Ouverture de la popup
-    promoButton.addEventListener("click", () => {
-        if (!promoButton.disabled) {
-            popup.classList.remove("hidden");
-        }
-    });
-
-    // Fermeture de la popup
-    closeBtn.addEventListener("click", () => {
+    const closePromoPopup = () => {
         popup.classList.add("hidden");
-    });
+        document.body.classList.remove("popup-open"); 
+    };
 
-    // Optionnel : fermer la popup en cliquant en dehors
-    window.addEventListener("click", (e) => {
+    closePopup.addEventListener("click", closePromoPopup);
+
+    popup.addEventListener("click", (e) => {
         if (e.target === popup) {
-            popup.classList.add("hidden");
+            closePromoPopup();
         }
     });
 });
-

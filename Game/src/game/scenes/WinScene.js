@@ -152,11 +152,11 @@ export class WinScene extends Scene {
         });
 
         closeButtonBg.on('pointerdown', () => {
-            window.location.href = '../exhibition';
+            window.location.href = '../exhibition/?gameWin=true';
         });
 
         closeButtonText.on('pointerdown', () => {
-            window.location.href = '../exhibition';
+            window.location.href = '../exhibition/?gameWin=true';
         });
 
         this.input.keyboard.on('keydown-ESC', () => {

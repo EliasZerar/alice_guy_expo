@@ -72,14 +72,12 @@ const StartGame = (parent) => {
         game.scale.refresh();
     });
 
-    // Handle AudioContext state
     const audioContext = game.sound.context;
     if (audioContext && audioContext.state === 'closed') {
         console.warn('AudioContext is closed. Creating a new AudioContext.');
         game.sound.context = new (window.AudioContext || window.webkitAudioContext)();
     }
 
-    // Ensure parent exists before accessing its style
     if (parent) {
         parent.style.overflow = 'hidden';
     } else {

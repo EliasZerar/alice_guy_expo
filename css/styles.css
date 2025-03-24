@@ -1360,7 +1360,7 @@ html, body {
 
 .svg-container {
   position: relative;
-  margin-left: 15px;
+  margin-left: 30px;
   max-width: 10px;
   min-height: 100%;
   background-color: #FFF;
@@ -1493,6 +1493,7 @@ body.popup-open {
   opacity: 0.5;
   transition: opacity 0.3s, cursor 0.3s;
   z-index: 999999;
+  margin-left: -30px;
 }
 
 .promo-btn.enabled {
@@ -1570,6 +1571,22 @@ body.popup-open {
   transform: translate(4px, -2px);
 }
 
+@media (min-width: 500px) {
+  .promo-btn {
+    margin-left: -50px;
+  }
+  .svg-container {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 700px) {
+  .promo-btn {
+    margin-left: -70px;
+  }
+  .svg-container {
+    margin-left: 70px;
+  }
+}
 @media (768px < width < 1100px) {
   .object-collection {
     margin-top: 100px;
@@ -1765,6 +1782,7 @@ body.popup-open {
     left: -80px;
     font-size: 1.4rem;
     transform: translate(0);
+    margin: 0;
   }
 }
 .reservation-container {

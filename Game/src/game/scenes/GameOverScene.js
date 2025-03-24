@@ -158,5 +158,18 @@ export class GameOverScene extends Scene {
             menuButtonBg.fillRoundedRect(menuButtonX - menuButtonWidth / 2, menuButtonY - menuButtonHeight / 2, menuButtonWidth, menuButtonHeight, borderRadius);
             this.input.setDefaultCursor('default');
         });
+
+        if (this.isMobile()) {
+            this.input.setDefaultCursor('pointer');
+        }
+
+        closeButtonBg.setInteractive(); 
+        closeButtonText.setInteractive(); 
+        menuButtonBg.setInteractive(); 
+        menuButtonText.setInteractive(); 
+    }
+
+    isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 }

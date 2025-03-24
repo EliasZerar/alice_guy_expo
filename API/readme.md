@@ -50,7 +50,9 @@ To retrieve all reservations, make a GET request to the `/index.php` endpoint wi
     "first_name": "first_name",
     "phone_number": "0102030405",
     "email": "email@mail.fr",
-    "date_time": "2025-10-01 17:00:00"
+    "date_time": "2025-10-01 17:00:00",
+    "participants": 2,
+    "promo_code": 1
   }
 ]
 ```
@@ -65,7 +67,9 @@ To add a new reservation, make a POST request to the `/index.php` endpoint with 
     "first_name": "first_name",
     "phone_number": "0102030405",
     "email": "email@mail.fr",
-    "date_time": "2025-10-01 17:00:00"
+    "date_time": "2025-10-01 17:00:00",
+    "participants": 2,
+    "promo_code": 1
   }
 ```
 
@@ -95,7 +99,9 @@ To update an existing reservation, make a PUT request to the `/index.php` endpoi
     "first_name": "first_name",
     "phone_number": "0102030405",
     "email": "email@mail.fr",
-    "date_time": "2025-10-01 17:00:00"
+    "date_time": "2025-10-01 17:00:00",
+    "participants": 2,
+    "promo_code": 1
 }
 ```
 

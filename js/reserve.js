@@ -417,7 +417,7 @@ submitBtn.addEventListener("click", () => {
         confirmationMessage.style.display = 'block';
       })
       .catch(error => {
-        alert("Bah alors on rentre pas une vraie adresse e-mail ???");
+        alert("L'adresse e-mail n'existe pas ou vous tentez d'effectuer une réservation depuis un autre domaine que celui autorisé (www.aliceguy.eu).");
         console.error("Error:", error);
       });
   }
