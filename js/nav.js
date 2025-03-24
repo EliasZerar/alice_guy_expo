@@ -4,7 +4,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!underline) return;
 
-    const activeLink = document.querySelector(".menu a.active");
+    // Nettoyage des chemins pour les comparer plus facilement
+    const normalizePath = (path) => path.replace(/\/index\.html$/, "/").replace(/\/$/, "") || "/";
+
+    const currentPath = normalizePath(window.location.pathname);
     let menuRect = document.querySelector(".menu").getBoundingClientRect();
 
     function getOffset(link) {
@@ -15,16 +18,32 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    function updateActiveLink() {
+        let found = false;
+        links.forEach(link => {
+            link.classList.remove("active");
+
+            const linkPath = normalizePath(new URL(link.href).pathname);
+            if (!found && currentPath === linkPath) {
+                link.classList.add("active");
+                found = true;
+            }
+        });
+
+        updateUnderline();
+    }
+
     function updateUnderline() {
         const activeLink = document.querySelector(".menu a.active");
         if (activeLink) {
             const { left, width } = getOffset(activeLink);
             underline.style.left = `${left}px`;
             underline.style.width = `${width}px`;
+            underline.style.opacity = 1;
+        } else {
+            underline.style.opacity = 0;
         }
     }
-
-    window.onload = updateUnderline;
 
     window.addEventListener("resize", () => {
         menuRect = document.querySelector(".menu").getBoundingClientRect();
@@ -45,13 +64,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("load", () => {
+        updateActiveLink();
         setTimeout(updateUnderline, 100);
     });
 
     const selectLang = document.querySelector('.language');
-    selectLang.addEventListener('change', () => {
-        setTimeout(() => {
-            updateUnderline();
-        }, 300); 
+    selectLang?.addEventListener('change', () => {
+        setTimeout(updateUnderline, 300);
     });
 });
