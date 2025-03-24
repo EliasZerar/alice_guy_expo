@@ -1,12 +1,41 @@
-# React + Vite
+# Backoffice React - Gestion des Réservations
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est un backoffice développé en React pour gérer les réservations. Il comprend plusieurs sections principales : tableau de bord, réservations, statistiques, et un calendrier hebdomadaire pour visualiser les réservations.
 
-Currently, two official plugins are available:
+## Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Tableau de bord** : Vue d'ensemble des réservations et statistiques.
+- **Réservations** : Gestion des réservations, modification, suppression.
+- **Statistiques** : Visualisation des statistiques de réservation.
+- **Calendrier hebdomadaire** : Utilisation de `@fullcalendar/react` pour afficher les réservations sous forme de calendrier.
 
-## Expanding the ESLint configuration
+## Prérequis
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Avant de commencer, assurez-vous que vous avez les éléments suivants installés sur votre machine :
+
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+
+## Installation
+
+1. Clonez ce repository :
+    ```bash
+    git clone https://github.com/jeremytahar/resa-backoffice.git
+    ```
+
+2. Accédez au dossier du projet :
+    ```bash
+    cd resa-backoffice
+    ```
+
+3. Installez les dépendances :
+    ```bash
+    npm install
+    ```
+
+4. Lancez l'application en mode développement :
+    ```bash
+    npm run dev
+    ```
+
+    L'application sera disponible sur `http://localhost:5173`.

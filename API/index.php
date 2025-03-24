@@ -1,5 +1,5 @@
 <?php
-$allowedOrigin = 'https://aliceguy.eu';
+$allowedOrigin = '*';
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: $allowedOrigin");
