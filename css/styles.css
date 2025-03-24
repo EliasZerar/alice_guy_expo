@@ -2149,6 +2149,7 @@ html, body {
 @media (min-width: 1131px) {
   .container-mention {
     font-size: 1.3rem;
+    margin: 5%;
   }
   .mention-text {
     font-size: 1.2rem;
