@@ -137,7 +137,7 @@
     margin-left: 15px;
     max-width: 10px;
     min-height: 100%;
-    background-color: white;
+    background-color: $secondary-color;
     z-index: 1;
     border-radius: 5px;
     flex: 1;
@@ -199,7 +199,7 @@
         left: 10px;
         right: 10px;
         bottom: 10px;
-        border: 1px solid white;
+        border: 1px solid $secondary-color;
         border-radius: 15px;
         pointer-events: none;
         z-index: 1;
@@ -238,7 +238,7 @@
     align-items: center;
     justify-content: center;
     background-color: #000;
-    border: 1px solid #fff;
+    border: 1px solid $secondary-color;
     padding: 2rem;
     border-radius: 15px;
 
@@ -246,6 +246,106 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+body.popup-open {
+    overflow: hidden;
+}
+
+.promo-btn {
+    position: absolute;
+    white-space: nowrap;
+    bottom: -100px;
+    left: 50vw;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: $primary-color;
+    color: $secondary-color;
+    border: none;
+    border-radius: 10px;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: opacity 0.3s, cursor 0.3s;
+    z-index: 999999;
+}
+
+.promo-btn.enabled {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.promo-popup.hidden {
+    display: none;
+}
+
+.promo-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.promo-popup-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: $primary-color;
+    padding: 24px 40px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid $secondary-color;
+        border-radius: 15px;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .popup-text {
+        margin-right: 20px;
+    }
+}
+
+.popup-reserve-btn {
+    float: right;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-color;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 7px 12px 7px 16px;
+    margin: 0;
+
+    &:hover svg {
+        transition: ease-in-out 0.2s;
+        transform: translate(4px, -2px);
     }
 }
 
@@ -339,8 +439,8 @@
         left: 50%;
         transform: translateX(-50%);
         max-width: 90%;
-        height: 100%;
-        pointer-events: none;
+        height: fit-content;
+        // pointer-events: none;
         display: flex;
         justify-content: center;
         background-color: transparent;
@@ -403,7 +503,7 @@
     }
 
     .collection-card {
-        background-color: #de623d;
+        background-color: $primary-color;
         padding: 40px;
         border-radius: 20px;
         width: 100%;
@@ -456,7 +556,7 @@
         align-items: center;
         justify-content: center;
         background-color: #000;
-        border: 1px solid #fff;
+        border: 1px solid $secondary-color;
         padding: 0;
         border-radius: 15px;
 
@@ -474,12 +574,19 @@
             border-top-right-radius: 50px;
         }
     }
+
+    .promo-btn {
+        bottom: -90px;
+        left: -80px;
+        font-size: 1.4rem;
+        transform: translate(0);
+    }
 }
 
-.testLocal {
-    position: absolute;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+// .testLocal {
+//     position: absolute;
+//     z-index: 999;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+// }

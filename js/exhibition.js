@@ -121,3 +121,36 @@ const clic = document.querySelector(".clic");
 clic.addEventListener("click", () => {
     toSection();
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const promoButton = document.getElementById("promo-button");
+    const popup = document.getElementById("promo-popup");
+    const closeBtn = document.getElementById("close-popup");
+
+    // Vérifie si le jeu est terminé
+    if (localStorage.getItem("gameFinished") === "true") {
+        promoButton.disabled = false;
+        promoButton.classList.add("enabled"); 
+    }
+
+    // Ouverture de la popup
+    promoButton.addEventListener("click", () => {
+        if (!promoButton.disabled) {
+            popup.classList.remove("hidden");
+        }
+    });
+
+    // Fermeture de la popup
+    closeBtn.addEventListener("click", () => {
+        popup.classList.add("hidden");
+    });
+
+    // Optionnel : fermer la popup en cliquant en dehors
+    window.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.classList.add("hidden");
+        }
+    });
+});
+
