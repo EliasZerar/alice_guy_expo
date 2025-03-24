@@ -1,89 +1,89 @@
 <?php
-// Database connection
-function dbConnect() {
-    try {
-        $db = new PDO('mysql:host=localhost:3306;dbname=tahar_ag_resa;charset=utf8', 'tahar_ag_resa', '@JeremyAdmin1234+');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $db;
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+function dbConnect()
+{
+  try {
+    $db = new PDO('mysql:host=localhost:3306;dbname=tahar_ag_resa;charset=utf8', 'tahar_ag_resa', '@JeremyAdmin1234+');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $db;
+  } catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+  }
 }
 
-// Verify JWT
-function verifyJWT() {
-    $headers = apache_request_headers();
-    error_log("En-têtes reçus : " . json_encode($headers));
-    if (isset($headers['Authorization'])) {
-        $token = str_replace('Bearer ', '', $headers['Authorization']);
-        error_log("Token reçu : " . $token);
-        $decoded = verifyToken($token);
-        if ($decoded) {
-            error_log("Token décodé : " . json_encode($decoded));
-            return $decoded;
-        } else {
-            error_log("Échec du décodage du token");
-        }
+function verifyJWT()
+{
+  $headers = apache_request_headers();
+  error_log("En-têtes reçus : " . json_encode($headers));
+  if (isset($headers['Authorization'])) {
+    $token = str_replace('Bearer ', '', $headers['Authorization']);
+    error_log("Token reçu : " . $token);
+    $decoded = verifyToken($token);
+    if ($decoded) {
+      error_log("Token décodé : " . json_encode($decoded));
+      return $decoded;
     } else {
-        error_log("Aucun en-tête Authorization trouvé");
+      error_log("Échec du décodage du token");
     }
-    http_response_code(401);
-    echo json_encode(["success" => false, "message" => "Token invalide ou expiré"]);
-    exit;
+  } else {
+    error_log("Aucun en-tête Authorization trouvé");
+  }
+  http_response_code(401);
+  echo json_encode(["success" => false, "message" => "Token invalide ou expiré"]);
+  exit;
 }
 
-// Get all reservations
-function getAllReservations() {
-    $db = dbConnect();
-    $query = $db->query('SELECT * FROM reservation ORDER BY id DESC');
-    return $query->fetchAll(PDO::FETCH_ASSOC);
+function getAllReservations()
+{
+  $db = dbConnect();
+  $query = $db->query('SELECT * FROM reservation ORDER BY id DESC');
+  return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Get last five reservations 
-function getLastReservations() {
-    $db = dbConnect();
-    $query = $db->query('SELECT * FROM reservation ORDER BY id DESC LIMIT 5');
-    return $query->fetchAll(PDO::FETCH_ASSOC);
+function getLastReservations()
+{
+  $db = dbConnect();
+  $query = $db->query('SELECT * FROM reservation ORDER BY id DESC LIMIT 5');
+  return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Add a reservation
-function addReservation($data) {
-    $db = dbConnect();
-    $query = $db->prepare('INSERT INTO reservation (last_name, first_name, phone_number, email, date_time, participants, promo_code) 
+function addReservation($data)
+{
+  $db = dbConnect();
+  $query = $db->prepare('INSERT INTO reservation (last_name, first_name, phone_number, email, date_time, participants, promo_code) 
                            VALUES (:last_name, :first_name, :phone_number, :email, :date_time, :participants, :promo_code)');
-    
-    $query->bindParam(':last_name', $data['last_name']);
-    $query->bindParam(':first_name', $data['first_name']);
-    $query->bindParam(':phone_number', $data['phone_number']);
-    $query->bindParam(':email', $data['email']);
-    $query->bindParam(':date_time', $data['date_time']);
-    $query->bindParam(':participants', $data['participants']);
-    $query->bindParam(':promo_code', $data['promo_code']);
 
-    if ($query->execute()) {
-        sendConfirmationMail($data);
-        return "Réservation ajoutée avec succès";
-    } else {
-        return "Erreur lors de l'ajout de la réservation";
-    }
+  $query->bindParam(':last_name', $data['last_name']);
+  $query->bindParam(':first_name', $data['first_name']);
+  $query->bindParam(':phone_number', $data['phone_number']);
+  $query->bindParam(':email', $data['email']);
+  $query->bindParam(':date_time', $data['date_time']);
+  $query->bindParam(':participants', $data['participants']);
+  $query->bindParam(':promo_code', $data['promo_code']);
+
+  if ($query->execute()) {
+    sendConfirmationMail($data);
+    return "Réservation ajoutée avec succès";
+  } else {
+    return "Erreur lors de l'ajout de la réservation";
+  }
 }
 
-// Delete a reservation
-function deleteReservation($id) {
-    $db = dbConnect();
-    $query = $db->prepare('DELETE FROM reservation WHERE id = :id');
-    $query->bindParam(':id', $id);
-    if ($query->execute()) {
-        return "Réservation supprimée avec succès";
-    } else {
-        return "Erreur lors de la suppression de la réservation";
-    }
+function deleteReservation($id)
+{
+  $db = dbConnect();
+  $query = $db->prepare('DELETE FROM reservation WHERE id = :id');
+  $query->bindParam(':id', $id);
+  if ($query->execute()) {
+    return "Réservation supprimée avec succès";
+  } else {
+    return "Erreur lors de la suppression de la réservation";
+  }
 }
 
-// Update a reservation
-function updateReservation($id, $data) {
-    $db = dbConnect();
-    $query = $db->prepare('UPDATE reservation 
+function updateReservation($id, $data)
+{
+  $db = dbConnect();
+  $query = $db->prepare('UPDATE reservation 
                            SET last_name = :last_name, 
                                first_name = :first_name, 
                                phone_number = :phone_number, 
@@ -93,20 +93,20 @@ function updateReservation($id, $data) {
                                promo_code = :promo_code
                            WHERE id = :id');
 
-    $query->bindParam(':id', $id, PDO::PARAM_INT);
-    $query->bindParam(':last_name', $data['last_name']);
-    $query->bindParam(':first_name', $data['first_name']);
-    $query->bindParam(':phone_number', $data['phone_number']);
-    $query->bindParam(':email', $data['email']);
-    $query->bindParam(':date_time', $data['date_time']);
-    $query->bindParam(':participants', $data['participants']);
-    $query->bindParam(':promo_code', $data['promo_code']);
+  $query->bindParam(':id', $id, PDO::PARAM_INT);
+  $query->bindParam(':last_name', $data['last_name']);
+  $query->bindParam(':first_name', $data['first_name']);
+  $query->bindParam(':phone_number', $data['phone_number']);
+  $query->bindParam(':email', $data['email']);
+  $query->bindParam(':date_time', $data['date_time']);
+  $query->bindParam(':participants', $data['participants']);
+  $query->bindParam(':promo_code', $data['promo_code']);
 
-    if ($query->execute()) {
-        return "Réservation mise à jour avec succès";
-    } else {
-        return "Erreur lors de la mise à jour de la réservation";
-    }
+  if ($query->execute()) {
+    return "Réservation mise à jour avec succès";
+  } else {
+    return "Erreur lors de la mise à jour de la réservation";
+  }
 }
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -114,25 +114,26 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-function sendConfirmationMail($reservation) {
-    $mail = new PHPMailer(true);
+function sendConfirmationMail($reservation)
+{
+  $mail = new PHPMailer(true);
 
-    try {
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; 
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'agency.studio24@gmail.com';  
-        $mail->Password   = 'ofos dsfu cewe oedi'; 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+  try {
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'agency.studio24@gmail.com';
+    $mail->Password   = 'ofos dsfu cewe oedi';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
-        $mail->setFrom('agency.studio24@gmail.com', 'Studio24');
-        $mail->addAddress($reservation['email'], $reservation['first_name'] . ' ' . $reservation['last_name']);
+    $mail->setFrom('agency.studio24@gmail.com', 'Studio24');
+    $mail->addAddress($reservation['email'], $reservation['first_name'] . ' ' . $reservation['last_name']);
 
-        $mail->isHTML(true);
-        $mail->CharSet = 'UTF-8';
-        $mail->Subject = 'Confirmation de votre réservation';
-        $mail->Body = '
+    $mail->isHTML(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->Subject = 'Confirmation de votre réservation';
+    $mail->Body = '
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -180,10 +181,10 @@ function sendConfirmationMail($reservation) {
               <p style="font-size: 16px; color: #2c2c2a"">
                 <strong>Paiement sur place :</strong><br>
                 Montant à régler : <strong>' . (
-                    $reservation['promo_code'] == 1
-                    ? '31,50 € (remise de 10% appliquée)'
-                    : '35 €'
-                  ) . '</strong>
+      $reservation['promo_code'] == 1
+      ? '31,50 € (remise de 10% appliquée)'
+      : '35 €'
+    ) . '</strong>
                   <br>
                 Le paiement s’effectue à votre arrivée sur le lieu de l’exposition.
               </p>
@@ -206,16 +207,11 @@ function sendConfirmationMail($reservation) {
 </html>';
 
 
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log("Erreur PHPMailer complète : " . $e->getMessage());
-        error_log("Erreur PHPMailer : " . $mail->ErrorInfo);
-        throw $e;
-    }
-    
-    
+    $mail->send();
+    return true;
+  } catch (Exception $e) {
+    error_log("Erreur PHPMailer complète : " . $e->getMessage());
+    error_log("Erreur PHPMailer : " . $mail->ErrorInfo);
+    throw $e;
+  }
 }
-
-
-?>

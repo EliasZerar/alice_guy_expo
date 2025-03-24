@@ -3,9 +3,8 @@ require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-$allowedOrigin = '*';
+$allowedOrigin = 'https://aliceguy.eu';
 
-// Gérer la requête OPTIONS (pré-vérification CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: $allowedOrigin");
     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -14,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Le reste du code (votre logique existante)
 require_once('jwt_utils.php');
 
 header("Access-Control-Allow-Origin: $allowedOrigin");
@@ -28,7 +26,6 @@ if (isset($input['username'], $input['password'])) {
     $username = $input['username'];
     $password = $input['password'];
 
-    // Comparaison avec les valeurs .env
     if ($username === $_ENV['USERNAME'] && $password === $_ENV['PASSWORD']) {
         $token = generateToken($username);
         echo json_encode([
