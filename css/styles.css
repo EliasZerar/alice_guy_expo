@@ -347,6 +347,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 html, body {
@@ -1130,6 +1131,10 @@ html, body {
   text-decoration: none;
   color: #EA5B28;
   font-weight: 600;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  cursor: pointer;
 }
 
 .b-bis {
@@ -1264,7 +1269,7 @@ html, body {
 
 .collection-step {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   position: relative;
@@ -1295,6 +1300,17 @@ html, body {
   z-index: 1;
 }
 
+.collection-card-img {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2rem;
+  height: fit-content;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
 .collection-card-title {
   font-family: "Oddlini Bold", sans-serif;
   font-size: 1.1rem;
@@ -1310,6 +1326,7 @@ html, body {
 
 .img-container {
   width: 70%;
+  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -1325,9 +1342,12 @@ html, body {
   object-fit: cover;
 }
 
-@media (768px < width < 1100px) and (min-width: 768px) {
+@media (768px < width < 1100px) {
+  .object-collection {
+    margin-top: 100px;
+  }
   .collection-steps {
-    gap: 50px;
+    gap: 100px;
   }
   .collection-step {
     flex-direction: row-reverse;
@@ -1335,11 +1355,34 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+  .collection-card {
+    flex: 3;
+  }
   .img-container {
-    width: 20vw;
+    width: 40vw;
     min-height: 100%;
     justify-content: flex-end;
     padding: 0 2rem;
+    flex: 1;
+  }
+  .collection-card-img {
+    display: flex;
+    flex-direction: row-reverse;
+    height: fit-content;
+    gap: 2rem;
+    height: 100%;
+  }
+  .collection-card-img .img {
+    height: 100%;
+  }
+  .collection-card-img .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hidden {
+    display: none;
+    flex: 0;
   }
 }
 @media (min-width: 1100px) {
@@ -1420,11 +1463,12 @@ html, body {
     z-index: 1;
     height: 452px;
     margin-right: 0;
+  }
+  .collection-step:nth-child(even) {
     margin-left: 80px;
   }
   .collection-card-img {
-    display: flex;
-    height: fit-content;
+    flex-direction: row;
   }
   .collection-card {
     background-color: #de623d;
@@ -1480,6 +1524,14 @@ html, body {
   .img-container.img-container-left {
     justify-content: center;
     padding-right: 0;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+  }
+  .img-container.img-container-right {
+    justify-content: center;
+    padding-left: 0;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
   }
 }
 .testLocal {
