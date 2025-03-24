@@ -1,7 +1,6 @@
 <?php
-$allowedOrigin = '*';
+$allowedOrigin = 'https://aliceguy.eu';
 
-// Gérer la requête OPTIONS (pré-vérification CORS)
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: $allowedOrigin");
     header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -10,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Le reste du code (votre logique existante)
 require_once('jwt_utils.php');
 require_once('model.php');
 
@@ -39,17 +37,14 @@ switch ($request_method) {
         break;
 
     case 'GET':
-        // Vérification JWT
         $user = verifyJWT();
         
-        // Si la requête est pour récupérer les 5 dernières réservations
         if (isset($_GET['last5']) && $_GET['last5'] === 'true') {
             error_log("Requête GET pour les 5 dernières réservations reçue");
             $reservations = getLastReservations();
             error_log("5 dernières réservations récupérées : " . json_encode($reservations));
             echo json_encode($reservations);
         } else {
-            // Sinon, récupérer toutes les réservations
             error_log("Requête GET reçue pour toutes les réservations");
             $reservations = getAllReservations();
             error_log("Réservations récupérées : " . json_encode($reservations));
