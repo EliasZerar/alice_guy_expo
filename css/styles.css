@@ -205,7 +205,6 @@ footer {
   justify-content: space-between;
   font-size: 0.8rem;
   font-family: "Oddlini Thin", sans-serif;
-  margin-top: 50px;
 }
 
 footer a {
@@ -661,7 +660,12 @@ html, body {
 .center-v {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  height: 70vh;
+  justify-content: center;
+}
+
+.title-firsts {
+  margin-bottom: 0;
 }
 
 .swiper {
@@ -898,6 +902,7 @@ html, body {
   flex-direction: column;
   margin: auto;
   overflow-x: hidden;
+  justify-content: center;
 }
 
 .camera-img {
@@ -1232,7 +1237,7 @@ html, body {
   margin-left: 15px;
   max-width: 10px;
   min-height: 100%;
-  background-color: white;
+  background-color: #FFF;
   z-index: 1;
   border-radius: 5px;
   flex: 1;
@@ -1294,7 +1299,7 @@ html, body {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  border: 1px solid white;
+  border: 1px solid #FFF;
   border-radius: 15px;
   pointer-events: none;
   z-index: 1;
@@ -1332,7 +1337,7 @@ html, body {
   align-items: center;
   justify-content: center;
   background-color: #000;
-  border: 1px solid #fff;
+  border: 1px solid #FFF;
   padding: 2rem;
   border-radius: 15px;
 }
@@ -1340,6 +1345,103 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+body.popup-open {
+  overflow: hidden;
+}
+
+.promo-btn {
+  position: absolute;
+  white-space: nowrap;
+  bottom: -100px;
+  left: 50vw;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #EA5B28;
+  color: #FFF;
+  border: none;
+  border-radius: 10px;
+  cursor: not-allowed;
+  opacity: 0.5;
+  transition: opacity 0.3s, cursor 0.3s;
+  z-index: 999999;
+}
+
+.promo-btn.enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.promo-popup.hidden {
+  display: none;
+}
+
+.promo-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.promo-popup-content {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  background-color: #EA5B28;
+  padding: 24px 40px;
+  padding-right: 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.promo-popup-content::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid #FFF;
+  border-radius: 15px;
+  pointer-events: none;
+  z-index: 1;
+}
+.promo-popup-content .popup-text {
+  margin-right: 20px;
+}
+
+.popup-reserve-btn {
+  float: right;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFF;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 7px 12px 7px 16px;
+  margin: 0;
+}
+.popup-reserve-btn:hover svg {
+  transition: ease-in-out 0.2s;
+  transform: translate(4px, -2px);
 }
 
 @media (768px < width < 1100px) {
@@ -1417,8 +1519,7 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     max-width: 90%;
-    height: 100%;
-    pointer-events: none;
+    height: fit-content;
     display: flex;
     justify-content: center;
     background-color: transparent;
@@ -1471,7 +1572,7 @@ html, body {
     flex-direction: row;
   }
   .collection-card {
-    background-color: #de623d;
+    background-color: #EA5B28;
     padding: 40px;
     border-radius: 20px;
     width: 100%;
@@ -1517,7 +1618,7 @@ html, body {
     align-items: center;
     justify-content: center;
     background-color: #000;
-    border: 1px solid #fff;
+    border: 1px solid #FFF;
     padding: 0;
     border-radius: 15px;
   }
@@ -1533,15 +1634,13 @@ html, body {
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
   }
+  .promo-btn {
+    bottom: -90px;
+    left: -80px;
+    font-size: 1.4rem;
+    transform: translate(0);
+  }
 }
-.testLocal {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .reservation-container {
   display: flex;
   flex-direction: column;

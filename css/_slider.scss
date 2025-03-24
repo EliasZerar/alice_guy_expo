@@ -1,7 +1,12 @@
 .center-v {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 70vh;
+    justify-content: center;
+}
+
+.title-firsts {
+    margin-bottom: 0;
 }
 
 .swiper {
