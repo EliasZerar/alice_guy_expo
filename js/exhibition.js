@@ -64,24 +64,20 @@ document.querySelectorAll(".collection-step").forEach((step) => {
     );
 });
 
-const testLocal = () => {
-    if (localStorage.getItem("gameFinished") === "true") {
-        localStorage.removeItem("gameFinished");
-    } else {
-        localStorage.setItem("gameFinished", "true");
-    }
-    location.reload();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     const gameFinished = localStorage.getItem("gameFinished");
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameWinParam = urlParams.get('gameWin');
 
-    if (gameFinished === "true") {
+    if (gameFinished === "true" && gameWinParam === "true") {
         setTimeout(() => {
             toSection();
         }, 300);
+    } else if (gameFinished === "true") {
+        unlockImagesAndShowCards();
     }
 });
+
 
 
 function unlockImagesAndShowCards() {
