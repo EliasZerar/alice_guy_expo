@@ -17,6 +17,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -27,7 +28,6 @@ html, body {
     height: 100%;
     display: flex;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 /* title */ 

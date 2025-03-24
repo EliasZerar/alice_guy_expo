@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!underline) return;
 
-    // Nettoyage des chemins pour les comparer plus facilement
     const normalizePath = (path) => path.replace(/\/index\.html$/, "/").replace(/\/$/, "") || "/";
 
     const currentPath = normalizePath(window.location.pathname);
@@ -63,10 +62,8 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    window.addEventListener("load", () => {
-        updateActiveLink();
-        setTimeout(updateUnderline, 100);
-    });
+    updateActiveLink();
+    setTimeout(updateUnderline, 100);
 
     const selectLang = document.querySelector('.language');
     selectLang?.addEventListener('change', () => {
