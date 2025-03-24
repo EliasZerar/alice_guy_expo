@@ -99,7 +99,6 @@
 }
 
 .firsts {
-    min-height: 100vh;
     position: relative;
 }
 
@@ -276,6 +275,10 @@
 
     .title-firsts {
         margin-left: 90px;
+    }
+
+    .firsts {
+        min-height: 100vh;
     }
 
 }
