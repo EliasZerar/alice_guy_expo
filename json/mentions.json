@@ -1,0 +1,98 @@
+{
+  "fr": {
+    "lang-title": "Mentions légales - Alice au pays des premières",
+
+    "lang-legal-title": "Mentions légales",
+    "lang-legal-editor": "Éditeur",
+
+    "lang-legal-university": "Ce site a été conçu au sein de l’Université Gustave Eiffel :",
+    "lang-legal-address": "Adresse :",
+    "lang-legal-phone": "Téléphone :",
+    "lang-legal-ape": "Code APE :",
+    "lang-legal-representative": "Représentant :",
+
+    "lang-legal-dpo": "Délégué à la Protection des Données (DPO)",
+
+    "lang-legal-dpo-name": "Nom :",
+    "lang-legal-dpo-address": "Adresse :",
+
+    "lang-legal-host": "Hébergeur",
+    "lang-legal-host-company": "Entreprise :",
+    "lang-legal-host-address": "Adresse :",
+
+    "lang-legal-team": "Équipe de Développement",
+    "lang-legal-team-desc": "Ce site a été conçu et développé par :",
+    "lang-legal-team-students": "Étudiants :",
+    "lang-legal-team-mockup": "Maquette :",
+    "lang-legal-team-webdev": "Développement Web :",
+    "lang-legal-team-designer": "Graphiste / DA :",
+    "lang-legal-team-texts": "Textes :",
+
+    "lang-legal-privacy": "Politique de confidentialité",
+    "lang-legal-privacy-desc": "Aucune donnée personnelle ou information sur les utilisateurs n’est collectée ni partagée.",
+    "lang-legal-privacy-data": "Nous utilisons exclusivement des données officielles, comme celles de l'INJEP, à des fins pédagogiques.",
+
+    "lang-legal-data-collection": "Collecte de Données",
+    "lang-legal-data-collection-desc": "Ce site est hébergé par o2switch, qui peut collecter certaines informations techniques (IP, navigateur, OS).",
+    "lang-legal-data-collection-more": "Pour plus d’informations, consultez leur ",
+    "lang-legal-data-collection-more-link": "Politique de Confidentialité",
+
+    "lang-legal-domain" : "Nom de Domaine",
+    "lang-legal-domain-desc1": "Le nom de domaine ",
+    "lang-legal-domain-desc-link": "aliceguy.eu",
+    "lang-legal-domain-desc2": " a été vérifié et est disponible.",
+
+    "lang-legal-sources": "Sources & Polices",
+    "lang-legal-sources-titles": "Titres :",
+    "lang-legal-sources-texts": "Textes :",
+    "lang-legal-sources-subtitles": "Sous-titres :"
+  },
+  "en": {
+    "lang-title": "Legal notices - Alice in the land of firsts",
+
+    "lang-legal-title": "Legal notices",
+    "lang-legal-editor": "Editor",
+
+    "lang-legal-university": "This site was designed within Gustave Eiffel University:",
+    "lang-legal-address": "Address :",
+    "lang-legal-phone": "Phone :",
+    "lang-legal-ape": "APE code :",
+    "lang-legal-representative": "Representative :",
+
+    "lang-legal-dpo": "Data Protection Officer (DPO)",
+
+    "lang-legal-dpo-name": "Name :",
+    "lang-legal-dpo-address": "Address :",
+
+    "lang-legal-host": "Host",
+    "lang-legal-host-company": "Company :",
+    "lang-legal-host-address": "Address :",
+
+    "lang-legal-team": "Development Team",
+    "lang-legal-team-desc": "This site was designed and developed by :",
+    "lang-legal-team-students": "Students :",
+    "lang-legal-team-mockup": "Mockup :",
+    "lang-legal-team-webdev": "Web Development :",
+    "lang-legal-team-designer": "Graphic Designer / AD :",
+    "lang-legal-team-texts": "Texts :",
+
+    "lang-legal-privacy": "Privacy Policy",
+    "lang-legal-privacy-desc": "No personal data or information about users is collected or shared.",
+    "lang-legal-privacy-data": "We use exclusively official data, such as those from INJEP, for educational purposes.",
+
+    "lang-legal-data-collection": "Data Collection",
+    "lang-legal-data-collection-desc": "This site is hosted by o2switch, which may collect certain technical information (IP, browser, OS).",
+    "lang-legal-data-collection-more": "For more information, consult their ",
+    "lang-legal-data-collection-more-link": "Privacy Policy",
+
+    "lang-legal-domain" : "Domain Name",
+    "lang-legal-domain-desc1": "The domain name ",
+    "lang-legal-domain-desc-link": "aliceguy.eu",
+    "lang-legal-domain-desc2": " has been verified and is available.",
+
+    "lang-legal-sources": "Sources & Fonts",
+    "lang-legal-sources-titles": "Titles :",
+    "lang-legal-sources-texts": "Texts :",
+    "lang-legal-sources-subtitles": "Subtitles :"
+  }
+}
