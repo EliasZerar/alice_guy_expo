@@ -40,7 +40,28 @@
 
 
     "lang-firsts-woman": "LA FEMME DES",
-    "lang-firsts-firsts": "PREMIÈRES"
+    "lang-firsts-firsts": "PREMIÈRES",
+
+    "lang-slide1-title": "La Fée aux choux",
+    "lang-slide1-text": "En réalisant La Fée aux choux en 1896, Alice Guy devient la première à réaliser un film de fiction. Elle devient également la première femme réalisatrice dans le cinéma.",
+
+    "lang-slide2-title": "Phonoscène et Making-of",
+    "lang-slide2-text": "En 1907, Alice Guy fut la première à expérimenter la synchronisation du son et de l’image dans le cinéma, donnant naissance à la phonoscène. Elle fut au même moment la première à réaliser un making-of.",
+
+    "lang-slide3-title": "Solax Company",
+    "lang-slide3-text": "Voyant l’émergence du cinéma aux États-Unis, Alice Guy traverse l’Atlantique pour fonder son studio de cinéma, le Solax Company, étant le premier à êtr dirigé par une femme.",
+
+    "lang-slide4-title": "A Fool and His Money",
+    "lang-slide4-text": "Lors d’un tournage, des acteurs blancs ont refusé d’apparaître à l’écran avec des acteurs noirs. Ainsi, en 1912, elle a décidé de réaliser “A Fool and His Money”, le premier film avec un casting entièrement afro-américain.",
+
+    "lang-slide5-title": "Effets spéciaux",
+    "lang-slide5-text": "Alice Guy, comme d’autres figures du cinéma de l’époque tel que Georges Méliès, a participé à la création d’effets spéciaux. Ils sont à l’origine de la surimpression, des fondus, des ralentis, ou encore des accélérés.",
+
+    "lang-swiper-title1": "Une réalisatrice de fiction",
+    "lang-swiper-title2": "Synchronisation son/image",
+    "lang-swiper-title3": "Une directrice de studio",
+    "lang-swiper-title4": "Un casting afro-américain",
+    "lang-swiper-title5": "Création d'ffets spéciaux"
   },
   "en": {
     "lang-title": "Alice Guy - Alice in the land of firsts",
@@ -84,6 +105,27 @@
 
     
     "lang-firsts-woman": "THE WOMAN OF",
-    "lang-firsts-firsts": "FIRSTS"
+    "lang-firsts-firsts": "FIRSTS",
+
+    "lang-slide1-title": "La fée aux Choux",
+    "lang-slide1-text": "By directing La fée aux Choux in 1896, Alice Guy became the first to direct a fiction film. She also became the first female director in cinema.",
+
+    "lang-slide2-title": "Phonoscene and Making-of",
+    "lang-slide2-text": "In 1907, Alice Guy was the first to experiment with the synchronization of sound and image in cinema, giving birth to the phonoscène. At the same time, she was the first to direct a making-of.",
+
+    "lang-slide3-title": "Solax Company",
+    "lang-slide3-text": "Seeing the emergence of cinema in the United States, Alice Guy crossed the Atlantic to found her film studio, the Solax Company, being the first to be directed by a woman.",
+
+    "lang-slide4-title": "A Fool and His Money",
+    "lang-slide4-text": "During a shoot, white actors refused to appear on screen with black actors. Thus, in 1912, she decided to direct “A Fool and His Money”, the first film with an entirely African-American cast.",
+
+    "lang-slide5-title": "Special Effects",
+    "lang-slide5-text": "Alice Guy, like other cinema figures of the time such as Georges Méliès, participated in the creation of special effects. They are the origin of superimposition, fades, slow motion, and fast motion.",
+
+    "lang-swiper-title1": "A fiction director",
+    "lang-swiper-title2": "Sound/image synchronization",
+    "lang-swiper-title3": "A studio director",
+    "lang-swiper-title4": "An African-American cast",
+    "lang-swiper-title5": "Creation of special effects"
   }
 }
