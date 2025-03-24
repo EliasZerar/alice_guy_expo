@@ -132,19 +132,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isFinished) {
         promoBtn.disabled = false;
-        promoBtn.classList.add("active");
+        promoBtn.classList.add("enabled");
     }
 
     promoBtn.addEventListener("click", () => {
         if (!promoBtn.disabled) {
             popup.classList.remove("hidden");
-            document.body.classList.add("popup-open"); // 🔥 Ajoute ça !
+            document.body.classList.add("popup-open"); 
         }
     });
 
     const closePromoPopup = () => {
         popup.classList.add("hidden");
-        document.body.classList.remove("popup-open"); // 🔥 Et ça aussi
+        document.body.classList.remove("popup-open"); 
     };
 
     closePopup.addEventListener("click", closePromoPopup);
