@@ -2230,6 +2230,7 @@ body.popup-open {
 
 .mentions {
   font-family: "Casablanca Serial";
+  margin-top: 0;
 }
 
 .legal-mentions h2 {
@@ -2245,13 +2246,16 @@ body.popup-open {
   font-weight: 550;
 }
 
-@media (min-width: 1131px) {
+@media (min-width: 1000px) {
   .container-mention {
     font-size: 1.3rem;
     margin: 5%;
   }
   .mention-text {
     font-size: 1.2rem;
+  }
+  .mentions {
+    font-size: 3.6rem;
   }
 }
 
