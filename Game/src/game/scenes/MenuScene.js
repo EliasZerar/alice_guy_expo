@@ -109,36 +109,37 @@ export class MenuScene extends Scene {
     checkOrientation() {
         if (this.scale.orientation === Phaser.Scale.PORTRAIT) {
             if (!this.popup) {
+                this.overlay = this.add.rectangle(0, 0, this.sys.game.config.width, this.sys.game.config.height, 0x000000, 0.8)
+                    .setOrigin(0)
+                    .setDepth(99);
+                
                 this.popup = this.add.rectangle(this.sys.game.config.width / 2, this.sys.game.config.height / 2, 500, 200, 0x000000, 0.8)
                     .setOrigin(0.5)
                     .setDepth(100);
-
-                this.popupText = this.add.text(this.sys.game.config.width / 2, this.sys.game.config.height / 2 - 30,
-                    'Ce jeu a un meilleur rendu sur desktop,\nsi vous voulez quand même jouer\nveuillez tourner votre téléphone en mode paysage.',
-                    { font: '20px Arial', fill: '#ffffff', align: 'center' }
+    
+                this.popupText = this.add.text(this.sys.game.config.width / 2, this.sys.game.config.height / 2 - 50,
+                    'Ce jeu a un meilleur rendu sur desktop,\nSi vous voulez quand même jouer\nveuillez tourner votre téléphone en mode paysage.',
+                    { 
+                        font: '44px satoshi-variable', 
+                        fill: '#ffffff', 
+                        align: 'center', 
+                        wordWrap: { width: 800, useAdvancedWrap: true } 
+                    }
                 ).setOrigin(0.5).setDepth(101);
-
-                this.closeButton = this.add.text(this.sys.game.config.width / 2, this.sys.game.config.height / 2 + 50, 'OK', { font: '25px Arial', fill: '#fff', backgroundColor: '#ea5b28', padding: { x: 10, y: 5 } })
-                    .setOrigin(0.5)
-                    .setInteractive()
-                    .setDepth(102)
-                    .on('pointerdown', () => {
-                        this.popup.destroy();
-                        this.popupText.destroy();
-                        this.closeButton.destroy();
-                        this.popup = null;
-                        this.disableButtons(false);
-                    });
                 
                 this.disableButtons(true);
             }
         } else {
             if (this.popup) {
+                if (this.overlay) {
+                    this.overlay.destroy();
+                    this.overlay = null;
+                }
                 this.popup.destroy();
                 this.popupText.destroy();
-                this.closeButton.destroy();
                 this.popup = null;
-                this.disableButtons(false);
+
+                this.disableButtons(false); 
             }
         }
     }

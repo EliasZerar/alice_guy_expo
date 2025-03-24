@@ -26,11 +26,17 @@ export class RulesScene extends Scene {
         const aliceGuyImage = this.add.image(width / 2 - 180, height / 4.2, 'aliceguy').setScale(0.25);
         aliceGuyImage.setOrigin(0.5);
 
-        const rulesText = 
-            "Vous contrôlez un personnage que vous pouvez déplacer à l’aide des touches [color=#ea5b28]Z, Q, S, D[/color] ou [color=#ea5b28]des flèches.[/color]" + 
-            " Votre objectif est de trouver et de [color=#ea5b28]ramasser 5 objets[/color] cachés dans le labyrinthe.\n\n" + 
-            "Faites [color=#ea5b28]attention aux ennemis[/color] que vous croiserez sur votre chemin : [color=#ea5b28]vous devez absolument les éviter.[/color]" +
-            "Une fois que vous aurez collecté tous les objets, une porte apparaîtra. Rejoignez-la pour remporter la partie.";
+        const isDesktop = this.sys.game.device.os.desktop;
+
+        const rulesText = isDesktop
+            ? "Vous contrôlez un personnage que vous pouvez déplacer à l’aide des touches [color=#ea5b28]Z, Q, S, D[/color] ou [color=#ea5b28]des flèches.[/color]" + 
+              " Votre objectif est de trouver et de [color=#ea5b28]ramasser 5 objets[/color] cachés dans le labyrinthe.\n\n" + 
+              "Faites [color=#ea5b28]attention aux ennemis[/color] que vous croiserez sur votre chemin : [color=#ea5b28]vous devez absolument les éviter.[/color]" +
+              "Une fois que vous aurez collecté tous les objets, une porte apparaîtra. Rejoignez-la pour remporter la partie."
+            : "Vous contrôlez un personnage que vous pouvez déplacer à l’aide du [color=#ea5b28]joysticks virtuels[/color] affichés à l’écran." + 
+              " Votre objectif est de trouver et de [color=#ea5b28]ramasser 5 objets[/color] cachés dans le labyrinthe.\n\n" + 
+              "Faites [color=#ea5b28]attention aux ennemis[/color] que vous croiserez sur votre chemin : [color=#ea5b28]vous devez absolument les éviter.[/color]" +
+              "Une fois que vous aurez collecté tous les objets, une porte apparaîtra. Rejoignez-la pour remporter la partie.";
 
         const rulesTextObject = this.add.rexBBCodeText(width / 2 - 250, height / 2, rulesText, { 
             fontSize: '20px',
