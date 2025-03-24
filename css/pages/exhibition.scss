@@ -350,6 +350,27 @@ body.popup-open {
     }
 }
 
+
+@media (min-width: 500px) {
+    .promo-btn {
+        margin-left: -50px;
+    }
+
+    .svg-container {
+        margin-left: 50px;
+    }
+}
+
+@media (min-width: 700px) {
+    .promo-btn {
+        margin-left: -70px;
+    }
+
+    .svg-container {
+        margin-left: 70px;
+    }
+}
+
 @media (768px < width < 1100px) {
     .object-collection {
         margin-top: 100px;
@@ -581,5 +602,6 @@ body.popup-open {
         left: -80px;
         font-size: 1.4rem;
         transform: translate(0);
+        margin: 0;
     }
 }

@@ -124,33 +124,34 @@ clic.addEventListener("click", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const promoButton = document.getElementById("promo-button");
+    const promoBtn = document.getElementById("promo-button");
     const popup = document.getElementById("promo-popup");
-    const closeBtn = document.getElementById("close-popup");
+    const closePopup = document.getElementById("close-popup");
 
-    // Vérifie si le jeu est terminé
-    if (localStorage.getItem("gameFinished") === "true") {
-        promoButton.disabled = false;
-        promoButton.classList.add("enabled"); 
+    const isFinished = localStorage.getItem("gameFinished") === "true";
+
+    if (isFinished) {
+        promoBtn.disabled = false;
+        promoBtn.classList.add("active");
     }
 
-    // Ouverture de la popup
-    promoButton.addEventListener("click", () => {
-        if (!promoButton.disabled) {
+    promoBtn.addEventListener("click", () => {
+        if (!promoBtn.disabled) {
             popup.classList.remove("hidden");
+            document.body.classList.add("popup-open"); // 🔥 Ajoute ça !
         }
     });
 
-    // Fermeture de la popup
-    closeBtn.addEventListener("click", () => {
+    const closePromoPopup = () => {
         popup.classList.add("hidden");
-    });
+        document.body.classList.remove("popup-open"); // 🔥 Et ça aussi
+    };
 
-    // Optionnel : fermer la popup en cliquant en dehors
-    window.addEventListener("click", (e) => {
+    closePopup.addEventListener("click", closePromoPopup);
+
+    popup.addEventListener("click", (e) => {
         if (e.target === popup) {
-            popup.classList.add("hidden");
+            closePromoPopup();
         }
     });
 });
-
