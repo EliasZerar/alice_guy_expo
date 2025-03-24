@@ -7,7 +7,7 @@ const swiper = new Swiper(".mySwiper", {
     loopAdditionalSlides: 2, 
     coverflowEffect: {
       rotate: 0,
-      stretch: 46,
+      stretch: 42,
       depth: 50,
       modifier: 6,
       slideShadows: true,
