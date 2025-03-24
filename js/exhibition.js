@@ -127,20 +127,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const promoBtn = document.getElementById("promo-button");
     const popup = document.getElementById("promo-popup");
     const closePopup = document.getElementById("close-popup");
+    const promoCodeElement = document.querySelector(".promo-code strong"); 
+    const promoCode = "SOLAX10";
 
     const isFinished = localStorage.getItem("gameFinished") === "true";
 
     if (isFinished) {
         promoBtn.disabled = false;
         promoBtn.classList.add("enabled");
-    }
 
-    promoBtn.addEventListener("click", () => {
-        if (!promoBtn.disabled) {
-            popup.classList.remove("hidden");
-            document.body.classList.add("popup-open"); 
+        if (promoCodeElement) {
+            promoCodeElement.textContent = promoCode; 
         }
-    });
+
+        promoBtn.addEventListener("click", () => {
+            if (!promoBtn.disabled) {
+                popup.classList.remove("hidden");
+                document.body.classList.add("popup-open"); 
+            }
+        });
+    }
 
     const closePromoPopup = () => {
         popup.classList.add("hidden");
