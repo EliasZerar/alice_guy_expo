@@ -2219,5 +2219,34 @@ body.popup-open {
     gap: 1rem;
   }
 }
+.container-mention {
+  margin: 7%;
+}
+
+.mentions {
+  font-family: "Casablanca Serial";
+}
+
+.legal-mentions h2 {
+  font-family: "Oddlini Bold";
+  margin-top: 60px;
+}
+
+.legal-mentions a {
+  color: #ea5b28;
+}
+
+.bold-text {
+  font-weight: 550;
+}
+
+@media (min-width: 1131px) {
+  .container-mention {
+    font-size: 1.3rem;
+  }
+  .mention-text {
+    font-size: 1.2rem;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
