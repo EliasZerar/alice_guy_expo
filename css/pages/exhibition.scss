@@ -153,7 +153,7 @@
     left: 50%;
     width: 20px;
     height: 20px;
-    background-color: #f37036;
+    background-color: $primary-color;
     border-radius: 50%;
     z-index: 10;
     transform: translate(-50%, -50%);
@@ -184,7 +184,7 @@
 }
 
 .collection-card {
-    background-color: #de623d;
+    background-color: $primary-color;
     padding: 1rem;
     border-radius: 15px;
     padding: 40px;
@@ -478,7 +478,7 @@ body.popup-open {
         position: absolute;
         width: 20px;
         height: 20px;
-        background-color: #f37036;
+        background-color: $primary-color;
         border-radius: 50%;
         z-index: 10;
         transform: translate(-50%, -50%);
