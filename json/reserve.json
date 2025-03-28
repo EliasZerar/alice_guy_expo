@@ -68,7 +68,13 @@
 
     "lang-prev-btn": "Précédent",
     "lang-next-btn": "Suivant",
-    "lang-confirm-btn": "Confirmer"
+    "lang-confirm-btn": "Confirmer",
+
+    "lang-confirmation-title": "Merci pour votre réservation !",
+    "lang-confirmation-message": "📩 Un email de confirmation vous a été envoyé",
+    "lang-confirmation-text": "Nous avons hâte de vous accueillir !",
+    "lang-confirmation-team": "– L'équipe"
+
   },
   "en": {
     "lang-title": "Reserve - Alice in the land of firsts",
@@ -139,6 +145,11 @@
 
     "lang-prev-btn": "Previous",
     "lang-next-btn": "Next",
-    "lang-confirm-btn": "Confirm"
+    "lang-confirm-btn": "Confirm",
+
+    "lang-confirmation-title": "Thank you for your reservation!",
+    "lang-confirmation-message": "📩 A confirmation email has been sent to you",
+    "lang-confirmation-text": "We look forward to welcoming you!",
+    "lang-confirmation-team": "– The team"
   }
 }
